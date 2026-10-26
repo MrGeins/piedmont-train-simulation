@@ -1,6 +1,6 @@
 from backend.controller.train_agent import TrainAgent
 from backend.utils.time_formatter import time_to_seconds, seconds_to_string
-from backend.data.stations_data import stations_registry
+from backend.network_graph import stations_registry
 from backend.data.schedules_service import ROUTES, PLATFORM_PLANS, TAKT_TEMPLATES
 
 
