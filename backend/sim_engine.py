@@ -80,7 +80,7 @@ class SimEngine:
                         )
 
                         if train.status == "TURNAROUND":
-                            self.interlocking.release_track_section(train.train_number, station_from, station_to)
+                            self.interlocking.release_track_section(train.train_number, station_from, station_to, infrastructure_map)
                     else:
                         train.accumulated_delay += int(base_time_step)
 
@@ -101,12 +101,12 @@ class SimEngine:
                     if train.status == "RUNNING" and prev_status == "DWELLING":
                         station_prev = train.route[train.current_station_index - 1]
                         station_curr = train.route[train.current_station_index]
-                        self.interlocking.release_track_section(train.train_number, station_prev, station_curr)
+                        self.interlocking.release_track_section(train.train_number, station_prev, station_curr, infrastructure_map)
 
                     elif train.status == "TERMINATED" and prev_status == "TURNAROUND":
                         station_prev = train.route[-2]
                         station_curr = train.route[-1]
-                        self.interlocking.release_track_section(old_train_num, station_prev, station_curr)
+                        self.interlocking.release_track_section(old_train_num, station_prev, station_curr, infrastructure_map)
                         self.interlocking.release_platform(old_train_num, station_curr)
 
             if self.on_tick_callback:
