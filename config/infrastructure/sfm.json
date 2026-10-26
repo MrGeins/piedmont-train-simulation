@@ -13,10 +13,7 @@
         8,
         9
       ],
-      "stub_tracks": {
-        "6": "SOUTH",
-        "9": "SOUTH"
-      }
+      "stub_tracks": {}
     },
     "REBAUDENGO": {
       "name": "Torino Rebaudengo Fossata",
@@ -91,9 +88,15 @@
       "num_tracks": 20,
       "available_tracks": [
         1,
+        2,
+        19,
         20
       ],
-      "stub_tracks": {}
+      "stub_tracks": {
+        "1": "SOUTH",
+        "2": "SOUTH",
+        "19": "SOUTH",
+        "20": "SOUTH"}
     },
     "GROSSETO": {
       "name": "Torino Corso Grosseto",
@@ -340,7 +343,11 @@
         2,
         3
       ],
-      "stub_tracks": {}
+      "stub_tracks": {
+        "1": "SOUTH",
+        "2": "SOUTH",
+        "3": "SOUTH"
+      }
     },
     "SAN_PAOLO": {
       "name": "Torino San Paolo",
@@ -599,24 +606,23 @@
         1,
         2
       ],
-      "stub_tracks": {
-        "1": "EAST",
-        "2": "EAST"
-      }
+      "stub_tracks": {}
     },
     "SETTIMO": {
       "name": "Settimo Torinese",
       "roro_station": true,
       "default_dwell": 1,
       "terminal": false,
-      "num_tracks": 4,
+      "num_tracks": 5,
       "available_tracks": [
         1,
         2,
         3,
-        4
+        4,
+        5
       ],
-      "stub_tracks": {}
+      "stub_tracks": {
+        "4": "NORTH"}
     },
     "VOLPIANO": {
       "name": "Volpiano",
@@ -702,13 +708,10 @@
       "terminal": true,
       "num_tracks": 6,
       "available_tracks": [
-        1,
         5,
         6
       ],
-      "stub_tracks": {
-        "1": "WEST"
-      }
+      "stub_tracks": {}
     },
     "MONTANARO": {
       "name": "Montanaro",
@@ -888,7 +891,11 @@
         2,
         3
       ],
-      "stub_tracks": {}
+      "stub_tracks": {
+        "1": "NORTH",
+        "2": "NORTH",
+        "3": "NORTH"
+      }
     },
     "MONCALIERI": {
       "name": "Moncalieri",
@@ -989,10 +996,11 @@
       "roro_station": true,
       "default_dwell": 1,
       "terminal": false,
-      "num_tracks": 2,
+      "num_tracks": 3,
       "available_tracks": [
         1,
-        2
+        2,
+        3
       ],
       "stub_tracks": {}
     },
@@ -1160,11 +1168,7 @@
         2,
         3
       ],
-      "stub_tracks": {
-        "1": "WEST",
-        "2": "WEST",
-        "3": "WEST"
-      }
+      "stub_tracks": {}
     },
     "RACCONIGI": {
       "name": "Racconigi",
@@ -1236,10 +1240,7 @@
         1,
         2
       ],
-      "stub_tracks": {
-        "1": "EAST",
-        "2": "EAST"
-      }
+      "stub_tracks": {}
     }
   },
   "topology": {
@@ -2585,12 +2586,12 @@
     {
       "from": "FOSSANO",
       "to": "CENTALLO",
-      "double_track": true
+      "double_track": false
     },
     {
       "from": "CENTALLO",
       "to": "CUNEO",
-      "double_track": true
+      "double_track": false
     }
   ]
 }

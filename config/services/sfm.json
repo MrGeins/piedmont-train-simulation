@@ -123,18 +123,6 @@
       "STURA",
       "SETTIMO",
       "BRANDIZZO",
-      "CHIVASSO"
-    ],
-    "S5e": [
-      "ORBASSANO",
-      "QUAGLIA",
-      "SAN_PAOLO",
-      "PORTA_SUSA",
-      "DORA",
-      "REBAUDENGO",
-      "STURA",
-      "SETTIMO",
-      "BRANDIZZO",
       "CHIVASSO",
       "MONTANARO",
       "RODALLO",
@@ -202,25 +190,7 @@
       "LANZO",
       "GERMAGNANO"
     ],
-    "S8e": [
-      "PORTA_NUOVA",
-      "ZAPPATA",
-      "PORTA_SUSA",
-      "DORA",
-      "REBAUDENGO",
-      "GROSSETO",
-      "VENARIA_RIGOLA",
-      "VENARIA_REGGIA",
-      "BORGARO",
-      "CASELLE",
-      "AEROPORTO",
-      "S_MAURIZIO",
-      "CIRIE",
-      "NOLE",
-      "VILLANOVA_GROSSO",
-      "MATHI",
-      "BALANGERO",
-      "LANZO",
+    "S8b": [
       "GERMAGNANO",
       "FUNGHERA",
       "TRAVES",
@@ -228,27 +198,6 @@
       "PESSINETTO",
       "MEZZENILE",
       "CERES"
-    ],
-    "S8b": [
-      "PORTA_NUOVA",
-      "ZAPPATA",
-      "PORTA_SUSA",
-      "DORA",
-      "REBAUDENGO",
-      "GROSSETO",
-      "VENARIA_RIGOLA",
-      "VENARIA_REGGIA",
-      "BORGARO",
-      "CASELLE",
-      "AEROPORTO",
-      "S_MAURIZIO",
-      "CIRIE",
-      "NOLE",
-      "VILLANOVA_GROSSO",
-      "MATHI",
-      "BALANGERO",
-      "LANZO",
-      "GERMAGNANO"
     ]
   },
   "PLATFORM_PLANS": {
@@ -270,7 +219,7 @@
       "CHIERI": 1
     },
     "S2": {
-      "STURA": 9,
+      "STURA": 7,
       "REBAUDENGO": 4,
       "DORA": 1,
       "PORTA_SUSA": 5,
@@ -303,7 +252,7 @@
       "PORTA_SUSA": 6,
       "DORA": 2,
       "REBAUDENGO": 4,
-      "STURA": 6
+      "STURA": 9
     },
     "S3b": {
       "STURA": 6,
@@ -367,18 +316,6 @@
       "STURA": 9
     },
     "S5": {
-      "ORBASSANO": 1,
-      "QUAGLIA": 2,
-      "SAN_PAOLO": 1,
-      "PORTA_SUSA": 6,
-      "DORA": 2,
-      "REBAUDENGO": 4,
-      "STURA": 8,
-      "SETTIMO": 2,
-      "BRANDIZZO": 2,
-      "CHIVASSO": 1
-    },
-    "S5e": {
       "ORBASSANO": 1,
       "QUAGLIA": 2,
       "SAN_PAOLO": 1,
@@ -455,25 +392,7 @@
       "LANZO": 1,
       "GERMAGNANO": 1
     },
-    "S8e": {
-      "PORTA_NUOVA": 20,
-      "ZAPPATA": 2,
-      "PORTA_SUSA": 6,
-      "DORA": 2,
-      "REBAUDENGO": 2,
-      "GROSSETO": 2,
-      "VENARIA_RIGOLA": 2,
-      "VENARIA_REGGIA": 2,
-      "BORGARO": 2,
-      "CASELLE": 2,
-      "AEROPORTO": 2,
-      "S_MAURIZIO": 2,
-      "CIRIE": 1,
-      "NOLE": 1,
-      "VILLANOVA_GROSSO": 1,
-      "MATHI": 1,
-      "BALANGERO": 1,
-      "LANZO": 1,
+    "S8b": {
       "GERMAGNANO": 2,
       "FUNGHERA": 1,
       "TRAVES": 1,
@@ -481,33 +400,12 @@
       "PESSINETTO": 1,
       "MEZZENILE": 1,
       "CERES": 1
-    },
-    "S8b": {
-      "PORTA_NUOVA": 20,
-      "ZAPPATA": 2,
-      "PORTA_SUSA": 6,
-      "DORA": 2,
-      "REBAUDENGO": 2,
-      "GROSSETO": 2,
-      "VENARIA_RIGOLA": 2,
-      "VENARIA_REGGIA": 2,
-      "BORGARO": 2,
-      "CASELLE": 2,
-      "AEROPORTO": 2,
-      "S_MAURIZIO": 2,
-      "CIRIE": 3,
-      "NOLE": 1,
-      "VILLANOVA_GROSSO": 1,
-      "MATHI": 1,
-      "BALANGERO": 1,
-      "LANZO": 1,
-      "GERMAGNANO": 1
     }
   },
   "SERVICES": {
     "S1": {
       "service_id": "S1",
-      "base_num": 1000,
+      "base_num": 2100,
       "fleet_size": 4,
       "frequency_min": 60,
       "start_time": "05:25:00",
@@ -515,31 +413,31 @@
     },
     "S2": {
       "service_id": "S2",
-      "base_num": 2000,
-      "fleet_size": 2,
+      "base_num": 2200,
+      "fleet_size": 4,
       "frequency_min": 60,
       "start_time": "05:33:00",
       "end_time": "22:50:00"
     },
     "S3a": {
       "service_id": "S3a",
-      "base_num": 3000,
-      "fleet_size": 3,
-      "frequency_min": 120,
+      "base_num": 2300,
+      "fleet_size": 4,
+      "frequency_min": 60,
       "start_time": "06:27:00",
       "end_time": "22:50:00"
     },
     "S3b": {
       "service_id": "S3b",
-      "base_num": 3500,
-      "fleet_size": 3,
-      "frequency_min": 120,
+      "base_num": 2350,
+      "fleet_size": 4,
+      "frequency_min": 60,
       "start_time": "05:27:00",
       "end_time": "22:50:00"
     },
     "S4": {
       "service_id": "S4",
-      "base_num": 4000,
+      "base_num": 2400,
       "fleet_size": 2,
       "frequency_min": 120,
       "start_time": "04:51:00",
@@ -547,31 +445,23 @@
     },
     "S4b": {
       "service_id": "S4b",
-      "base_num": 4500,
+      "base_num": 2450,
       "fleet_size": 2,
       "frequency_min": 120,
       "start_time": "05:51:00",
       "end_time": "22:55:00"
     },
     "S5": {
-      "service_id": "S5",
-      "base_num": 5000,
-      "fleet_size": 2,
-      "frequency_min": 120,
-      "start_time": "06:29:00",
-      "end_time": "22:32:00"
-    },
-    "S5e": {
       "service_id": "S5e",
-      "base_num": 5500,
-      "fleet_size": 2,
+      "base_num": 2550,
+      "fleet_size": 4,
       "frequency_min": 120,
       "start_time": "04:45:00",
       "end_time": "23:16:00"
     },
     "S6": {
       "service_id": "S6",
-      "base_num": 6000,
+      "base_num": 2600,
       "fleet_size": 4,
       "frequency_min": 60,
       "start_time": "05:12:00",
@@ -579,7 +469,7 @@
     },
     "S7": {
       "service_id": "S7",
-      "base_num": 7000,
+      "base_num": 2700,
       "fleet_size": 4,
       "frequency_min": 60,
       "start_time": "05:55:00",
@@ -587,24 +477,16 @@
     },
     "S8": {
       "service_id": "S8",
-      "base_num": 8000,
+      "base_num": 2800,
       "fleet_size": 4,
       "frequency_min": 60,
       "start_time": "05:47:00",
       "end_time": "22:35:00"
     },
     "S8b": {
-      "service_id": "S8b",
-      "base_num": 8400,
-      "fleet_size": 2,
-      "frequency_min": 120,
-      "start_time": "06:07:00",
-      "end_time": "22:35:00"
-    },
-    "S8e": {
       "service_id": "S8e",
-      "base_num": 8800,
-      "fleet_size": 3,
+      "base_num": 11800,
+      "fleet_size": 1,
       "frequency_min": 120,
       "start_time": "04:39:00",
       "end_time": "23:35:00"
