@@ -18,6 +18,11 @@ class TimetableGenerationTests(unittest.TestCase):
         self.assertTrue(all(not train.custom_travel_times for train in trains))
         self.assertTrue(all(not train.custom_dwell_times for train in trains))
 
+    def test_fleet_capacity_is_derived_from_route_and_frequency(self):
+        route = ["STURA", "REBAUDENGO", "DORA", "PORTA_SUSA"]
+        required = TimetableGenerator.required_fleet_size(route, frequency_min=10)
+        self.assertGreaterEqual(required, 2)
+
     def test_duplicate_train_numbers_are_rejected(self):
         first = TrainAgent(service_id="X", train_number=1, route=["STURA"], departure_time_str="05:00:00")
         second = TrainAgent(service_id="Y", train_number=1, route=["STURA"], departure_time_str="05:01:00")
