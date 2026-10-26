@@ -1,0 +1,18 @@
+import unittest
+from backend.controller.timetable_generator import TimetableGenerator
+from backend.controller.train_agent import TrainAgent
+
+class TimetableGenerationTests(unittest.TestCase):
+    def test_full_day_timetable_has_unique_ids_and_valid_platforms(self):
+        trains = TimetableGenerator.generate_full_day_timetable()
+        self.assertEqual(len(trains), 37)
+        self.assertEqual(len({train.train_number for train in trains}), len(trains))
+        TimetableGenerator.validate_generated_timetable(trains)
+
+    def test_duplicate_train_numbers_are_rejected(self):
+        first = TrainAgent(service_id="X", train_number=1, route=["STURA"], departure_time_str="05:00:00")
+        second = TrainAgent(service_id="Y", train_number=1, route=["STURA"], departure_time_str="05:01:00")
+        with self.assertRaisesRegex(ValueError, "duplicate train number"):
+            TimetableGenerator.validate_generated_timetable([first, second])
+
+if __name__ == "__main__": unittest.main()
