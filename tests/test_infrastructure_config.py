@@ -6,9 +6,9 @@ from backend.configuration.validator import InfrastructureConfigError, validate_
 class InfrastructureConfigTests(unittest.TestCase):
     def test_active_configuration_loads(self):
         stations, links, topology = load_infrastructure()
-        self.assertGreater(len(stations), 0)
-        self.assertGreater(len(links), 0)
-        self.assertGreater(len(topology), 0)
+        self.assertEqual(len(stations), 99)
+        self.assertEqual(len(links), 123)
+        self.assertEqual(len(topology), 122)
         self.assertEqual(set(stations) - set(topology), set())
         self.assertIn("STURA", stations)
         self.assertIn("STURA", topology)
