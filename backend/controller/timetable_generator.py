@@ -67,10 +67,30 @@ class TimetableGenerator:
             raise ValueError("Generated timetable validation failed:\n- " + "\n- ".join(errors))
 
     @classmethod
+    def required_fleet_size(cls, route: list[str], frequency_min: int) -> int:
+        """Estimate units needed to sustain the configured headway on a round trip."""
+        if frequency_min <= 0:
+            raise ValueError("frequency_min must be positive")
+        segment_count = max(0, len(route) - 1)
+        dwell_minutes = sum(
+            stations_registry[station].default_dwell
+            for station in route[1:-1]
+            if station in stations_registry
+        )
+        one_way_seconds = (
+            segment_count * cls.DEFAULT_SEGMENT_TRAVEL_MINUTES * 60
+            + dwell_minutes * 60
+        )
+        # A unit runs out and back, with a 90-second turnback at each terminal.
+        round_trip_seconds = 2 * one_way_seconds + 2 * 90
+        headway_seconds = frequency_min * 60
+        return max(1, int((round_trip_seconds + headway_seconds - 1) // headway_seconds))
+
+    @classmethod
     def generate_full_day_timetable(cls) -> list[TrainAgent]:
         """Create the configured fleet; each agent follows the service frequency."""
         all_trains = []
-        for service_key, cfg in SERVICES.items():
+        for _, cfg in SERVICES.items():
             service_id = cfg["service_id"]
             route = ROUTES.get(service_id, [])
             if not route:
@@ -80,6 +100,12 @@ class TimetableGenerator:
             frequency_seconds = cfg["frequency_min"] * 60
             start_seconds = time_to_seconds(cfg["start_time"])
             end_seconds = time_to_seconds(cfg["end_time"])
+            required_fleet = cls.required_fleet_size(route, cfg["frequency_min"])
+            if fleet_size < required_fleet:
+                raise ValueError(
+                    f"Service {service_id} has fleet_size={fleet_size}, but its route and "
+                    f"frequency require at least {required_fleet} units"
+                )
             forward, reverse = cls.build_directional_schedules(service_id, route)
             for idx in range(fleet_size):
                 direction = "SOUTH" if idx % 2 == 0 else "NORTH"
