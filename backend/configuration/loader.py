@@ -1,28 +1,33 @@
 """Load and validate the declarative railway infrastructure configuration."""
 from __future__ import annotations
 
-import json
 from pathlib import Path
 from typing import Any
 
 from backend.model.models import RailwayLine, RailwayStation
+from backend.configuration.providers import InfrastructureProvider, LocalJsonInfrastructureProvider
 from backend.configuration.validator import validate_infrastructure
 
 DEFAULT_CONFIG_PATH = Path(__file__).resolve().parents[2] / "config" / "infrastructure" / "sfm.json"
 
 
-def load_infrastructure(config_path: str | Path | None = None) -> tuple[dict[str, RailwayStation], list[RailwayLine], dict[str, dict[str, Any]]]:
-    """Load config and return runtime objects compatible with legacy exports."""
-    path = Path(config_path) if config_path is not None else DEFAULT_CONFIG_PATH
-    try:
-        with path.open("r", encoding="utf-8") as stream:
-            data = json.load(stream)
-    except OSError as exc:
-        raise RuntimeError(f"Cannot read infrastructure configuration '{path}': {exc}") from exc
-    except json.JSONDecodeError as exc:
-        raise ValueError(f"Invalid JSON in infrastructure configuration '{path}' at line {exc.lineno}, column {exc.colno}: {exc.msg}") from exc
+def load_infrastructure(
+    config_path: str | Path | None = None,
+    provider: InfrastructureProvider | None = None,
+) -> tuple[dict[str, RailwayStation], list[RailwayLine], dict[str, dict[str, Any]]]:
+    """Load runtime infrastructure through a provider, defaulting to local JSON.
 
-    validate_infrastructure(data, source=str(path))
+    Providers return the same normalized configuration document, so validation
+    and conversion into runtime model objects remain independent of the source.
+    """
+    if provider is not None and config_path is not None:
+        raise ValueError("Pass either config_path or provider, not both")
+    source_provider = provider or LocalJsonInfrastructureProvider(
+        Path(config_path) if config_path is not None else DEFAULT_CONFIG_PATH
+    )
+    data = source_provider.load_data()
+    validate_infrastructure(data, source=source_provider.source)
+
     registry = {
         key: RailwayStation(
             key=key, name=item["name"], roro_station=item["roro_station"],
