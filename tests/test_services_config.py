@@ -7,6 +7,9 @@ class ServicesConfigTests(unittest.TestCase):
     def test_services_load_and_reference_known_stations(self):
         routes, plans, templates = load_services()
         stations, _, _ = load_infrastructure()
+        self.assertEqual(len(routes), 12)
+        self.assertEqual(len(plans), 12)
+        self.assertEqual(len(templates), 13)
         self.assertEqual(set(routes), set(plans))
         self.assertIn("S1", templates)
         self.assertTrue(all(stop in stations for route in routes.values() for stop in route))
