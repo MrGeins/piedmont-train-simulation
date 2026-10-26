@@ -98,6 +98,40 @@ class TimetableGenerator:
 
         return forward_sched, reverse_sched
 
+    @staticmethod
+    def validate_generated_timetable(trains: list[TrainAgent]) -> None:
+        """Fail fast when generated trains reference invalid stations or platform tracks."""
+        errors = []
+        seen_numbers = set()
+
+        for index, train in enumerate(trains):
+            label = f"trains[{index}] (number={train.train_number})"
+            if train.train_number in seen_numbers:
+                errors.append(f"{label}: duplicate train number")
+            seen_numbers.add(train.train_number)
+
+            if not train.route:
+                errors.append(f"{label}: route must not be empty")
+                continue
+
+            for station_key in train.route:
+                station = stations_registry.get(station_key)
+                if station is None:
+                    errors.append(f"{label}: route references unknown station {station_key!r}")
+                    continue
+
+                for plan_name in ("forward_platforms", "reverse_platforms"):
+                    plan = getattr(train, plan_name, {})
+                    track = plan.get(station_key)
+                    if track not in station.available_tracks:
+                        errors.append(
+                            f"{label}: {plan_name} selects unavailable track {track!r} "
+                            f"at {station_key}; available={station.available_tracks}"
+                        )
+
+        if errors:
+            raise ValueError("Generated timetable validation failed:\\n- " + "\\n- ".join(errors))
+
     @classmethod
     def generate_full_day_timetable(cls) -> list[TrainAgent]:
         all_trains = []
@@ -191,4 +225,5 @@ class TimetableGenerator:
                 )
                 all_trains.append(agent)
 
+        cls.validate_generated_timetable(all_trains)
         return all_trains
