@@ -1,6 +1,8 @@
 import unittest
 from backend.configuration.loader import load_infrastructure
 from backend.configuration.validator import InfrastructureConfigError, validate_infrastructure
+from backend.configuration.providers import LocalJsonInfrastructureProvider
+from backend.configuration.loader import DEFAULT_CONFIG_PATH
 
 
 class InfrastructureConfigTests(unittest.TestCase):
@@ -24,19 +26,13 @@ class InfrastructureConfigTests(unittest.TestCase):
         with self.assertRaises(InfrastructureConfigError):
             validate_infrastructure(data)
 
-
-if __name__ == "__main__":
-    unittest.main()
-
-
     def test_infrastructure_can_be_loaded_through_a_provider(self):
-        from backend.configuration.loader import load_infrastructure
-        from backend.configuration.providers import LocalJsonInfrastructureProvider
-
-        provider = LocalJsonInfrastructureProvider(
-            __import__("backend.configuration.loader", fromlist=["DEFAULT_CONFIG_PATH"]).DEFAULT_CONFIG_PATH
-        )
+        provider = LocalJsonInfrastructureProvider(DEFAULT_CONFIG_PATH)
         stations, links, topology = load_infrastructure(provider=provider)
         self.assertTrue(stations)
         self.assertTrue(links)
         self.assertTrue(topology)
+
+
+if __name__ == "__main__":
+    unittest.main()
