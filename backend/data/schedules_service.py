@@ -1,6 +1,9 @@
-"""Compatibility exports for route and timetable configuration."""
+"""Compatibility exports for route and parameter-based service configuration."""
 from backend.configuration.services_loader import load_services
 
-ROUTES, PLATFORM_PLANS, TAKT_TEMPLATES = load_services()
+ROUTES, PLATFORM_PLANS, SERVICES = load_services()
 
-__all__ = ["ROUTES", "PLATFORM_PLANS", "TAKT_TEMPLATES"]
+# Deprecated compatibility alias for callers not yet migrated.
+TAKT_TEMPLATES = SERVICES
+
+__all__ = ["ROUTES", "PLATFORM_PLANS", "SERVICES", "TAKT_TEMPLATES"]
