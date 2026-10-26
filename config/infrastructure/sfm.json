@@ -1,0 +1,2596 @@
+{
+  "schema_version": 1,
+  "stations": {
+    "STURA": {
+      "name": "Torino Stura",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": true,
+      "num_tracks": 9,
+      "available_tracks": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "stub_tracks": {
+        "6": "SOUTH",
+        "9": "SOUTH"
+      }
+    },
+    "REBAUDENGO": {
+      "name": "Torino Rebaudengo Fossata",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 5,
+      "available_tracks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stub_tracks": {}
+    },
+    "DORA": {
+      "name": "Torino Dora",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "PORTA_SUSA": {
+      "name": "Torino Porta Susa",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 6,
+      "available_tracks": [
+        5,
+        6
+      ],
+      "stub_tracks": {}
+    },
+    "ZAPPATA": {
+      "name": "Torino Zappata",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "LINGOTTO": {
+      "name": "Torino Lingotto",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 9,
+      "available_tracks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "stub_tracks": {}
+    },
+    "PORTA_NUOVA": {
+      "name": "Torino Porta Nuova",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 20,
+      "available_tracks": [
+        1,
+        20
+      ],
+      "stub_tracks": {}
+    },
+    "GROSSETO": {
+      "name": "Torino Corso Grosseto",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "VENARIA_RIGOLA": {
+      "name": "Venaria Reale-Rigola Stadio",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "VENARIA_REGGIA": {
+      "name": "Venaria Reale-Reggia",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BORGARO": {
+      "name": "Borgaro",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CASELLE": {
+      "name": "Caselle Torinese",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "AEROPORTO": {
+      "name": "Torino Aeroporto di Caselle",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": true,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "stub_tracks": {
+        "3": "SOUTH",
+        "4": "SOUTH"
+      }
+    },
+    "S_MAURIZIO": {
+      "name": "S. Maurizio Canavese",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CIRIE": {
+      "name": "Ciriè",
+      "roro_station": true,
+      "default_dwell": 2,
+      "terminal": false,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "NOLE": {
+      "name": "Nole",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "VILLANOVA_GROSSO": {
+      "name": "Villanova C.-Grosso",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "MATHI": {
+      "name": "Mathi",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BALANGERO": {
+      "name": "Balangero",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "LANZO": {
+      "name": "Lanzo Torinese",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "GERMAGNANO": {
+      "name": "Germagnano",
+      "roro_station": true,
+      "default_dwell": 2,
+      "terminal": true,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "stub_tracks": {
+        "1": "SOUTH"
+      }
+    },
+    "FUNGHERA": {
+      "name": "Funghera",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "TRAVES": {
+      "name": "Traves",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "LOSA": {
+      "name": "Losa",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "PESSINETTO": {
+      "name": "Pessinetto",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "MEZZENILE": {
+      "name": "Mezzenile",
+      "roro_station": false,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "CERES": {
+      "name": "Ceres",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "SAN_PAOLO": {
+      "name": "Torino San Paolo",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "stub_tracks": {}
+    },
+    "QUAGLIA": {
+      "name": "Quaglia - Le Gru",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "ORBASSANO": {
+      "name": "Orbassano San Luigi",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {
+        "1": "NORTH",
+        "2": "NORTH"
+      }
+    },
+    "GRUGLIASCO": {
+      "name": "Grugliasco",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "COLLEGNO": {
+      "name": "Collegno",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "ALPIGNANO": {
+      "name": "Alpignano",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "ROSTA": {
+      "name": "Rosta",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "AVIGLIANA": {
+      "name": "Avigliana",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "S_AMBROGIO": {
+      "name": "S. Ambrogio",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CONDOVE": {
+      "name": "Condove-Chiusa S.M.",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "S_ANTONINO": {
+      "name": "S. Antonino-Vaie",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BORGONE": {
+      "name": "Borgone",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BRUZOLO": {
+      "name": "Bruzolo di Susa",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BUSSOLENO": {
+      "name": "Bussoleno",
+      "roro_station": true,
+      "default_dwell": 2,
+      "terminal": false,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "SUSA": {
+      "name": "Susa",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {
+        "1": "EAST"
+      }
+    },
+    "MEANA": {
+      "name": "Meana",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CHIOMONTE": {
+      "name": "Chiomonte",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "SALBERTRAND": {
+      "name": "Salbertrand",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "OULX": {
+      "name": "Oulx-Cesana-Claviere-Sestriere",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BEAULARD": {
+      "name": "Beaulard",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BARDONECCHIA": {
+      "name": "Bardonecchia",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {
+        "1": "EAST",
+        "2": "EAST"
+      }
+    },
+    "SETTIMO": {
+      "name": "Settimo Torinese",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "stub_tracks": {}
+    },
+    "VOLPIANO": {
+      "name": "Volpiano",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "S_BENIGNO": {
+      "name": "S. Benigno Canavese",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BOSCONERO": {
+      "name": "Bosconero",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "FELETTO": {
+      "name": "Feletto",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "RIVAROLO": {
+      "name": "Rivarolo Canavese",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {
+        "1": "SOUTH",
+        "2": "SOUTH",
+        "3": "SOUTH"
+      }
+    },
+    "BRANDIZZO": {
+      "name": "Brandizzo",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CHIVASSO": {
+      "name": "Chivasso",
+      "roro_station": true,
+      "default_dwell": 4,
+      "terminal": true,
+      "num_tracks": 6,
+      "available_tracks": [
+        1,
+        5,
+        6
+      ],
+      "stub_tracks": {
+        "1": "WEST"
+      }
+    },
+    "MONTANARO": {
+      "name": "Montanaro",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "RODALLO": {
+      "name": "Rodallo",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CALUSO": {
+      "name": "Caluso",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CANDIA": {
+      "name": "Candia Canavese",
+      "roro_station": true,
+      "default_dwell": 4,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "MERCENASCO": {
+      "name": "Mercenasco",
+      "roro_station": false,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "STRAMBINO": {
+      "name": "Strambino",
+      "roro_station": true,
+      "default_dwell": 5,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "IVREA": {
+      "name": "Ivrea",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "SANGONE": {
+      "name": "Moncalieri Sangone",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "NICHELINO": {
+      "name": "Nichelino",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CANDIOLO": {
+      "name": "Candiolo",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "NONE": {
+      "name": "None",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "AIRASCA": {
+      "name": "Airasca",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "PISCINA": {
+      "name": "Piscina di Pinerolo",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "PIN_OLIMPICA": {
+      "name": "Pinerolo Olimpica",
+      "roro_station": false,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "PINEROLO": {
+      "name": "Pinerolo",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "MONCALIERI": {
+      "name": "Moncalieri",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 5,
+      "available_tracks": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "stub_tracks": {}
+    },
+    "TROFARELLO": {
+      "name": "Trofarello",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 6,
+      "available_tracks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "stub_tracks": {}
+    },
+    "CHIERI": {
+      "name": "Chieri",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {
+        "1": "WEST",
+        "2": "WEST"
+      }
+    },
+    "CAMBIANO": {
+      "name": "Cambiano-Santena",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "PESSIONE": {
+      "name": "Pessione",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "VILLANOVA_ASTI": {
+      "name": "Villanova d'Asti",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "S_PAOLO_SOLBRITO": {
+      "name": "S. Paolo Solbrito",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "VILLAFRANCA": {
+      "name": "Villafranca-Cantarana",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BALDICHIERI": {
+      "name": "Baldichieri-Tigliole",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "S_DAMIANO": {
+      "name": "S. Damiano d'Asti",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "ASTI": {
+      "name": "Asti",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 8,
+      "available_tracks": [
+        1,
+        5
+      ],
+      "stub_tracks": {}
+    },
+    "VILLASTELLONE": {
+      "name": "Villastellone",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CARMAGNOLA": {
+      "name": "Carmagnola",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "SOMMARIVA": {
+      "name": "Sommariva Don Bosco",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "SANFRE": {
+      "name": "Sanfrè",
+      "roro_station": false,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "BANDITO": {
+      "name": "Bandito",
+      "roro_station": false,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "BRA": {
+      "name": "Bra",
+      "roro_station": true,
+      "default_dwell": 2,
+      "terminal": false,
+      "num_tracks": 6,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "POCAPAGLIA": {
+      "name": "Pocapaglia",
+      "roro_station": false,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "S_VITTORIA": {
+      "name": "S. Vittoria",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "MONTICELLO": {
+      "name": "Monticello d'Alba",
+      "roro_station": false,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "MUSSOTTO": {
+      "name": "Mussotto",
+      "roro_station": false,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "ALBA": {
+      "name": "Alba",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {
+        "1": "WEST",
+        "2": "WEST",
+        "3": "WEST"
+      }
+    },
+    "RACCONIGI": {
+      "name": "Racconigi",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CAVALLERMAGGIORE": {
+      "name": "Cavallermaggiore",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "SAVIGLIANO": {
+      "name": "Savigliano",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "FOSSANO": {
+      "name": "Fossano",
+      "roro_station": true,
+      "default_dwell": 2,
+      "terminal": false,
+      "num_tracks": 7,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CENTALLO": {
+      "name": "Centallo",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CUNEO": {
+      "name": "Cuneo",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 5,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {
+        "1": "EAST",
+        "2": "EAST"
+      }
+    }
+  },
+  "topology": {
+    "STURA": {
+      "name": "Torino Stura",
+      "x": -60,
+      "y": -60,
+      "display_label": true
+    },
+    "BIVIO_CERES": {
+      "name": "Bivio Ceres",
+      "x": -60,
+      "y": -38,
+      "display_label": false
+    },
+    "REBAUDENGO": {
+      "name": "Torino Rebaudengo",
+      "x": -60,
+      "y": -20,
+      "display_label": true
+    },
+    "DORA": {
+      "name": "Torino Dora",
+      "x": -60,
+      "y": 0,
+      "display_label": true
+    },
+    "PORTA_SUSA": {
+      "name": "Torino Porta Susa",
+      "x": -60,
+      "y": 20,
+      "display_label": true
+    },
+    "BIVIO_CROCETTA": {
+      "name": "Bivio Crocetta",
+      "x": -60,
+      "y": 40,
+      "display_label": false
+    },
+    "BIVIO_GRANGIA": {
+      "name": "Bivio Grangia",
+      "x": -80,
+      "y": 60,
+      "display_label": false
+    },
+    "SAN_PAOLO": {
+      "name": "Torino San Paolo",
+      "x": -115,
+      "y": 60,
+      "display_label": true
+    },
+    "BIVIO_ORBASSANO": {
+      "name": "Bivio Orbassano",
+      "x": -132,
+      "y": 60,
+      "display_label": false
+    },
+    "QUADRIVIO": {
+      "name": "Quadrivio",
+      "x": -50,
+      "y": 60,
+      "display_label": false
+    },
+    "ZAPPATA": {
+      "name": "Torino Zappata",
+      "x": -25,
+      "y": 60,
+      "display_label": true
+    },
+    "CLESSIDRA": {
+      "name": "Clessidra",
+      "x": 0,
+      "y": 60,
+      "display_label": false
+    },
+    "PORTA_NUOVA": {
+      "name": "Torino Porta Nuova",
+      "x": 0,
+      "y": 35,
+      "display_label": true
+    },
+    "LINGOTTO": {
+      "name": "Torino Lingotto",
+      "x": 0,
+      "y": 85,
+      "display_label": true
+    },
+    "GROSSETO": {
+      "name": "Torino C. Grosseto",
+      "x": -82,
+      "y": -42,
+      "display_label": true
+    },
+    "VENARIA_RIGOLA": {
+      "name": "Venaria Rigola",
+      "x": -100,
+      "y": -60,
+      "display_label": true
+    },
+    "VENARIA_REGGIA": {
+      "name": "Venaria Reggia",
+      "x": -120,
+      "y": -80,
+      "display_label": true
+    },
+    "PC_BORGARO": {
+      "name": "PC Borgaro",
+      "x": -140,
+      "y": -100,
+      "display_label": false
+    },
+    "BORGARO": {
+      "name": "Borgaro",
+      "x": -140,
+      "y": -118,
+      "display_label": true
+    },
+    "CASELLE": {
+      "name": "Caselle Torinese",
+      "x": -140,
+      "y": -138,
+      "display_label": true
+    },
+    "AEROPORTO": {
+      "name": "Torino Aeroporto",
+      "x": -140,
+      "y": -158,
+      "display_label": true
+    },
+    "S_MAURIZIO": {
+      "name": "S. Maurizio C.",
+      "x": -140,
+      "y": -178,
+      "display_label": true
+    },
+    "CIRIE": {
+      "name": "Ciriè",
+      "x": -140,
+      "y": -198,
+      "display_label": true
+    },
+    "PC_CIRIE": {
+      "name": "PC Ciriè",
+      "x": -140,
+      "y": -212,
+      "display_label": false
+    },
+    "NOLE": {
+      "name": "Nole",
+      "x": -158,
+      "y": -230,
+      "display_label": true
+    },
+    "VILLANOVA_GROSSO": {
+      "name": "Villanova Grosso",
+      "x": -178,
+      "y": -250,
+      "display_label": true
+    },
+    "MATHI": {
+      "name": "Mathi",
+      "x": -198,
+      "y": -270,
+      "display_label": true
+    },
+    "BALANGERO": {
+      "name": "Balangero",
+      "x": -218,
+      "y": -290,
+      "display_label": true
+    },
+    "LANZO": {
+      "name": "Lanzo Torinese",
+      "x": -238,
+      "y": -310,
+      "display_label": true
+    },
+    "GERMAGNANO": {
+      "name": "Germagnano",
+      "x": -258,
+      "y": -330,
+      "display_label": true
+    },
+    "PC_GERMAGNANO": {
+      "name": "PC Germagnano",
+      "x": -272,
+      "y": -344,
+      "display_label": false
+    },
+    "FUNGHERA": {
+      "name": "Funghera",
+      "x": -292,
+      "y": -344,
+      "display_label": true
+    },
+    "TRAVES": {
+      "name": "Traves",
+      "x": -315,
+      "y": -344,
+      "display_label": true
+    },
+    "LOSA": {
+      "name": "Losa",
+      "x": -338,
+      "y": -344,
+      "display_label": true
+    },
+    "PESSINETTO": {
+      "name": "Pessinetto",
+      "x": -361,
+      "y": -344,
+      "display_label": true
+    },
+    "MEZZENILE": {
+      "name": "Mezzenile",
+      "x": -384,
+      "y": -344,
+      "display_label": true
+    },
+    "CERES": {
+      "name": "Ceres",
+      "x": -408,
+      "y": -344,
+      "display_label": true
+    },
+    "QUAGLIA": {
+      "name": "Quaglia - Le Gru",
+      "x": -152,
+      "y": 80,
+      "display_label": true
+    },
+    "ORBASSANO": {
+      "name": "Orbassano S.Luigi",
+      "x": -172,
+      "y": 100,
+      "display_label": true
+    },
+    "GRUGLIASCO": {
+      "name": "Grugliasco",
+      "x": -150,
+      "y": 60,
+      "display_label": true
+    },
+    "COLLEGNO": {
+      "name": "Collegno",
+      "x": -172,
+      "y": 60,
+      "display_label": true
+    },
+    "ALPIGNANO": {
+      "name": "Alpignano",
+      "x": -194,
+      "y": 60,
+      "display_label": true
+    },
+    "ROSTA": {
+      "name": "Rosta",
+      "x": -216,
+      "y": 60,
+      "display_label": true
+    },
+    "AVIGLIANA": {
+      "name": "Avigliana",
+      "x": -238,
+      "y": 60,
+      "display_label": true
+    },
+    "S_AMBROGIO": {
+      "name": "S. Ambrogio",
+      "x": -260,
+      "y": 60,
+      "display_label": true
+    },
+    "CONDOVE": {
+      "name": "Condove",
+      "x": -282,
+      "y": 60,
+      "display_label": true
+    },
+    "S_ANTONINO": {
+      "name": "S. Antonino",
+      "x": -304,
+      "y": 60,
+      "display_label": true
+    },
+    "BORGONE": {
+      "name": "Borgone",
+      "x": -326,
+      "y": 60,
+      "display_label": true
+    },
+    "BRUZOLO": {
+      "name": "Bruzolo",
+      "x": -348,
+      "y": 60,
+      "display_label": true
+    },
+    "BUSSOLENO": {
+      "name": "Bussoleno",
+      "x": -372,
+      "y": 60,
+      "display_label": true
+    },
+    "BIVIO_VALSUSA": {
+      "name": "Bivio Valsusa",
+      "x": -390,
+      "y": 60,
+      "display_label": false
+    },
+    "PC_SUSA": {
+      "name": "PC Susa",
+      "x": -410,
+      "y": 40,
+      "display_label": false
+    },
+    "SUSA": {
+      "name": "Susa",
+      "x": -432,
+      "y": 40,
+      "display_label": true
+    },
+    "PC_MEANA": {
+      "name": "PC Meana",
+      "x": -410,
+      "y": 80,
+      "display_label": false
+    },
+    "MEANA": {
+      "name": "Meana",
+      "x": -430,
+      "y": 80,
+      "display_label": true
+    },
+    "CHIOMONTE": {
+      "name": "Chiomonte",
+      "x": -452,
+      "y": 80,
+      "display_label": true
+    },
+    "SALBERTRAND": {
+      "name": "Salbertrand",
+      "x": -474,
+      "y": 80,
+      "display_label": true
+    },
+    "OULX": {
+      "name": "Oulx",
+      "x": -496,
+      "y": 80,
+      "display_label": true
+    },
+    "BEAULARD": {
+      "name": "Beaulard",
+      "x": -518,
+      "y": 80,
+      "display_label": true
+    },
+    "BARDONECCHIA": {
+      "name": "Bardonecchia",
+      "x": -542,
+      "y": 80,
+      "display_label": true
+    },
+    "PC_STURA": {
+      "name": "PC Stura",
+      "x": -60,
+      "y": -75,
+      "display_label": false
+    },
+    "PC_SETTIMO": {
+      "name": "PC Settimo",
+      "x": -20,
+      "y": -75,
+      "display_label": false
+    },
+    "SETTIMO": {
+      "name": "Settimo T.",
+      "x": 0,
+      "y": -75,
+      "display_label": true
+    },
+    "BIVIO_CANAVESE": {
+      "name": "Bivio Canavese",
+      "x": 20,
+      "y": -75,
+      "display_label": false
+    },
+    "VOLPIANO": {
+      "name": "Volpiano",
+      "x": 20,
+      "y": -95,
+      "display_label": true
+    },
+    "S_BENIGNO": {
+      "name": "S. Benigno C.",
+      "x": 20,
+      "y": -115,
+      "display_label": true
+    },
+    "BOSCONERO": {
+      "name": "Bosconero",
+      "x": 20,
+      "y": -135,
+      "display_label": true
+    },
+    "FELETTO": {
+      "name": "Feletto",
+      "x": 20,
+      "y": -155,
+      "display_label": true
+    },
+    "RIVAROLO": {
+      "name": "Rivarolo C.",
+      "x": 20,
+      "y": -175,
+      "display_label": true
+    },
+    "BRANDIZZO": {
+      "name": "Brandizzo",
+      "x": 48,
+      "y": -75,
+      "display_label": true
+    },
+    "CHIVASSO": {
+      "name": "Chivasso",
+      "x": 80,
+      "y": -75,
+      "display_label": true
+    },
+    "BIVIO_AOSTA": {
+      "name": "Bivio Aosta",
+      "x": 100,
+      "y": -75,
+      "display_label": false
+    },
+    "MONTANARO": {
+      "name": "Montanaro",
+      "x": 100,
+      "y": -100,
+      "display_label": true
+    },
+    "RODALLO": {
+      "name": "Rodallo",
+      "x": 100,
+      "y": -125,
+      "display_label": true
+    },
+    "CALUSO": {
+      "name": "Caluso",
+      "x": 100,
+      "y": -150,
+      "display_label": true
+    },
+    "CANDIA": {
+      "name": "Candia C.",
+      "x": 100,
+      "y": -175,
+      "display_label": true
+    },
+    "MERCENASCO": {
+      "name": "Mercenasco",
+      "x": 100,
+      "y": -200,
+      "display_label": true
+    },
+    "STRAMBINO": {
+      "name": "Strambino",
+      "x": 100,
+      "y": -225,
+      "display_label": true
+    },
+    "IVREA": {
+      "name": "Ivrea",
+      "x": 100,
+      "y": -250,
+      "display_label": true
+    },
+    "BIVIO_SANGONE": {
+      "name": "Bivio Sangone",
+      "x": 0,
+      "y": 102,
+      "display_label": false
+    },
+    "SANGONE": {
+      "name": "Moncalieri Sangone",
+      "x": -20,
+      "y": 122,
+      "display_label": true
+    },
+    "NICHELINO": {
+      "name": "Nichelino",
+      "x": -40,
+      "y": 142,
+      "display_label": true
+    },
+    "CANDIOLO": {
+      "name": "Candiolo",
+      "x": -60,
+      "y": 162,
+      "display_label": true
+    },
+    "NONE": {
+      "name": "None",
+      "x": -80,
+      "y": 182,
+      "display_label": true
+    },
+    "AIRASCA": {
+      "name": "Airasca",
+      "x": -100,
+      "y": 202,
+      "display_label": true
+    },
+    "PC_AIRASCA": {
+      "name": "PC Airasca",
+      "x": -114,
+      "y": 216,
+      "display_label": false
+    },
+    "PISCINA": {
+      "name": "Piscina",
+      "x": -136,
+      "y": 216,
+      "display_label": true
+    },
+    "PIN_OLIMPICA": {
+      "name": "Pinerolo Olimpica",
+      "x": -160,
+      "y": 216,
+      "display_label": true
+    },
+    "PINEROLO": {
+      "name": "Pinerolo",
+      "x": -185,
+      "y": 216,
+      "display_label": true
+    },
+    "MONCALIERI": {
+      "name": "Moncalieri",
+      "x": 0,
+      "y": 125,
+      "display_label": true
+    },
+    "TROFARELLO": {
+      "name": "Trofarello",
+      "x": 0,
+      "y": 160,
+      "display_label": true
+    },
+    "BIVIO_TROFARELLO": {
+      "name": "Bivio Trofarello",
+      "x": 0,
+      "y": 178,
+      "display_label": false
+    },
+    "VILLASTELLONE": {
+      "name": "Villastellone",
+      "x": 0,
+      "y": 205,
+      "display_label": true
+    },
+    "CARMAGNOLA": {
+      "name": "Carmagnola",
+      "x": 0,
+      "y": 240,
+      "display_label": true
+    },
+    "BIVIO_BRA": {
+      "name": "Bivio Bra",
+      "x": 0,
+      "y": 258,
+      "display_label": false
+    },
+    "RACCONIGI": {
+      "name": "Racconigi",
+      "x": 0,
+      "y": 285,
+      "display_label": true
+    },
+    "CAVALLERMAGGIORE": {
+      "name": "Cavallermaggiore",
+      "x": 0,
+      "y": 320,
+      "display_label": true
+    },
+    "SAVIGLIANO": {
+      "name": "Savigliano",
+      "x": 0,
+      "y": 355,
+      "display_label": true
+    },
+    "FOSSANO": {
+      "name": "Fossano",
+      "x": 0,
+      "y": 390,
+      "display_label": true
+    },
+    "CENTALLO": {
+      "name": "Centallo",
+      "x": 0,
+      "y": 425,
+      "display_label": true
+    },
+    "CUNEO": {
+      "name": "Cuneo",
+      "x": 0,
+      "y": 460,
+      "display_label": true
+    },
+    "BIVIO_CHIERI": {
+      "name": "Bivio Chieri",
+      "x": 20,
+      "y": 178,
+      "display_label": false
+    },
+    "CHIERI": {
+      "name": "Chieri",
+      "x": 45,
+      "y": 178,
+      "display_label": true
+    },
+    "BIVIO_GENOVA": {
+      "name": "Bivio Genova",
+      "x": 20,
+      "y": 198,
+      "display_label": false
+    },
+    "CAMBIANO": {
+      "name": "Cambiano",
+      "x": 42,
+      "y": 198,
+      "display_label": true
+    },
+    "PESSIONE": {
+      "name": "Pessione",
+      "x": 70,
+      "y": 198,
+      "display_label": true
+    },
+    "VILLANOVA_ASTI": {
+      "name": "Villanova d'Asti",
+      "x": 98,
+      "y": 198,
+      "display_label": true
+    },
+    "S_PAOLO_SOLBRITO": {
+      "name": "S. Paolo Solbrito",
+      "x": 128,
+      "y": 198,
+      "display_label": true
+    },
+    "VILLAFRANCA": {
+      "name": "Villafranca",
+      "x": 158,
+      "y": 198,
+      "display_label": true
+    },
+    "BALDICHIERI": {
+      "name": "Baldichieri",
+      "x": 188,
+      "y": 198,
+      "display_label": true
+    },
+    "S_DAMIANO": {
+      "name": "S. Damiano",
+      "x": 218,
+      "y": 198,
+      "display_label": true
+    },
+    "ASTI": {
+      "name": "Asti",
+      "x": 248,
+      "y": 198,
+      "display_label": true
+    },
+    "SOMMARIVA": {
+      "name": "Sommariva",
+      "x": 20,
+      "y": 278,
+      "display_label": true
+    },
+    "SANFRE": {
+      "name": "Sanfrè",
+      "x": 40,
+      "y": 298,
+      "display_label": true
+    },
+    "BANDITO": {
+      "name": "Bandito",
+      "x": 60,
+      "y": 318,
+      "display_label": true
+    },
+    "PC_BRA": {
+      "name": "PC Bra",
+      "x": 74,
+      "y": 332,
+      "display_label": false
+    },
+    "BRA": {
+      "name": "Bra",
+      "x": 96,
+      "y": 332,
+      "display_label": true
+    },
+    "POCAPAGLIA": {
+      "name": "Pocapaglia",
+      "x": 122,
+      "y": 332,
+      "display_label": true
+    },
+    "S_VITTORIA": {
+      "name": "S. Vittoria",
+      "x": 148,
+      "y": 332,
+      "display_label": true
+    },
+    "MONTICELLO": {
+      "name": "Monticello",
+      "x": 174,
+      "y": 332,
+      "display_label": true
+    },
+    "MUSSOTTO": {
+      "name": "Mussotto",
+      "x": 200,
+      "y": 332,
+      "display_label": true
+    },
+    "ALBA": {
+      "name": "Alba",
+      "x": 226,
+      "y": 332,
+      "display_label": true
+    }
+  },
+  "links": [
+    {
+      "from": "STURA",
+      "to": "BIVIO_CERES",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_CERES",
+      "to": "REBAUDENGO",
+      "double_track": true
+    },
+    {
+      "from": "REBAUDENGO",
+      "to": "DORA",
+      "double_track": true
+    },
+    {
+      "from": "DORA",
+      "to": "PORTA_SUSA",
+      "double_track": true
+    },
+    {
+      "from": "PORTA_SUSA",
+      "to": "BIVIO_CROCETTA",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_CROCETTA",
+      "to": "QUADRIVIO",
+      "double_track": true
+    },
+    {
+      "from": "QUADRIVIO",
+      "to": "ZAPPATA",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_CROCETTA",
+      "to": "BIVIO_GRANGIA",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_GRANGIA",
+      "to": "SAN_PAOLO",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_GRANGIA",
+      "to": "QUADRIVIO",
+      "double_track": true
+    },
+    {
+      "from": "ZAPPATA",
+      "to": "CLESSIDRA",
+      "double_track": true
+    },
+    {
+      "from": "CLESSIDRA",
+      "to": "LINGOTTO",
+      "double_track": true
+    },
+    {
+      "from": "CLESSIDRA",
+      "to": "PORTA_NUOVA",
+      "double_track": true
+    },
+    {
+      "from": "PORTA_NUOVA",
+      "to": "LINGOTTO",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_CERES",
+      "to": "GROSSETO",
+      "double_track": true
+    },
+    {
+      "from": "GROSSETO",
+      "to": "VENARIA_RIGOLA",
+      "double_track": true
+    },
+    {
+      "from": "VENARIA_RIGOLA",
+      "to": "VENARIA_REGGIA",
+      "double_track": true
+    },
+    {
+      "from": "VENARIA_REGGIA",
+      "to": "PC_BORGARO",
+      "double_track": true
+    },
+    {
+      "from": "PC_BORGARO",
+      "to": "BORGARO",
+      "double_track": true
+    },
+    {
+      "from": "BORGARO",
+      "to": "CASELLE",
+      "double_track": true
+    },
+    {
+      "from": "CASELLE",
+      "to": "AEROPORTO",
+      "double_track": true
+    },
+    {
+      "from": "AEROPORTO",
+      "to": "S_MAURIZIO",
+      "double_track": true
+    },
+    {
+      "from": "S_MAURIZIO",
+      "to": "CIRIE",
+      "double_track": true
+    },
+    {
+      "from": "CIRIE",
+      "to": "PC_CIRIE",
+      "double_track": false
+    },
+    {
+      "from": "PC_CIRIE",
+      "to": "NOLE",
+      "double_track": false
+    },
+    {
+      "from": "NOLE",
+      "to": "VILLANOVA_GROSSO",
+      "double_track": false
+    },
+    {
+      "from": "VILLANOVA_GROSSO",
+      "to": "MATHI",
+      "double_track": false
+    },
+    {
+      "from": "MATHI",
+      "to": "BALANGERO",
+      "double_track": false
+    },
+    {
+      "from": "BALANGERO",
+      "to": "LANZO",
+      "double_track": false
+    },
+    {
+      "from": "LANZO",
+      "to": "GERMAGNANO",
+      "double_track": false
+    },
+    {
+      "from": "GERMAGNANO",
+      "to": "PC_GERMAGNANO",
+      "double_track": false
+    },
+    {
+      "from": "PC_GERMAGNANO",
+      "to": "FUNGHERA",
+      "double_track": false
+    },
+    {
+      "from": "FUNGHERA",
+      "to": "TRAVES",
+      "double_track": false
+    },
+    {
+      "from": "TRAVES",
+      "to": "LOSA",
+      "double_track": false
+    },
+    {
+      "from": "LOSA",
+      "to": "PESSINETTO",
+      "double_track": false
+    },
+    {
+      "from": "PESSINETTO",
+      "to": "MEZZENILE",
+      "double_track": false
+    },
+    {
+      "from": "MEZZENILE",
+      "to": "CERES",
+      "double_track": false
+    },
+    {
+      "from": "SAN_PAOLO",
+      "to": "BIVIO_ORBASSANO",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_ORBASSANO",
+      "to": "QUAGLIA",
+      "double_track": true
+    },
+    {
+      "from": "QUAGLIA",
+      "to": "ORBASSANO",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_ORBASSANO",
+      "to": "GRUGLIASCO",
+      "double_track": true
+    },
+    {
+      "from": "GRUGLIASCO",
+      "to": "COLLEGNO",
+      "double_track": true
+    },
+    {
+      "from": "COLLEGNO",
+      "to": "ALPIGNANO",
+      "double_track": true
+    },
+    {
+      "from": "ALPIGNANO",
+      "to": "ROSTA",
+      "double_track": true
+    },
+    {
+      "from": "ROSTA",
+      "to": "AVIGLIANA",
+      "double_track": true
+    },
+    {
+      "from": "AVIGLIANA",
+      "to": "S_AMBROGIO",
+      "double_track": true
+    },
+    {
+      "from": "S_AMBROGIO",
+      "to": "CONDOVE",
+      "double_track": true
+    },
+    {
+      "from": "CONDOVE",
+      "to": "S_ANTONINO",
+      "double_track": true
+    },
+    {
+      "from": "S_ANTONINO",
+      "to": "BORGONE",
+      "double_track": true
+    },
+    {
+      "from": "BORGONE",
+      "to": "BRUZOLO",
+      "double_track": true
+    },
+    {
+      "from": "BRUZOLO",
+      "to": "BUSSOLENO",
+      "double_track": true
+    },
+    {
+      "from": "BUSSOLENO",
+      "to": "BIVIO_VALSUSA",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_VALSUSA",
+      "to": "PC_SUSA",
+      "double_track": false
+    },
+    {
+      "from": "PC_SUSA",
+      "to": "SUSA",
+      "double_track": false
+    },
+    {
+      "from": "BIVIO_VALSUSA",
+      "to": "PC_MEANA",
+      "double_track": true
+    },
+    {
+      "from": "PC_MEANA",
+      "to": "MEANA",
+      "double_track": true
+    },
+    {
+      "from": "MEANA",
+      "to": "CHIOMONTE",
+      "double_track": true
+    },
+    {
+      "from": "CHIOMONTE",
+      "to": "SALBERTRAND",
+      "double_track": true
+    },
+    {
+      "from": "SALBERTRAND",
+      "to": "OULX",
+      "double_track": true
+    },
+    {
+      "from": "OULX",
+      "to": "BEAULARD",
+      "double_track": true
+    },
+    {
+      "from": "BEAULARD",
+      "to": "BARDONECCHIA",
+      "double_track": true
+    },
+    {
+      "from": "STURA",
+      "to": "PC_STURA",
+      "double_track": true
+    },
+    {
+      "from": "PC_STURA",
+      "to": "PC_SETTIMO",
+      "double_track": true
+    },
+    {
+      "from": "PC_SETTIMO",
+      "to": "SETTIMO",
+      "double_track": true
+    },
+    {
+      "from": "SETTIMO",
+      "to": "BIVIO_CANAVESE",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_CANAVESE",
+      "to": "VOLPIANO",
+      "double_track": false
+    },
+    {
+      "from": "VOLPIANO",
+      "to": "S_BENIGNO",
+      "double_track": false
+    },
+    {
+      "from": "S_BENIGNO",
+      "to": "BOSCONERO",
+      "double_track": false
+    },
+    {
+      "from": "BOSCONERO",
+      "to": "FELETTO",
+      "double_track": false
+    },
+    {
+      "from": "FELETTO",
+      "to": "RIVAROLO",
+      "double_track": false
+    },
+    {
+      "from": "BIVIO_CANAVESE",
+      "to": "BRANDIZZO",
+      "double_track": true
+    },
+    {
+      "from": "BRANDIZZO",
+      "to": "CHIVASSO",
+      "double_track": true
+    },
+    {
+      "from": "CHIVASSO",
+      "to": "BIVIO_AOSTA",
+      "double_track": false
+    },
+    {
+      "from": "BIVIO_AOSTA",
+      "to": "MONTANARO",
+      "double_track": false
+    },
+    {
+      "from": "MONTANARO",
+      "to": "RODALLO",
+      "double_track": false
+    },
+    {
+      "from": "RODALLO",
+      "to": "CALUSO",
+      "double_track": false
+    },
+    {
+      "from": "CALUSO",
+      "to": "CANDIA",
+      "double_track": false
+    },
+    {
+      "from": "CANDIA",
+      "to": "MERCENASCO",
+      "double_track": false
+    },
+    {
+      "from": "MERCENASCO",
+      "to": "STRAMBINO",
+      "double_track": false
+    },
+    {
+      "from": "STRAMBINO",
+      "to": "IVREA",
+      "double_track": false
+    },
+    {
+      "from": "LINGOTTO",
+      "to": "BIVIO_SANGONE",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_SANGONE",
+      "to": "SANGONE",
+      "double_track": true
+    },
+    {
+      "from": "SANGONE",
+      "to": "NICHELINO",
+      "double_track": false
+    },
+    {
+      "from": "NICHELINO",
+      "to": "CANDIOLO",
+      "double_track": false
+    },
+    {
+      "from": "CANDIOLO",
+      "to": "NONE",
+      "double_track": false
+    },
+    {
+      "from": "NONE",
+      "to": "AIRASCA",
+      "double_track": false
+    },
+    {
+      "from": "AIRASCA",
+      "to": "PC_AIRASCA",
+      "double_track": false
+    },
+    {
+      "from": "PC_AIRASCA",
+      "to": "PISCINA",
+      "double_track": false
+    },
+    {
+      "from": "PISCINA",
+      "to": "PIN_OLIMPICA",
+      "double_track": false
+    },
+    {
+      "from": "PIN_OLIMPICA",
+      "to": "PINEROLO",
+      "double_track": false
+    },
+    {
+      "from": "LINGOTTO",
+      "to": "MONCALIERI",
+      "double_track": true
+    },
+    {
+      "from": "MONCALIERI",
+      "to": "TROFARELLO",
+      "double_track": true
+    },
+    {
+      "from": "TROFARELLO",
+      "to": "BIVIO_TROFARELLO",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_TROFARELLO",
+      "to": "BIVIO_CHIERI",
+      "double_track": false
+    },
+    {
+      "from": "BIVIO_CHIERI",
+      "to": "CHIERI",
+      "double_track": false
+    },
+    {
+      "from": "BIVIO_TROFARELLO",
+      "to": "BIVIO_GENOVA",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_GENOVA",
+      "to": "CAMBIANO",
+      "double_track": true
+    },
+    {
+      "from": "CAMBIANO",
+      "to": "PESSIONE",
+      "double_track": true
+    },
+    {
+      "from": "PESSIONE",
+      "to": "VILLANOVA_ASTI",
+      "double_track": true
+    },
+    {
+      "from": "VILLANOVA_ASTI",
+      "to": "S_PAOLO_SOLBRITO",
+      "double_track": true
+    },
+    {
+      "from": "S_PAOLO_SOLBRITO",
+      "to": "VILLAFRANCA",
+      "double_track": true
+    },
+    {
+      "from": "VILLAFRANCA",
+      "to": "BALDICHIERI",
+      "double_track": true
+    },
+    {
+      "from": "BALDICHIERI",
+      "to": "S_DAMIANO",
+      "double_track": true
+    },
+    {
+      "from": "S_DAMIANO",
+      "to": "ASTI",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_TROFARELLO",
+      "to": "VILLASTELLONE",
+      "double_track": true
+    },
+    {
+      "from": "VILLASTELLONE",
+      "to": "CARMAGNOLA",
+      "double_track": true
+    },
+    {
+      "from": "CARMAGNOLA",
+      "to": "BIVIO_BRA",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_BRA",
+      "to": "SOMMARIVA",
+      "double_track": false
+    },
+    {
+      "from": "SOMMARIVA",
+      "to": "SANFRE",
+      "double_track": false
+    },
+    {
+      "from": "SANFRE",
+      "to": "BANDITO",
+      "double_track": false
+    },
+    {
+      "from": "BANDITO",
+      "to": "PC_BRA",
+      "double_track": false
+    },
+    {
+      "from": "PC_BRA",
+      "to": "BRA",
+      "double_track": false
+    },
+    {
+      "from": "BRA",
+      "to": "POCAPAGLIA",
+      "double_track": false
+    },
+    {
+      "from": "POCAPAGLIA",
+      "to": "S_VITTORIA",
+      "double_track": false
+    },
+    {
+      "from": "S_VITTORIA",
+      "to": "MONTICELLO",
+      "double_track": false
+    },
+    {
+      "from": "MONTICELLO",
+      "to": "MUSSOTTO",
+      "double_track": false
+    },
+    {
+      "from": "MUSSOTTO",
+      "to": "ALBA",
+      "double_track": false
+    },
+    {
+      "from": "BIVIO_BRA",
+      "to": "RACCONIGI",
+      "double_track": true
+    },
+    {
+      "from": "RACCONIGI",
+      "to": "CAVALLERMAGGIORE",
+      "double_track": true
+    },
+    {
+      "from": "CAVALLERMAGGIORE",
+      "to": "SAVIGLIANO",
+      "double_track": true
+    },
+    {
+      "from": "SAVIGLIANO",
+      "to": "FOSSANO",
+      "double_track": true
+    },
+    {
+      "from": "FOSSANO",
+      "to": "CENTALLO",
+      "double_track": true
+    },
+    {
+      "from": "CENTALLO",
+      "to": "CUNEO",
+      "double_track": true
+    }
+  ]
+}
