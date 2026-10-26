@@ -8,7 +8,7 @@ from backend.data.schedules_service import ROUTES, PLATFORM_PLANS, SERVICES
 class TimetableGenerator:
     # The simulator currently models a generic segment duration. Per-station dwell
     # durations come from the infrastructure model; no per-stop timetable is stored.
-    DEFAULT_SEGMENT_TRAVEL_MINUTES = 3.0
+    DEFAULT_SEGMENT_TRAVEL_MINUTES = TrainAgent.DEFAULT_SEGMENT_TRAVEL_MINUTES
 
     @classmethod
     def build_directional_schedules(cls, route_key: str, route: list) -> tuple[dict[str, int], dict[str, int]]:
