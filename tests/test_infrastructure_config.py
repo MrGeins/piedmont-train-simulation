@@ -27,3 +27,16 @@ class InfrastructureConfigTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+    def test_infrastructure_can_be_loaded_through_a_provider(self):
+        from backend.configuration.loader import load_infrastructure
+        from backend.configuration.providers import LocalJsonInfrastructureProvider
+
+        provider = LocalJsonInfrastructureProvider(
+            __import__("backend.configuration.loader", fromlist=["DEFAULT_CONFIG_PATH"]).DEFAULT_CONFIG_PATH
+        )
+        stations, links, topology = load_infrastructure(provider=provider)
+        self.assertTrue(stations)
+        self.assertTrue(links)
+        self.assertTrue(topology)
