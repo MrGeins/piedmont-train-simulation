@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "profiles": {},
+  "metadata": {
+    "status": "pending_calibration",
+    "note": "Add only verified rolling-stock performance data. No SFM vehicle profile is assumed by the simulator."
+  }
+}
