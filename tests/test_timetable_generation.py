@@ -2,6 +2,7 @@ import unittest
 
 from backend.controller.timetable_generator import TimetableGenerator
 from backend.controller.train_agent import TrainAgent
+from backend.data.schedules_service import SERVICES
 
 
 class TimetableGenerationTests(unittest.TestCase):
@@ -17,11 +18,7 @@ class TimetableGenerationTests(unittest.TestCase):
         self.assertTrue(all(train.frequency_seconds > 0 for train in trains))
         self.assertTrue(all(not train.custom_travel_times for train in trains))
         self.assertTrue(all(not train.custom_dwell_times for train in trains))
-        self.assertEqual(
-            len(trains),
-            sum(config["fleet_size"] for config in TimetableGenerator.__dict__.get("_unused", []))
-            if False else 37,
-        )
+        self.assertEqual(len(trains), sum(config["fleet_size"] for config in SERVICES.values()))
 
     def test_generated_trains_use_service_parameters(self):
         trains = TimetableGenerator.generate_full_day_timetable()
