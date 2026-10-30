@@ -10,7 +10,7 @@ from backend.utils.time_formatter import time_to_seconds
 class TimetableGenerationTests(unittest.TestCase):
     def test_full_day_timetable_has_unique_ids_and_valid_platforms(self):
         trains = TimetableGenerator.generate_full_day_timetable()
-        self.assertEqual(len(trains), 30)
+        self.assertEqual(len(trains), 38)
         self.assertEqual(len({train.train_number for train in trains}), len(trains))
         TimetableGenerator.validate_generated_timetable(trains)
 
