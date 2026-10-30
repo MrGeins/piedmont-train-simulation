@@ -128,7 +128,7 @@ class TimetableGenerator:
         headway_seconds = frequency_min * 60
         units_per_terminal = max(
             1,
-            (round_trip_seconds + (2 * headway_seconds) - 1) // (2 * headway_seconds),
+            int((round_trip_seconds + (2 * headway_seconds) - 1) // (2 * headway_seconds)),
         )
         return 2 * units_per_terminal
 
