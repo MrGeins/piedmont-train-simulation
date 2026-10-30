@@ -8,7 +8,7 @@ from backend.data.schedules_service import SERVICES
 class TimetableGenerationTests(unittest.TestCase):
     def test_full_day_timetable_has_unique_ids_and_valid_platforms(self):
         trains = TimetableGenerator.generate_full_day_timetable()
-        self.assertEqual(len(trains), 37)
+        self.assertEqual(len(trains), 38)
         self.assertEqual(len({train.train_number for train in trains}), len(trains))
         TimetableGenerator.validate_generated_timetable(trains)
 
@@ -33,7 +33,7 @@ class TimetableGenerationTests(unittest.TestCase):
             travel_times={("STURA", "REBAUDENGO"): 10.0},
             turnback_seconds=120,
         )
-        self.assertEqual(required, 3)
+        self.assertEqual(required, 4)
 
     def test_fleet_capacity_is_derived_from_route_and_frequency(self):
         route = ["STURA", "REBAUDENGO", "DORA", "PORTA_SUSA"]
