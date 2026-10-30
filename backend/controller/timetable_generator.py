@@ -125,7 +125,8 @@ class TimetableGenerator:
         one_way_seconds = one_way_travel_seconds + dwell_minutes * 60
         round_trip_seconds = 2 * one_way_seconds + 2 * turnback_seconds
         headway_seconds = frequency_min * 60
-        return max(1, int((round_trip_seconds + headway_seconds - 1) // headway_seconds))
+        units_per_terminal = max(1, (round_trip_seconds + (2 * headway_seconds) - 1) // (2 * headway_seconds))
+        return 2 * units_per_terminal
 
     @classmethod
     def generate_full_day_timetable(
@@ -191,7 +192,7 @@ class TimetableGenerator:
                     is_reverse_direction=(direction == "NORTH"),
                     custom_travel_times=cycle_times,
                     custom_dwell_times={},
-                    takt_anchors={},
+                    takt_anchors={route[0]: start_seconds, route[-1]: start_seconds},
                     frequency_seconds=frequency_seconds,
                 )
                 all_trains.append(agent)
