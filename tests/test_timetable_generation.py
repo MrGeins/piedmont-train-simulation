@@ -16,7 +16,8 @@ class TimetableGenerationTests(unittest.TestCase):
         trains = TimetableGenerator.generate_full_day_timetable()
         self.assertTrue(trains)
         self.assertTrue(all(train.frequency_seconds > 0 for train in trains))
-        self.assertTrue(all(not train.custom_travel_times for train in trains))
+        self.assertTrue(all(train.custom_travel_times for train in trains))
+        self.assertTrue(all(value > 0 for train in trains for value in train.custom_travel_times.values()))
         self.assertTrue(all(not train.custom_dwell_times for train in trains))
         self.assertEqual(len(trains), sum(config["fleet_size"] for config in SERVICES.values()))
 
