@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "description": "Explicit, reviewed aliases from RINF operational-point names or IDs to this project's topology node keys. Keep empty until each mapping has been checked against the source register.",
+  "operational_point_aliases": {}
+}
