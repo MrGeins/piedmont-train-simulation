@@ -184,7 +184,7 @@ def main() -> int:
         rows = list(csv.DictReader(stream))
     report = build_candidates(rows, infrastructure, aliases, args.snapshot)
     Path(args.output).write_text(
-        json.dumps(report, indent=2, ensure_ascii=False) + "\\n",
+        json.dumps(report, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
     print(json.dumps(report["summary"], indent=2))
