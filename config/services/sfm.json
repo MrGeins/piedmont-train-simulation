@@ -452,7 +452,7 @@
       "end_time": "22:55:00"
     },
     "S5": {
-      "service_id": "S5e",
+      "service_id": "S5",
       "base_num": 2550,
       "fleet_size": 4,
       "frequency_min": 120,
@@ -484,7 +484,7 @@
       "end_time": "22:35:00"
     },
     "S8b": {
-      "service_id": "S8e",
+      "service_id": "S8b",
       "base_num": 11800,
       "fleet_size": 1,
       "frequency_min": 120,
