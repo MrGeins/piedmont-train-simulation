@@ -3,6 +3,60 @@
   "profiles": {},
   "metadata": {
     "status": "pending_calibration",
-    "note": "Add only verified rolling-stock performance data. No SFM vehicle profile is assumed by the simulator."
-  }
+    "note": "Observed SFM rolling-stock families are recorded separately from physical performance profiles. Do not populate speed, acceleration, braking or turnback values without exact-variant technical evidence."
+  },
+  "observed_types": [
+    {
+      "type_id": "MINUETTO",
+      "display_name": "Minuetto",
+      "evidence": [
+        "sfm_faq_rolling_stock"
+      ],
+      "performance_profile_status": "not_calibrated"
+    },
+    {
+      "type_id": "POP",
+      "display_name": "POP",
+      "evidence": [
+        "sfm_faq_rolling_stock",
+        "sfm_program_2026"
+      ],
+      "performance_profile_status": "not_calibrated"
+    },
+    {
+      "type_id": "JAZZ",
+      "display_name": "Jazz",
+      "evidence": [
+        "sfm_faq_rolling_stock"
+      ],
+      "performance_profile_status": "not_calibrated"
+    },
+    {
+      "type_id": "ROCK",
+      "display_name": "Rock",
+      "evidence": [
+        "sfm_faq_rolling_stock",
+        "sfm_program_2026"
+      ],
+      "performance_profile_status": "not_calibrated"
+    },
+    {
+      "type_id": "TAF",
+      "display_name": "TAF",
+      "evidence": [
+        "sfm_faq_rolling_stock",
+        "sfm_program_2026"
+      ],
+      "performance_profile_status": "not_calibrated"
+    },
+    {
+      "type_id": "E464_VIVALTO",
+      "display_name": "E.464 + carrozze Vivalto",
+      "evidence": [
+        "sfm_faq_rolling_stock",
+        "sfm_program_2026"
+      ],
+      "performance_profile_status": "not_calibrated"
+    }
+  ]
 }
