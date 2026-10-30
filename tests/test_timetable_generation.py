@@ -3,7 +3,7 @@ import unittest
 from backend.controller.timetable_generator import TimetableGenerator
 from backend.controller.train_agent import TrainAgent
 from backend.controller.fleet_manager import FleetManager, FleetCapacityError
-from backend.data.schedules_service import SERVICES
+from backend.data.schedules_service import ROUTES, SERVICES
 from backend.utils.time_formatter import time_to_seconds
 
 
@@ -23,7 +23,7 @@ class TimetableGenerationTests(unittest.TestCase):
         self.assertTrue(all(not train.custom_dwell_times for train in trains))
         minimum_active = sum(
             TimetableGenerator.required_fleet_size(
-                __import__("backend.data.schedules_service", fromlist=["ROUTES"]).ROUTES[cfg["service_id"]],
+                ROUTES[cfg["service_id"]],
                 cfg["frequency_min"],
             )
             for cfg in SERVICES.values()
