@@ -3,8 +3,11 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 # Run against the ERA RINF SPARQL endpoint.
 # Export the result as CSV with the columns used by rinf_candidate_import.py.
-# RINF section lengths are between adjacent operational points; they are not
-# automatically interchangeable with a single edge in the simulator topology.
+# Infrastructure manager is resolved through its organisation role; the
+# organisation code property is era:organisationCode (not era:imCode).
+# A SectionOfLine is between adjacent operational points and may contain
+# multiple tracks. Track-specific speed limits are intentionally not flattened
+# into this section-length query.
 
 SELECT DISTINCT
   (STR(?section) AS ?section_uri)
@@ -16,7 +19,10 @@ WHERE {
            era:opStart ?start ;
            era:opEnd ?end ;
            era:lengthOfSectionOfLine ?length ;
-           era:imCode "0083" .
+           era:infrastructureManager ?imRole .
+
+  ?imRole era:roleOf ?im .
+  ?im era:organisationCode "0083" .
 
   ?start era:opName ?startName .
   ?end era:opName ?endName .
