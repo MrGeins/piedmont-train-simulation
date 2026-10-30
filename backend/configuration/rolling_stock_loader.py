@@ -41,7 +41,7 @@ def validate_rolling_stock(data: Any, source: str = "rolling stock config") -> N
                 errors.append(f"{prefix}.minimum_turnback_seconds must be a non-negative integer")
     if errors:
         raise RollingStockConfigError(
-            f"{source}: validation failed:\\n- " + "\\n- ".join(errors)
+            f"{source}: validation failed:\n- " + "\n- ".join(errors)
         )
 
 
