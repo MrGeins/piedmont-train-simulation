@@ -8,7 +8,7 @@ from backend.data.schedules_service import SERVICES
 class TimetableGenerationTests(unittest.TestCase):
     def test_full_day_timetable_has_unique_ids_and_valid_platforms(self):
         trains = TimetableGenerator.generate_full_day_timetable()
-        self.assertEqual(len(trains), 38)
+        self.assertEqual(len(trains), 30)
         self.assertEqual(len({train.train_number for train in trains}), len(trains))
         TimetableGenerator.validate_generated_timetable(trains)
 
@@ -20,6 +20,8 @@ class TimetableGenerationTests(unittest.TestCase):
         self.assertTrue(all(value > 0 for train in trains for value in train.custom_travel_times.values()))
         self.assertTrue(all(not train.custom_dwell_times for train in trains))
         self.assertEqual(len(trains), sum(config["fleet_size"] for config in SERVICES.values()))
+        self.assertTrue(all(train.takt_anchors for train in trains))
+        self.assertTrue(all(train.route[0] in train.takt_anchors and train.route[-1] in train.takt_anchors for train in trains))
 
     def test_generated_trains_use_service_parameters(self):
         trains = TimetableGenerator.generate_full_day_timetable()
