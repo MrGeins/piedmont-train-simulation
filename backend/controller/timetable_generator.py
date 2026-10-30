@@ -1,14 +1,21 @@
-"""Generate a timetable from service-level parameters and the runtime model."""
+"""Generate physical trainset agents from service and infrastructure data."""
+
 from backend.controller.train_agent import TrainAgent
 from backend.utils.time_formatter import time_to_seconds, seconds_to_string
-from backend.network_graph import stations_registry
+from backend.network_graph import stations_registry, infrastructure_map
+from backend.controller.pathfinder import get_physical_path
 from backend.data.schedules_service import ROUTES, PLATFORM_PLANS, SERVICES
+from backend.railway.travel_time_calculator import (
+    MissingOperationalDataError,
+    TravelTimeCalculator,
+)
+from backend.railway.vehicle_performance import VehiclePerformance
 
 
 class TimetableGenerator:
-    # The simulator currently models a generic segment duration. Per-station dwell
-    # durations come from the infrastructure model; no per-stop timetable is stored.
+    # Compatibility fallback used only until a link has measured operational data.
     DEFAULT_SEGMENT_TRAVEL_MINUTES = TrainAgent.DEFAULT_SEGMENT_TRAVEL_MINUTES
+    DEFAULT_TURNBACK_SECONDS = 90
 
     @classmethod
     def build_directional_schedules(cls, route_key: str, route: list) -> tuple[dict[str, int], dict[str, int]]:
@@ -37,6 +44,32 @@ class TimetableGenerator:
                     rev_tr = non_stub_avail[0]
             reverse_sched[st_key] = rev_tr
         return forward_sched, reverse_sched
+
+    @classmethod
+    def _build_route_travel_times(
+        cls,
+        route: list[str],
+        calculator: TravelTimeCalculator | None,
+        vehicle: VehiclePerformance | None,
+    ) -> dict[tuple[str, str], float]:
+        """Return directional station-to-station times in minutes.
+
+        If operational data is incomplete, retain the legacy simulation fallback
+        for that station pair. The fallback is not presented as a real running time.
+        """
+        result: dict[tuple[str, str], float] = {}
+        for start, end in zip(route, route[1:]):
+            if calculator is not None and vehicle is not None:
+                physical_path = get_physical_path(start, end, infrastructure_map)
+                try:
+                    result[(start, end)] = calculator.calculate_path_minutes(
+                        physical_path, infrastructure_map, vehicle
+                    )
+                    continue
+                except MissingOperationalDataError:
+                    pass
+            result[(start, end)] = cls.DEFAULT_SEGMENT_TRAVEL_MINUTES
+        return result
 
     @staticmethod
     def validate_generated_timetable(trains: list[TrainAgent]) -> None:
@@ -67,28 +100,48 @@ class TimetableGenerator:
             raise ValueError("Generated timetable validation failed:\n- " + "\n- ".join(errors))
 
     @classmethod
-    def required_fleet_size(cls, route: list[str], frequency_min: int) -> int:
-        """Estimate units needed to sustain the configured headway on a round trip."""
+    def required_fleet_size(
+        cls,
+        route: list[str],
+        frequency_min: int,
+        travel_times: dict[tuple[str, str], float] | None = None,
+        turnback_seconds: int = DEFAULT_TURNBACK_SECONDS,
+    ) -> int:
+        """Estimate physical trainsets needed for the round-trip cycle."""
         if frequency_min <= 0:
             raise ValueError("frequency_min must be positive")
-        segment_count = max(0, len(route) - 1)
+        if turnback_seconds < 0:
+            raise ValueError("turnback_seconds must be non-negative")
+        travel_times = travel_times or {}
+        one_way_travel_seconds = sum(
+            travel_times.get((start, end), cls.DEFAULT_SEGMENT_TRAVEL_MINUTES) * 60
+            for start, end in zip(route, route[1:])
+        )
         dwell_minutes = sum(
             stations_registry[station].default_dwell
             for station in route[1:-1]
             if station in stations_registry
         )
-        one_way_seconds = (
-            segment_count * cls.DEFAULT_SEGMENT_TRAVEL_MINUTES * 60
-            + dwell_minutes * 60
-        )
-        # A unit runs out and back, with a 90-second turnback at each terminal.
-        round_trip_seconds = 2 * one_way_seconds + 2 * 90
+        one_way_seconds = one_way_travel_seconds + dwell_minutes * 60
+        round_trip_seconds = 2 * one_way_seconds + 2 * turnback_seconds
         headway_seconds = frequency_min * 60
         return max(1, int((round_trip_seconds + headway_seconds - 1) // headway_seconds))
 
     @classmethod
-    def generate_full_day_timetable(cls) -> list[TrainAgent]:
-        """Create the configured fleet; each agent follows the service frequency."""
+    def generate_full_day_timetable(
+        cls,
+        travel_time_calculator: TravelTimeCalculator | None = None,
+        vehicle_performance: VehiclePerformance | None = None,
+    ) -> list[TrainAgent]:
+        """Create one runtime agent per physical trainset.
+
+        Each TrainAgent represents a reusable physical unit. It generates its
+        subsequent trips by turning back at the terminal; fleet_size therefore
+        counts units, not the number of scheduled departures.
+        """
+        if (travel_time_calculator is None) != (vehicle_performance is None):
+            raise ValueError("travel_time_calculator and vehicle_performance must be provided together")
+
         all_trains = []
         for _, cfg in SERVICES.items():
             service_id = cfg["service_id"]
@@ -100,12 +153,26 @@ class TimetableGenerator:
             frequency_seconds = cfg["frequency_min"] * 60
             start_seconds = time_to_seconds(cfg["start_time"])
             end_seconds = time_to_seconds(cfg["end_time"])
-            required_fleet = cls.required_fleet_size(route, cfg["frequency_min"])
+
+            forward_times = cls._build_route_travel_times(
+                route, travel_time_calculator, vehicle_performance
+            )
+            reverse_times = {(end, start): minutes for (start, end), minutes in forward_times.items()}
+            cycle_times = {**forward_times, **reverse_times}
+            turnback_seconds = (
+                vehicle_performance.minimum_turnback_seconds
+                if vehicle_performance is not None
+                else cls.DEFAULT_TURNBACK_SECONDS
+            )
+            required_fleet = cls.required_fleet_size(
+                route, cfg["frequency_min"], forward_times, turnback_seconds
+            )
             if fleet_size < required_fleet:
                 raise ValueError(
                     f"Service {service_id} has fleet_size={fleet_size}, but its route and "
                     f"frequency require at least {required_fleet} units"
                 )
+
             forward, reverse = cls.build_directional_schedules(service_id, route)
             for idx in range(fleet_size):
                 direction = "SOUTH" if idx % 2 == 0 else "NORTH"
@@ -122,7 +189,7 @@ class TimetableGenerator:
                     forward_platforms=forward,
                     reverse_platforms=reverse,
                     is_reverse_direction=(direction == "NORTH"),
-                    custom_travel_times={},
+                    custom_travel_times=cycle_times,
                     custom_dwell_times={},
                     takt_anchors={},
                     frequency_seconds=frequency_seconds,
