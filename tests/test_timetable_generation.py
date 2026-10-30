@@ -2,7 +2,9 @@ import unittest
 
 from backend.controller.timetable_generator import TimetableGenerator
 from backend.controller.train_agent import TrainAgent
+from backend.controller.fleet_manager import FleetManager, FleetCapacityError
 from backend.data.schedules_service import SERVICES
+from backend.utils.time_formatter import time_to_seconds
 
 
 class TimetableGenerationTests(unittest.TestCase):
@@ -21,11 +23,28 @@ class TimetableGenerationTests(unittest.TestCase):
         self.assertTrue(all(not train.custom_dwell_times for train in trains))
         self.assertEqual(len(trains), sum(config["fleet_size"] for config in SERVICES.values()))
         self.assertTrue(all(train.takt_anchors for train in trains))
-        self.assertTrue(all(train.route[0] in train.takt_anchors and train.route[-1] in train.takt_anchors for train in trains))
+        self.assertTrue(all(
+            train.route[0] in train.takt_anchors and train.route[-1] in train.takt_anchors
+            for train in trains
+        ))
 
-    def test_generated_trains_use_service_parameters(self):
-        trains = TimetableGenerator.generate_full_day_timetable()
-        self.assertTrue(all(train.end_service_time > train.departure_time for train in trains))
+    def test_full_day_trip_plan_creates_all_departures_and_assigns_trainsets(self):
+        plans = TimetableGenerator.generate_full_day_trip_plan()
+        for service_id, trainsets in plans.items():
+            config = SERVICES[service_id]
+            start = time_to_seconds(config["start_time"])
+            end = time_to_seconds(config["end_time"])
+            frequency = config["frequency_min"] * 60
+            departures_per_direction = (end - start) // frequency + 1
+            trips = [trip for unit in trainsets for trip in unit.assigned_trips]
+            self.assertEqual(len(trips), departures_per_direction * 2)
+            self.assertEqual(len({trip.trip_id for trip in trips}), len(trips))
+            for unit in trainsets:
+                self.assertTrue(unit.assigned_trips)
+                for previous, following in zip(unit.assigned_trips, unit.assigned_trips[1:]):
+                    self.assertEqual(previous.destination, following.origin)
+                    self.assertGreaterEqual(following.departure_seconds, previous.arrival_seconds + 90)
+                    self.assertEqual(following.trainset_id, unit.trainset_id)
 
     def test_fleet_capacity_uses_running_time_and_turnback(self):
         route = ["STURA", "REBAUDENGO"]
@@ -41,6 +60,21 @@ class TimetableGenerationTests(unittest.TestCase):
         route = ["STURA", "REBAUDENGO", "DORA", "PORTA_SUSA"]
         required = TimetableGenerator.required_fleet_size(route, frequency_min=10)
         self.assertGreaterEqual(required, 2)
+        self.assertEqual(required % 2, 0)
+
+    def test_fleet_manager_rejects_an_insufficient_fleet(self):
+        with self.assertRaises(FleetCapacityError):
+            FleetManager.plan_service(
+                service_id="TEST",
+                route=["A", "B"],
+                base_train_number=1,
+                fleet_size=2,
+                start_seconds=0,
+                end_seconds=1200,
+                frequency_seconds=600,
+                one_way_running_seconds=1200,
+                turnback_seconds=120,
+            )
 
     def test_travel_model_arguments_must_be_supplied_together(self):
         with self.assertRaisesRegex(ValueError, "must be provided together"):
