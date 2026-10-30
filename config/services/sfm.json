@@ -486,7 +486,7 @@
     "S8b": {
       "service_id": "S8b",
       "base_num": 11800,
-      "fleet_size": 1,
+      "fleet_size": 2,
       "frequency_min": 120,
       "start_time": "04:39:00",
       "end_time": "23:35:00"
