@@ -406,7 +406,7 @@
     "S1": {
       "service_id": "S1",
       "base_num": 2100,
-      "fleet_size": 4,
+      "fleet_size": 2,
       "frequency_min": 60,
       "start_time": "05:25:00",
       "end_time": "22:50:00"
@@ -414,7 +414,7 @@
     "S2": {
       "service_id": "S2",
       "base_num": 2200,
-      "fleet_size": 4,
+      "fleet_size": 2,
       "frequency_min": 60,
       "start_time": "05:33:00",
       "end_time": "22:50:00"
@@ -454,7 +454,7 @@
     "S5": {
       "service_id": "S5",
       "base_num": 2550,
-      "fleet_size": 4,
+      "fleet_size": 2,
       "frequency_min": 120,
       "start_time": "04:45:00",
       "end_time": "23:16:00"
@@ -470,7 +470,7 @@
     "S7": {
       "service_id": "S7",
       "base_num": 2700,
-      "fleet_size": 4,
+      "fleet_size": 2,
       "frequency_min": 60,
       "start_time": "05:55:00",
       "end_time": "22:55:00"
