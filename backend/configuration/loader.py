@@ -37,7 +37,17 @@ def load_infrastructure(
         )
         for key, item in data["stations"].items()
     }
-    links = [RailwayLine(item["from"], item["to"], item["double_track"]) for item in data["links"]]
+    links = [
+        RailwayLine(
+            item["from"], item["to"], item["double_track"],
+            distance_km=item.get("distance_km"),
+            speed_limit_kmh=item.get("speed_limit_kmh"),
+            gradient_permille=item.get("gradient_permille"),
+            electrified=item.get("electrified"),
+            track_type=item.get("track_type"),
+        )
+        for item in data["links"]
+    ]
     topology = {
         key: {"nome": item["name"], "x": item["x"], "y": item["y"], "display_label": item["display_label"]}
         for key, item in data["topology"].items()
