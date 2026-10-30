@@ -5,10 +5,12 @@ from backend.utils.time_formatter import seconds_to_string, time_to_seconds
 from backend.network_graph import infrastructure_map, stations_registry, stations
 from backend.controller.timetable_generator import TimetableGenerator
 from backend.controller.interlocking_system import InterlockingSystem
+from backend.configuration.rolling_stock_loader import load_vehicle_profiles
+from backend.railway.travel_time_calculator import TravelTimeCalculator
 
 
 class SimEngine:
-    def __init__(self, start_time_str: str, end_time_str: str):
+    def __init__(self, start_time_str: str, end_time_str: str, vehicle_profile_id: str | None = None):
         self.sim_current_time = time_to_seconds(start_time_str)
         self.sim_end_time = time_to_seconds(end_time_str)
         self.active_trains = []
@@ -18,6 +20,7 @@ class SimEngine:
         self.on_tick_callback = None
         self.rush_hour_stress = False
         self.interlocking = InterlockingSystem()
+        self.vehicle_profile_id = vehicle_profile_id
 
     def register_callback(self, callback_function):
         self.on_tick_callback = callback_function
@@ -33,7 +36,21 @@ class SimEngine:
         self.is_paused = False
 
     def initialize_timetable(self):
-        self.active_trains = TimetableGenerator.generate_full_day_timetable()
+        if self.vehicle_profile_id is None:
+            self.active_trains = TimetableGenerator.generate_full_day_timetable()
+            return
+
+        profiles = load_vehicle_profiles()
+        vehicle = profiles.get(self.vehicle_profile_id)
+        if vehicle is None:
+            raise ValueError(
+                f"Unknown rolling-stock profile {self.vehicle_profile_id!r}; "
+                f"available profiles: {sorted(profiles)}"
+            )
+        self.active_trains = TimetableGenerator.generate_full_day_timetable(
+            travel_time_calculator=TravelTimeCalculator(),
+            vehicle_performance=vehicle,
+        )
 
     def start_sim(self):
         if not self.is_running:
