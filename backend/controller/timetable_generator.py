@@ -177,7 +177,9 @@ class TimetableGenerator:
                 service_id=service_id,
                 route=route,
                 base_train_number=cfg["base_num"],
-                fleet_size=cfg["fleet_size"],
+                # Only the minimum active fleet is dispatched; additional configured
+                # units remain reserve stock and must not create duplicate departures.
+                fleet_size=required,
                 start_seconds=time_to_seconds(cfg["start_time"]),
                 end_seconds=time_to_seconds(cfg["end_time"]),
                 frequency_seconds=cfg["frequency_min"] * 60,
