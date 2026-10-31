@@ -39,3 +39,18 @@ The SFM 2026 operating plan identifies rolling-stock types and train composition
 - Do not collapse different running-track speed limits into one value without a documented conservative/directional rule.
 - The importer creates a review report only; it never modifies active infrastructure data.
 - Keep the 3-minute simulation fallback until the required physical inputs are verified.
+
+
+## First RINF calibration — 2026-10-31
+
+The RFI snapshot `2026-09-29` was matched against the existing SFM topology. The matching rule was deliberately strict: a normalized RINF operational-point name had to match exactly one normalized topology display name, and both endpoints had to identify one existing undirected project link.
+
+- Accepted exact-name mappings: **73** in `rinf_operational_point_aliases.json`.
+- Promoted SectionOfLine distances: **40** links, each with its RINF section URI, snapshot and retrieval date.
+- Promoted track speed limits: **22** links. Each has exactly one RINF RunningTrack and direction code `30` (both directions).
+- Distance only: **18** links. These sections contain multiple running tracks; their individual speed values remain in the review report and are not collapsed into a single edge speed.
+- Not promoted: **12** matched-endpoint sections that do not correspond to one existing topology link. A section spanning multiple project edges is not split or distributed.
+
+RINF direction codes are `10` = normal direction, `20` = opposite direction, and `30` = both directions. This mapping is taken from the ERA RINF Application Guide. See <https://rinf.data.era.europa.eu/era-vocabulary/rinf-appGuide/v3.3.0/>.
+
+Every promoted link carries `distance_source`; links with a promoted speed also carry `speed_limit_source`, including the RunningTrack URI, track ID and direction. The 3-minute fallback remains in place wherever calibrated distance/speed data is unavailable. This calibration does not populate rolling-stock performance profiles.
