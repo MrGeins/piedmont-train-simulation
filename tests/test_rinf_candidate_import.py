@@ -25,10 +25,15 @@ class RinfCandidateImportTests(unittest.TestCase):
             "end_name": "Beta",
             "distance_km": "12.5",
             "speed_limit_kmh": "90",
+            "track_uri": "https://example.test/track/1",
+            "track_id": "1",
+            "track_direction": "NOMINAL",
         }], self.infrastructure, self.aliases, "2026-09-29")
         candidate = report["candidate_sections"][0]
         self.assertEqual(candidate["distance_km"], 12.5)
         self.assertEqual(candidate["speed_limit_kmh"], 90)
+        self.assertEqual(candidate["track_speed_limits"][0]["track_id"], "1")
+        self.assertEqual(candidate["track_speed_limits"][0]["track_direction"], "NOMINAL")
         self.assertEqual(candidate["status"], "pending_manual_review")
         self.assertFalse(candidate["direct_project_link"])
         self.assertIn("rinf_section_not_a_single_project_topology_edge", candidate["review_reasons"])
@@ -45,15 +50,44 @@ class RinfCandidateImportTests(unittest.TestCase):
         self.assertEqual(report["summary"]["unmatched_sections"], 1)
         self.assertEqual(report["candidate_sections"], [])
 
-    def test_multiple_track_speeds_require_review(self):
+    def test_multiple_track_speeds_are_preserved_without_flattening(self):
         rows = [
-            {"section_uri": "sol-3", "start_name": "Alpha", "end_name": "Beta", "distance_km": "10", "speed_limit_kmh": "80"},
-            {"section_uri": "sol-3", "start_name": "Alpha", "end_name": "Beta", "distance_km": "10", "speed_limit_kmh": "100"},
+            {
+                "section_uri": "sol-3", "start_name": "Alpha", "end_name": "Beta",
+                "distance_km": "10", "speed_limit_kmh": "80",
+                "track_uri": "track-a", "track_id": "1", "track_direction": "NOMINAL",
+            },
+            {
+                "section_uri": "sol-3", "start_name": "Alpha", "end_name": "Beta",
+                "distance_km": "10", "speed_limit_kmh": "100",
+                "track_uri": "track-b", "track_id": "2", "track_direction": "OPPOSITE",
+            },
         ]
         report = build_candidates(rows, self.infrastructure, self.aliases, "snapshot")
         candidate = report["candidate_sections"][0]
         self.assertIsNone(candidate["speed_limit_kmh"])
-        self.assertIn("multiple_track_speed_limits_require_directional_review", candidate["review_reasons"])
+        self.assertEqual(
+            [track["speed_limit_kmh"] for track in candidate["track_speed_limits"]],
+            [80, 100],
+        )
+        self.assertEqual(candidate["rinf_running_tracks"], 2)
+        self.assertIn("multiple_running_tracks_require_directional_review", candidate["review_reasons"])
+
+    def test_identical_speed_on_multiple_tracks_is_not_collapsed(self):
+        rows = [
+            {
+                "section_uri": "sol-3b", "start_name": "Alpha", "end_name": "Beta",
+                "distance_km": "10", "speed_limit_kmh": "80", "track_id": "1",
+            },
+            {
+                "section_uri": "sol-3b", "start_name": "Alpha", "end_name": "Beta",
+                "distance_km": "10", "speed_limit_kmh": "80", "track_id": "2",
+            },
+        ]
+        candidate = build_candidates(rows, self.infrastructure, self.aliases, "snapshot")["candidate_sections"][0]
+        self.assertIsNone(candidate["speed_limit_kmh"])
+        self.assertEqual(candidate["rinf_running_tracks"], 2)
+        self.assertIn("multiple_running_tracks_require_directional_review", candidate["review_reasons"])
 
     def test_conflicting_lengths_are_not_imported(self):
         rows = [
