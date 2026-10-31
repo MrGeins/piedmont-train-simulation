@@ -96,7 +96,8 @@
         "1": "SOUTH",
         "2": "SOUTH",
         "19": "SOUTH",
-        "20": "SOUTH"}
+        "20": "SOUTH"
+      }
     },
     "GROSSETO": {
       "name": "Torino Corso Grosseto",
@@ -622,7 +623,8 @@
         5
       ],
       "stub_tracks": {
-        "4": "NORTH"}
+        "4": "NORTH"
+      }
     },
     "VOLPIANO": {
       "name": "Volpiano",
@@ -2001,7 +2003,16 @@
     {
       "from": "PORTA_SUSA",
       "to": "BIVIO_CROCETTA",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 1.804,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/17d4fb4c7f",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "BIVIO_CROCETTA",
@@ -2046,7 +2057,16 @@
     {
       "from": "PORTA_NUOVA",
       "to": "LINGOTTO",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 4.318,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/349fb4824c",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "BIVIO_CERES",
@@ -2076,7 +2096,16 @@
     {
       "from": "BORGARO",
       "to": "CASELLE",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 2.555,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/6a7957d318",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "CASELLE",
@@ -2116,17 +2145,80 @@
     {
       "from": "MATHI",
       "to": "BALANGERO",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 2.024,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/5d5d6fb894",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 120,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/5d5d6fb894",
+        "track_uri": "http://data.europa.eu/949/track/5158d4b8fc",
+        "track_id": "TR4463-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "BALANGERO",
       "to": "LANZO",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 3.238,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/12a2323f02",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 120,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/12a2323f02",
+        "track_uri": "http://data.europa.eu/949/track/553bf0aa68",
+        "track_id": "TR4464-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "LANZO",
       "to": "GERMAGNANO",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 1.49,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/ca20f7a1d8",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 60,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/ca20f7a1d8",
+        "track_uri": "http://data.europa.eu/949/track/951f355af7",
+        "track_id": "TR4465-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "GERMAGNANO",
@@ -2141,27 +2233,132 @@
     {
       "from": "FUNGHERA",
       "to": "TRAVES",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 1.29,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/071f795e8d",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 55,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/071f795e8d",
+        "track_uri": "http://data.europa.eu/949/track/4e93e462da",
+        "track_id": "TR4409-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "TRAVES",
       "to": "LOSA",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 2.043,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/8da0e7f3e2",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 55,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/8da0e7f3e2",
+        "track_uri": "http://data.europa.eu/949/track/1b47368d1f",
+        "track_id": "TR4410-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "LOSA",
       "to": "PESSINETTO",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 1.513,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/a1e9add892",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 55,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/a1e9add892",
+        "track_uri": "http://data.europa.eu/949/track/0b2f1ca094",
+        "track_id": "TR4411-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "PESSINETTO",
       "to": "MEZZENILE",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 0.91,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/742c923bb2",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 55,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/742c923bb2",
+        "track_uri": "http://data.europa.eu/949/track/7b40c7e315",
+        "track_id": "TR4412-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "MEZZENILE",
       "to": "CERES",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 2.039,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/58ea418c58",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 55,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/58ea418c58",
+        "track_uri": "http://data.europa.eu/949/track/32aecf3d95",
+        "track_id": "TR4413-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "SAN_PAOLO",
@@ -2186,27 +2383,72 @@
     {
       "from": "GRUGLIASCO",
       "to": "COLLEGNO",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 2.298,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/e0587bb675",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "COLLEGNO",
       "to": "ALPIGNANO",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 4.217,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/605e55d622",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "ALPIGNANO",
       "to": "ROSTA",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 5.218,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/870c6500f8",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "ROSTA",
       "to": "AVIGLIANA",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 4.875,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/de3f3e2f2c",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "AVIGLIANA",
       "to": "S_AMBROGIO",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 3.623,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/f1967558f3",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "S_AMBROGIO",
@@ -2281,7 +2523,16 @@
     {
       "from": "BEAULARD",
       "to": "BARDONECCHIA",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 5.279,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/c7d15109c0",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "STURA",
@@ -2321,7 +2572,28 @@
     {
       "from": "BOSCONERO",
       "to": "FELETTO",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 4.287,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/544a8b54e4",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 105,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/544a8b54e4",
+        "track_uri": "http://data.europa.eu/949/track/8592510f82",
+        "track_id": "TR4444-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "FELETTO",
@@ -2336,7 +2608,16 @@
     {
       "from": "BRANDIZZO",
       "to": "CHIVASSO",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 4.355,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/877218da09",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "CHIVASSO",
@@ -2351,12 +2632,54 @@
     {
       "from": "MONTANARO",
       "to": "RODALLO",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 5.37,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/0e0cd55cae",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 135,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/0e0cd55cae",
+        "track_uri": "http://data.europa.eu/949/track/e6c2979939",
+        "track_id": "TR1039-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "RODALLO",
       "to": "CALUSO",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 3.332,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/d2c2be159a",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 135,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/d2c2be159a",
+        "track_uri": "http://data.europa.eu/949/track/d64c2c2a75",
+        "track_id": "TR1040-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "CALUSO",
@@ -2371,12 +2694,54 @@
     {
       "from": "MERCENASCO",
       "to": "STRAMBINO",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 3.23,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/30ef91b87a",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 130,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/30ef91b87a",
+        "track_uri": "http://data.europa.eu/949/track/66963e5b6f",
+        "track_id": "TR1043-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "STRAMBINO",
       "to": "IVREA",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 9.077,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/00e7ac627a",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 130,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/00e7ac627a",
+        "track_uri": "http://data.europa.eu/949/track/2d67d66339",
+        "track_id": "TR1044-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "LINGOTTO",
@@ -2391,22 +2756,106 @@
     {
       "from": "SANGONE",
       "to": "NICHELINO",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 2.296,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/709ea020b2",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 120,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/709ea020b2",
+        "track_uri": "http://data.europa.eu/949/track/96d05da4d4",
+        "track_id": "TR1175-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "NICHELINO",
       "to": "CANDIOLO",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 4.787,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/2e5cb5fb19",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 135,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/2e5cb5fb19",
+        "track_uri": "http://data.europa.eu/949/track/6d51cc61a0",
+        "track_id": "TR1176-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "CANDIOLO",
       "to": "NONE",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 5.377,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/786b09821f",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 135,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/786b09821f",
+        "track_uri": "http://data.europa.eu/949/track/f7c31bb41b",
+        "track_id": "TR1177-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "NONE",
       "to": "AIRASCA",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 4.629,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/703d512d1c",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 135,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/703d512d1c",
+        "track_uri": "http://data.europa.eu/949/track/34d661f548",
+        "track_id": "TR1178-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "AIRASCA",
@@ -2426,17 +2875,56 @@
     {
       "from": "PIN_OLIMPICA",
       "to": "PINEROLO",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 0.946,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/2aa87bfcef",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 135,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/2aa87bfcef",
+        "track_uri": "http://data.europa.eu/949/track/c2c8a72d8e",
+        "track_id": "TR0374-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "LINGOTTO",
       "to": "MONCALIERI",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 3.692,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/0f7391697e",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "MONCALIERI",
       "to": "TROFARELLO",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 5.02,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/065eef020f",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 4
+      }
     },
     {
       "from": "TROFARELLO",
@@ -2471,12 +2959,30 @@
     {
       "from": "PESSIONE",
       "to": "VILLANOVA_ASTI",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 8.345,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/6d9a37739c",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "VILLANOVA_ASTI",
       "to": "S_PAOLO_SOLBRITO",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 2.815,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/393b65eccb",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "S_PAOLO_SOLBRITO",
@@ -2506,7 +3012,16 @@
     {
       "from": "VILLASTELLONE",
       "to": "CARMAGNOLA",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 8.35,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/5a642ff278",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "CARMAGNOLA",
@@ -2526,7 +3041,28 @@
     {
       "from": "SANFRE",
       "to": "BANDITO",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 3.395,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/ac03486be8",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 135,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/ac03486be8",
+        "track_uri": "http://data.europa.eu/949/track/15d7405373",
+        "track_id": "TR6946-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "BANDITO",
@@ -2541,12 +3077,54 @@
     {
       "from": "BRA",
       "to": "POCAPAGLIA",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 4.738,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/7cb45cf59e",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 85,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/7cb45cf59e",
+        "track_uri": "http://data.europa.eu/949/track/9af374d87b",
+        "track_id": "TR1419-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "POCAPAGLIA",
       "to": "S_VITTORIA",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 2.023,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/ecce7cb7ec",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 85,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/ecce7cb7ec",
+        "track_uri": "http://data.europa.eu/949/track/d6bdbc1d2d",
+        "track_id": "TR1418-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "S_VITTORIA",
@@ -2561,7 +3139,28 @@
     {
       "from": "MUSSOTTO",
       "to": "ALBA",
-      "double_track": false
+      "double_track": false,
+      "distance_km": 2.273,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/664be4826c",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 95,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/664be4826c",
+        "track_uri": "http://data.europa.eu/949/track/9a9b9f2302",
+        "track_id": "TR1415-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
     },
     {
       "from": "BIVIO_BRA",
@@ -2571,17 +3170,44 @@
     {
       "from": "RACCONIGI",
       "to": "CAVALLERMAGGIORE",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 7.049,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/fa7b1f5955",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "CAVALLERMAGGIORE",
       "to": "SAVIGLIANO",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 6.756,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/24efbb742c",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "SAVIGLIANO",
       "to": "FOSSANO",
-      "double_track": true
+      "double_track": true,
+      "distance_km": 12.157,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/517a36e426",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
     },
     {
       "from": "FOSSANO",
