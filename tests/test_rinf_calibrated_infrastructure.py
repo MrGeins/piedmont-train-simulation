@@ -42,23 +42,35 @@ class RinfCalibratedInfrastructureTests(unittest.TestCase):
             self.assertEqual(source["snapshot"], "2026-09-29")
             self.assertTrue(source["section_uri"].startswith("http://data.europa.eu/949/sectionOfLine/"))
 
-    def test_speed_is_only_promoted_for_one_bidirectional_running_track(self):
+    def test_speed_is_promoted_only_when_track_limits_are_unambiguous(self):
         links = self.infrastructure["links"]
         with_speed = [link for link in links if "speed_limit_source" in link]
         distance_only = [
             link for link in links
             if "distance_source" in link and "speed_limit_source" not in link
         ]
-        self.assertEqual(len(with_speed), 22)
-        self.assertEqual(len(distance_only), 18)
+        self.assertEqual(len(with_speed), 39)
+        self.assertEqual(len(distance_only), 1)
         for link in with_speed:
             source = link["speed_limit_source"]
-            self.assertEqual(source["track_direction_code"], 30)
-            self.assertEqual(source["track_direction"], "both")
-            self.assertTrue(source["track_uri"].startswith("http://data.europa.eu/949/track/"))
-            self.assertTrue(source["track_id"])
             self.assertGreater(link["speed_limit_kmh"], 0)
+            if "track_limits" in source:
+                self.assertGreaterEqual(len(source["track_limits"]), 2)
+                self.assertEqual(
+                    len({track["speed_limit_kmh"] for track in source["track_limits"]}), 1
+                )
+                for track in source["track_limits"]:
+                    self.assertTrue(track["track_uri"].startswith("http://data.europa.eu/949/track/"))
+                    self.assertTrue(track["track_id"])
+                    self.assertIn(track["track_direction_code"], (10, 20, 30))
+            else:
+                self.assertEqual(source["track_direction_code"], 30)
+                self.assertEqual(source["track_direction"], "both")
+                self.assertTrue(source["track_uri"].startswith("http://data.europa.eu/949/track/"))
+                self.assertTrue(source["track_id"])
         self.assertTrue(all("speed_limit_kmh" not in link for link in distance_only))
+        unresolved = next(link for link in distance_only if link["from"] == "BIVIO_CROCETTA")
+        self.assertEqual(unresolved["to"], "PORTA_SUSA")
 
     def test_registered_aliases_are_unique_exact_normalized_name_matches(self):
         aliases = self.alias_document["operational_point_aliases"]
