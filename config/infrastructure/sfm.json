@@ -2066,6 +2066,31 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/349fb4824c",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 115,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/349fb4824c",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/1d154d338b",
+            "track_id": "TR8702-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 115
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/d48bd77a13",
+            "track_id": "TR8702-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 115
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
@@ -2105,6 +2130,31 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/6a7957d318",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 120,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/6a7957d318",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/8c9e992b1b",
+            "track_id": "TR4456-BC-BC01",
+            "track_direction_code": 20,
+            "track_direction": "opposite",
+            "speed_limit_kmh": 120
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/f4de5c7a16",
+            "track_id": "TR4456-BC-BC02",
+            "track_direction_code": 10,
+            "track_direction": "normal",
+            "speed_limit_kmh": 120
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
@@ -2392,6 +2442,31 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/e0587bb675",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 155,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/e0587bb675",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/fb2bdf7a13",
+            "track_id": "TR0899-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 155
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/5d2574a464",
+            "track_id": "TR0899-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 155
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
@@ -2406,6 +2481,31 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/605e55d622",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 150,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/605e55d622",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/d31bcbef68",
+            "track_id": "TR0895-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 150
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/e6dab13b60",
+            "track_id": "TR0895-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 150
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
@@ -2420,6 +2520,31 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/870c6500f8",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 135,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/870c6500f8",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/6ccf8d824a",
+            "track_id": "TR0894-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 135
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/a44b559425",
+            "track_id": "TR0894-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 135
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
@@ -2434,6 +2559,31 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/de3f3e2f2c",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 155,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/de3f3e2f2c",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/ac590624d6",
+            "track_id": "TR0893-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 155
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/29525aaba8",
+            "track_id": "TR0893-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 155
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
@@ -2448,6 +2598,31 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/f1967558f3",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 155,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/f1967558f3",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/d6d360c7f3",
+            "track_id": "TR0892-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 155
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/ededb081f5",
+            "track_id": "TR0892-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 155
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
@@ -2532,6 +2707,31 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/c7d15109c0",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 100,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/c7d15109c0",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/f61cc8300b",
+            "track_id": "TR0880-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 100
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/4734552b9e",
+            "track_id": "TR0880-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 100
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
@@ -2617,6 +2817,31 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/877218da09",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 160,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/877218da09",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/663953bccb",
+            "track_id": "TR0991-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 160
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/07dcc8b61f",
+            "track_id": "TR0991-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 160
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
@@ -2910,6 +3135,31 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/0f7391697e",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 160,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/0f7391697e",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/b5f6253ca3",
+            "track_id": "TR8310-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 160
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/3883f46fc5",
+            "track_id": "TR8310-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 160
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
@@ -2924,6 +3174,45 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/065eef020f",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 4
+      },
+      "speed_limit_kmh": 160,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/065eef020f",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/07fbb28c86",
+            "track_id": "TR1249-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 160
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/69263fe97d",
+            "track_id": "TR1249-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 160
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/b4de179137",
+            "track_id": "TR1263-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 160
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/3b200c41af",
+            "track_id": "TR1263-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 160
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
@@ -2968,6 +3257,31 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/6d9a37739c",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 180,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/6d9a37739c",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/2c4560cf26",
+            "track_id": "TR7000-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 180
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/f729b6afbb",
+            "track_id": "TR7000-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 180
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
@@ -2982,6 +3296,31 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/393b65eccb",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 140,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/393b65eccb",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/1105f85132",
+            "track_id": "TR7001-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 140
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/af528da450",
+            "track_id": "TR7001-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 140
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
@@ -3021,6 +3360,31 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/5a642ff278",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 150,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/5a642ff278",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/58a253b57a",
+            "track_id": "TR1252-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 150
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/6067923e93",
+            "track_id": "TR1252-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 150
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
@@ -3179,6 +3543,31 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/fa7b1f5955",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 150,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/fa7b1f5955",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/11b615719f",
+            "track_id": "TR1254-BC-BC01",
+            "track_direction_code": 10,
+            "track_direction": "normal",
+            "speed_limit_kmh": 150
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/9083f8b480",
+            "track_id": "TR1254-BC-BC02",
+            "track_direction_code": 20,
+            "track_direction": "opposite",
+            "speed_limit_kmh": 150
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
@@ -3193,6 +3582,31 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/24efbb742c",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 150,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/24efbb742c",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/51c5e030fc",
+            "track_id": "TR1255-BC-BC01",
+            "track_direction_code": 10,
+            "track_direction": "normal",
+            "speed_limit_kmh": 150
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/02ef531f5e",
+            "track_id": "TR1255-BC-BC02",
+            "track_direction_code": 20,
+            "track_direction": "opposite",
+            "speed_limit_kmh": 150
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
@@ -3207,6 +3621,31 @@
         "section_uri": "http://data.europa.eu/949/sectionOfLine/517a36e426",
         "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
         "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 150,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/517a36e426",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/d8d4816ca0",
+            "track_id": "TR3487-BC-BC01",
+            "track_direction_code": 10,
+            "track_direction": "normal",
+            "speed_limit_kmh": 150
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/2cef66cf5b",
+            "track_id": "TR3487-BC-BC02",
+            "track_direction_code": 20,
+            "track_direction": "opposite",
+            "speed_limit_kmh": 150
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
       }
     },
     {
