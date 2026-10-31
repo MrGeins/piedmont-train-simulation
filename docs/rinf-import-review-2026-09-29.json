@@ -27001,12 +27001,13 @@
     "sections_requiring_track_direction_review": 24,
     "unmatched_sections": 3151,
     "rejected_rows": 0,
-    "ready_for_manual_review": 22,
     "promoted_sections": 40,
     "links_with_distance": 40,
     "links_with_speed_limit": 22,
     "links_with_distance_only": 18,
-    "sections_not_promoted": 12
+    "sections_not_promoted": 12,
+    "remaining_track_speed_reviews": 18,
+    "remaining_topology_reviews": 12
   },
   "accepted_operational_point_aliases": {
     "AIRASCA": "AIRASCA",
