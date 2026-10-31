@@ -6,7 +6,7 @@
   "source_file_git_blob_sha": "49d0f4f84f6184d146d7020dccba3ff62ca2cff8",
   "source_scope": "RFI infrastructure manager 0083; national network export, not pre-filtered to the SFM/Piedmont topology",
   "active_infrastructure_modified": true,
-  "alias_policy": "No aliases were written to the active alias registry. Suggestions below are generated only by exact normalized equality with an existing topology display name and still require human confirmation.",
+  "alias_policy": "73 operational-point aliases were promoted to the active registry after exact normalized-name matching to one unique topology display name. No fuzzy matching or geographic inference was used.",
   "proposed_operational_point_aliases": {
     "AIRASCA": "AIRASCA",
     "ALBA": "ALBA",
@@ -139,7 +139,29 @@
       "review_reasons": [
         "rinf_section_not_a_single_project_topology_edge"
       ],
-      "promoted_to_active_config": false
+      "promoted_to_active_config": false,
+      "topology_path_review": {
+        "shortest_path_count": 1,
+        "shortest_hop_count": 2,
+        "candidate_nodes": [
+          "GERMAGNANO",
+          "PC_GERMAGNANO",
+          "FUNGHERA"
+        ],
+        "candidate_links": [
+          {
+            "from": "GERMAGNANO",
+            "to": "PC_GERMAGNANO"
+          },
+          {
+            "from": "PC_GERMAGNANO",
+            "to": "FUNGHERA"
+          }
+        ],
+        "status": "unique_shortest_topology_path_candidate",
+        "promotion_status": "not_promoted_no_segment_distance_allocation",
+        "note": "A shortest topology chain identifies a candidate corridor only. The RINF SectionOfLine length remains an aggregate and is not distributed among project links without an authoritative linear-reference or geometry method."
+      }
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/065eef020f",
@@ -253,7 +275,29 @@
         "multiple_running_tracks_require_directional_review",
         "rinf_section_not_a_single_project_topology_edge"
       ],
-      "promoted_to_active_config": false
+      "promoted_to_active_config": false,
+      "topology_path_review": {
+        "shortest_path_count": 1,
+        "shortest_hop_count": 2,
+        "candidate_nodes": [
+          "CHIOMONTE",
+          "MEANA",
+          "PC_MEANA"
+        ],
+        "candidate_links": [
+          {
+            "from": "CHIOMONTE",
+            "to": "MEANA"
+          },
+          {
+            "from": "MEANA",
+            "to": "PC_MEANA"
+          }
+        ],
+        "status": "unique_shortest_topology_path_candidate",
+        "promotion_status": "not_promoted_no_segment_distance_allocation",
+        "note": "A shortest topology chain identifies a candidate corridor only. The RINF SectionOfLine length remains an aggregate and is not distributed among project links without an authoritative linear-reference or geometry method."
+      }
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/0b5800a125",
@@ -290,7 +334,44 @@
         "multiple_running_tracks_require_directional_review",
         "rinf_section_not_a_single_project_topology_edge"
       ],
-      "promoted_to_active_config": false
+      "promoted_to_active_config": false,
+      "topology_path_review": {
+        "shortest_path_count": 1,
+        "shortest_hop_count": 5,
+        "candidate_nodes": [
+          "LINGOTTO",
+          "CLESSIDRA",
+          "ZAPPATA",
+          "QUADRIVIO",
+          "BIVIO_CROCETTA",
+          "PORTA_SUSA"
+        ],
+        "candidate_links": [
+          {
+            "from": "LINGOTTO",
+            "to": "CLESSIDRA"
+          },
+          {
+            "from": "CLESSIDRA",
+            "to": "ZAPPATA"
+          },
+          {
+            "from": "ZAPPATA",
+            "to": "QUADRIVIO"
+          },
+          {
+            "from": "QUADRIVIO",
+            "to": "BIVIO_CROCETTA"
+          },
+          {
+            "from": "BIVIO_CROCETTA",
+            "to": "PORTA_SUSA"
+          }
+        ],
+        "status": "unique_shortest_topology_path_candidate",
+        "promotion_status": "not_promoted_no_segment_distance_allocation",
+        "note": "A shortest topology chain identifies a candidate corridor only. The RINF SectionOfLine length remains an aggregate and is not distributed among project links without an authoritative linear-reference or geometry method."
+      }
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/0e0cd55cae",
@@ -645,7 +726,29 @@
       "review_reasons": [
         "rinf_section_not_a_single_project_topology_edge"
       ],
-      "promoted_to_active_config": false
+      "promoted_to_active_config": false,
+      "topology_path_review": {
+        "shortest_path_count": 1,
+        "shortest_hop_count": 2,
+        "candidate_nodes": [
+          "CHIVASSO",
+          "BIVIO_AOSTA",
+          "MONTANARO"
+        ],
+        "candidate_links": [
+          {
+            "from": "CHIVASSO",
+            "to": "BIVIO_AOSTA"
+          },
+          {
+            "from": "BIVIO_AOSTA",
+            "to": "MONTANARO"
+          }
+        ],
+        "status": "unique_shortest_topology_path_candidate",
+        "promotion_status": "not_promoted_no_segment_distance_allocation",
+        "note": "A shortest topology chain identifies a candidate corridor only. The RINF SectionOfLine length remains an aggregate and is not distributed among project links without an authoritative linear-reference or geometry method."
+      }
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/4f4cc51d6c",
@@ -682,7 +785,29 @@
         "multiple_running_tracks_require_directional_review",
         "rinf_section_not_a_single_project_topology_edge"
       ],
-      "promoted_to_active_config": false
+      "promoted_to_active_config": false,
+      "topology_path_review": {
+        "shortest_path_count": 1,
+        "shortest_hop_count": 2,
+        "candidate_nodes": [
+          "CARMAGNOLA",
+          "BIVIO_BRA",
+          "RACCONIGI"
+        ],
+        "candidate_links": [
+          {
+            "from": "CARMAGNOLA",
+            "to": "BIVIO_BRA"
+          },
+          {
+            "from": "BIVIO_BRA",
+            "to": "RACCONIGI"
+          }
+        ],
+        "status": "unique_shortest_topology_path_candidate",
+        "promotion_status": "not_promoted_no_segment_distance_allocation",
+        "note": "A shortest topology chain identifies a candidate corridor only. The RINF SectionOfLine length remains an aggregate and is not distributed among project links without an authoritative linear-reference or geometry method."
+      }
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/517a36e426",
@@ -1016,7 +1141,29 @@
         "multiple_running_tracks_require_directional_review",
         "rinf_section_not_a_single_project_topology_edge"
       ],
-      "promoted_to_active_config": false
+      "promoted_to_active_config": false,
+      "topology_path_review": {
+        "shortest_path_count": 1,
+        "shortest_hop_count": 2,
+        "candidate_nodes": [
+          "TROFARELLO",
+          "BIVIO_TROFARELLO",
+          "VILLASTELLONE"
+        ],
+        "candidate_links": [
+          {
+            "from": "TROFARELLO",
+            "to": "BIVIO_TROFARELLO"
+          },
+          {
+            "from": "BIVIO_TROFARELLO",
+            "to": "VILLASTELLONE"
+          }
+        ],
+        "status": "unique_shortest_topology_path_candidate",
+        "promotion_status": "not_promoted_no_segment_distance_allocation",
+        "note": "A shortest topology chain identifies a candidate corridor only. The RINF SectionOfLine length remains an aggregate and is not distributed among project links without an authoritative linear-reference or geometry method."
+      }
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/703d512d1c",
@@ -1260,7 +1407,34 @@
       "review_reasons": [
         "rinf_section_not_a_single_project_topology_edge"
       ],
-      "promoted_to_active_config": false
+      "promoted_to_active_config": false,
+      "topology_path_review": {
+        "shortest_path_count": 1,
+        "shortest_hop_count": 3,
+        "candidate_nodes": [
+          "SUSA",
+          "PC_SUSA",
+          "BIVIO_VALSUSA",
+          "BUSSOLENO"
+        ],
+        "candidate_links": [
+          {
+            "from": "SUSA",
+            "to": "PC_SUSA"
+          },
+          {
+            "from": "PC_SUSA",
+            "to": "BIVIO_VALSUSA"
+          },
+          {
+            "from": "BIVIO_VALSUSA",
+            "to": "BUSSOLENO"
+          }
+        ],
+        "status": "unique_shortest_topology_path_candidate",
+        "promotion_status": "not_promoted_no_segment_distance_allocation",
+        "note": "A shortest topology chain identifies a candidate corridor only. The RINF SectionOfLine length remains an aggregate and is not distributed among project links without an authoritative linear-reference or geometry method."
+      }
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/8b9e0ed88f",
@@ -1297,7 +1471,39 @@
         "multiple_running_tracks_require_directional_review",
         "rinf_section_not_a_single_project_topology_edge"
       ],
-      "promoted_to_active_config": false
+      "promoted_to_active_config": false,
+      "topology_path_review": {
+        "shortest_path_count": 1,
+        "shortest_hop_count": 4,
+        "candidate_nodes": [
+          "PORTA_SUSA",
+          "DORA",
+          "REBAUDENGO",
+          "BIVIO_CERES",
+          "STURA"
+        ],
+        "candidate_links": [
+          {
+            "from": "PORTA_SUSA",
+            "to": "DORA"
+          },
+          {
+            "from": "DORA",
+            "to": "REBAUDENGO"
+          },
+          {
+            "from": "REBAUDENGO",
+            "to": "BIVIO_CERES"
+          },
+          {
+            "from": "BIVIO_CERES",
+            "to": "STURA"
+          }
+        ],
+        "status": "unique_shortest_topology_path_candidate",
+        "promotion_status": "not_promoted_no_segment_distance_allocation",
+        "note": "A shortest topology chain identifies a candidate corridor only. The RINF SectionOfLine length remains an aggregate and is not distributed among project links without an authoritative linear-reference or geometry method."
+      }
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/8da0e7f3e2",
@@ -1411,7 +1617,34 @@
       "review_reasons": [
         "rinf_section_not_a_single_project_topology_edge"
       ],
-      "promoted_to_active_config": false
+      "promoted_to_active_config": false,
+      "topology_path_review": {
+        "shortest_path_count": 1,
+        "shortest_hop_count": 3,
+        "candidate_nodes": [
+          "TROFARELLO",
+          "BIVIO_TROFARELLO",
+          "BIVIO_CHIERI",
+          "CHIERI"
+        ],
+        "candidate_links": [
+          {
+            "from": "TROFARELLO",
+            "to": "BIVIO_TROFARELLO"
+          },
+          {
+            "from": "BIVIO_TROFARELLO",
+            "to": "BIVIO_CHIERI"
+          },
+          {
+            "from": "BIVIO_CHIERI",
+            "to": "CHIERI"
+          }
+        ],
+        "status": "unique_shortest_topology_path_candidate",
+        "promotion_status": "not_promoted_no_segment_distance_allocation",
+        "note": "A shortest topology chain identifies a candidate corridor only. The RINF SectionOfLine length remains an aggregate and is not distributed among project links without an authoritative linear-reference or geometry method."
+      }
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/c7d15109c0",
@@ -1478,7 +1711,29 @@
       "review_reasons": [
         "rinf_section_not_a_single_project_topology_edge"
       ],
-      "promoted_to_active_config": false
+      "promoted_to_active_config": false,
+      "topology_path_review": {
+        "shortest_path_count": 1,
+        "shortest_hop_count": 2,
+        "candidate_nodes": [
+          "CIRIE",
+          "PC_CIRIE",
+          "NOLE"
+        ],
+        "candidate_links": [
+          {
+            "from": "CIRIE",
+            "to": "PC_CIRIE"
+          },
+          {
+            "from": "PC_CIRIE",
+            "to": "NOLE"
+          }
+        ],
+        "status": "unique_shortest_topology_path_candidate",
+        "promotion_status": "not_promoted_no_segment_distance_allocation",
+        "note": "A shortest topology chain identifies a candidate corridor only. The RINF SectionOfLine length remains an aggregate and is not distributed among project links without an authoritative linear-reference or geometry method."
+      }
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/ca20f7a1d8",
@@ -1543,7 +1798,29 @@
         "multiple_running_tracks_require_directional_review",
         "rinf_section_not_a_single_project_topology_edge"
       ],
-      "promoted_to_active_config": false
+      "promoted_to_active_config": false,
+      "topology_path_review": {
+        "shortest_path_count": 1,
+        "shortest_hop_count": 2,
+        "candidate_nodes": [
+          "PC_MEANA",
+          "BIVIO_VALSUSA",
+          "BUSSOLENO"
+        ],
+        "candidate_links": [
+          {
+            "from": "PC_MEANA",
+            "to": "BIVIO_VALSUSA"
+          },
+          {
+            "from": "BIVIO_VALSUSA",
+            "to": "BUSSOLENO"
+          }
+        ],
+        "status": "unique_shortest_topology_path_candidate",
+        "promotion_status": "not_promoted_no_segment_distance_allocation",
+        "note": "A shortest topology chain identifies a candidate corridor only. The RINF SectionOfLine length remains an aggregate and is not distributed among project links without an authoritative linear-reference or geometry method."
+      }
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/d2c2be159a",
@@ -1740,7 +2017,29 @@
       "review_reasons": [
         "rinf_section_not_a_single_project_topology_edge"
       ],
-      "promoted_to_active_config": false
+      "promoted_to_active_config": false,
+      "topology_path_review": {
+        "shortest_path_count": 1,
+        "shortest_hop_count": 2,
+        "candidate_nodes": [
+          "BANDITO",
+          "PC_BRA",
+          "BRA"
+        ],
+        "candidate_links": [
+          {
+            "from": "BANDITO",
+            "to": "PC_BRA"
+          },
+          {
+            "from": "PC_BRA",
+            "to": "BRA"
+          }
+        ],
+        "status": "unique_shortest_topology_path_candidate",
+        "promotion_status": "not_promoted_no_segment_distance_allocation",
+        "note": "A shortest topology chain identifies a candidate corridor only. The RINF SectionOfLine length remains an aggregate and is not distributed among project links without an authoritative linear-reference or geometry method."
+      }
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/fa7b1f5955",
@@ -27008,7 +27307,9 @@
     "sections_not_promoted": 12,
     "remaining_track_speed_reviews": 1,
     "remaining_topology_reviews": 12,
-    "promoted_multitrack_equal_speed_sections": 17
+    "promoted_multitrack_equal_speed_sections": 17,
+    "sections_with_unique_shortest_topology_path": 12,
+    "sections_without_unique_shortest_topology_path": 0
   },
   "accepted_operational_point_aliases": {
     "AIRASCA": "AIRASCA",
@@ -27100,6 +27401,8 @@
     "promoted_multitrack_equal_speed_sections": 17,
     "remaining_multitrack_speed_sections": [
       "http://data.europa.eu/949/sectionOfLine/17d4fb4c7f"
-    ]
+    ],
+    "topology_path_policy": "Record a unique shortest chain through project topology as a review candidate only. Do not allocate aggregate RINF section length to constituent graph links without an authoritative linear-reference or geometry method.",
+    "sections_with_unique_shortest_topology_path": 12
   }
 }
