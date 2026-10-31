@@ -79,6 +79,49 @@
         "The FAQ lists families used across the SFM network, not a complete assignment by service or a technical performance dataset."
       ],
       "status": "published_reference"
+    },
+    "hitachi_rail_caravaggio": {
+      "publisher": "Hitachi Rail",
+      "title": "Caravaggio / Rock - technical outline",
+      "source_type": "manufacturer_rolling_stock_specification",
+      "url": "https://www.hitachirail.com/products-and-solutions/rolling-stock/commuter-trains/caravaggio-rock/",
+      "fields_of_interest": [
+        "ETR521",
+        "maximum_speed_kmh",
+        "vehicle_count"
+      ],
+      "limitations": [
+        "Published page confirms ETR521 five-car formation and 160 km/h maximum speed, but does not publish numeric acceleration or service-braking curves."
+      ],
+      "status": "published_manufacturer_reference"
+    },
+    "trenitalia_pop_technical_outline": {
+      "publisher": "Trenitalia",
+      "title": "Caratteristiche nuovi treni POP",
+      "source_type": "operator_rolling_stock_specification",
+      "url": "https://www.trenitalia.com/content/dam/tcom/allegati/trenitalia_2014/in_regione/Basilicata_piano_sostituzione_materiale_rotabile.pdf",
+      "fields_of_interest": [
+        "four_car_formation",
+        "maximum_speed_kmh"
+      ],
+      "limitations": [
+        "Published regional POP summary reports a four-car train and 160 km/h maximum speed; exact SFM unit subtype and acceleration/braking curves are not specified."
+      ],
+      "status": "published_operator_reference"
+    },
+    "trenord_taf_fleet": {
+      "publisher": "Trenord",
+      "title": "La flotta - TAF",
+      "source_type": "operator_rolling_stock_family_reference",
+      "url": "https://www.trenord.it/chi-siamo/la-flotta/",
+      "fields_of_interest": [
+        "four_car_formation",
+        "maximum_speed_kmh"
+      ],
+      "limitations": [
+        "Confirms TAF family configuration and 140 km/h maximum speed; does not identify the exact SFM unit or publish numeric acceleration/braking curves."
+      ],
+      "status": "published_operator_reference"
     }
   }
 }
