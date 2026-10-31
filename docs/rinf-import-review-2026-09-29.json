@@ -148,7 +148,7 @@
       "from": "MONCALIERI",
       "to": "TROFARELLO",
       "distance_km": 5.02,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 160,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/07fbb28c86",
@@ -183,11 +183,11 @@
       "rinf_track_rows": 4,
       "rinf_running_tracks": 4,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     },
     {
@@ -327,7 +327,7 @@
       "from": "LINGOTTO",
       "to": "MONCALIERI",
       "distance_km": 3.692,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 160,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/b5f6253ca3",
@@ -350,11 +350,11 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     },
     {
@@ -429,7 +429,7 @@
       "from": "CAVALLERMAGGIORE",
       "to": "SAVIGLIANO",
       "distance_km": 6.756,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 150,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/51c5e030fc",
@@ -452,11 +452,11 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     },
     {
@@ -550,7 +550,7 @@
       "from": "PORTA_NUOVA",
       "to": "LINGOTTO",
       "distance_km": 4.318,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 115,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/1d154d338b",
@@ -573,11 +573,11 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     },
     {
@@ -587,7 +587,7 @@
       "from": "VILLANOVA_ASTI",
       "to": "S_PAOLO_SOLBRITO",
       "distance_km": 2.815,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 140,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/1105f85132",
@@ -610,11 +610,11 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     },
     {
@@ -691,7 +691,7 @@
       "from": "SAVIGLIANO",
       "to": "FOSSANO",
       "distance_km": 12.157,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 150,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/d8d4816ca0",
@@ -714,11 +714,11 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     },
     {
@@ -784,7 +784,7 @@
       "from": "VILLASTELLONE",
       "to": "CARMAGNOLA",
       "distance_km": 8.35,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 150,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/58a253b57a",
@@ -807,11 +807,11 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     },
     {
@@ -849,7 +849,7 @@
       "from": "ALPIGNANO",
       "to": "COLLEGNO",
       "distance_km": 4.217,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 150,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/d31bcbef68",
@@ -872,11 +872,11 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     },
     {
@@ -914,7 +914,7 @@
       "from": "BORGARO",
       "to": "CASELLE",
       "distance_km": 2.555,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 120,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/8c9e992b1b",
@@ -937,11 +937,11 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     },
     {
@@ -951,7 +951,7 @@
       "from": "PESSIONE",
       "to": "VILLANOVA_ASTI",
       "distance_km": 8.345,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 180,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/2c4560cf26",
@@ -974,11 +974,11 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     },
     {
@@ -1165,7 +1165,7 @@
       "from": "ROSTA",
       "to": "ALPIGNANO",
       "distance_km": 5.218,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 135,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/6ccf8d824a",
@@ -1188,11 +1188,11 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     },
     {
@@ -1202,7 +1202,7 @@
       "from": "BRANDIZZO",
       "to": "CHIVASSO",
       "distance_km": 4.355,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 160,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/663953bccb",
@@ -1225,11 +1225,11 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     },
     {
@@ -1420,7 +1420,7 @@
       "from": "BARDONECCHIA",
       "to": "BEAULARD",
       "distance_km": 5.279,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 100,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/f61cc8300b",
@@ -1443,11 +1443,11 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     },
     {
@@ -1580,7 +1580,7 @@
       "from": "AVIGLIANA",
       "to": "ROSTA",
       "distance_km": 4.875,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 155,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/ac590624d6",
@@ -1603,11 +1603,11 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     },
     {
@@ -1617,7 +1617,7 @@
       "from": "COLLEGNO",
       "to": "GRUGLIASCO",
       "distance_km": 2.298,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 155,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/fb2bdf7a13",
@@ -1640,11 +1640,11 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     },
     {
@@ -1682,7 +1682,7 @@
       "from": "S_AMBROGIO",
       "to": "AVIGLIANA",
       "distance_km": 3.623,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 155,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/d6d360c7f3",
@@ -1705,11 +1705,11 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     },
     {
@@ -1749,7 +1749,7 @@
       "from": "RACCONIGI",
       "to": "CAVALLERMAGGIORE",
       "distance_km": 7.049,
-      "speed_limit_kmh": null,
+      "speed_limit_kmh": 150,
       "track_speed_limits": [
         {
           "track_uri": "http://data.europa.eu/949/track/11b615719f",
@@ -1772,11 +1772,11 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "promoted_distance_only",
+      "status": "promoted_distance_and_speed_identical_multitrack",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
       ],
-      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promotion_note": "All identified RunningTracks publish the same maximum permitted speed; per-track identifiers and direction codes are preserved in active provenance.",
       "promoted_to_active_config": true
     }
   ],
@@ -27003,11 +27003,12 @@
     "rejected_rows": 0,
     "promoted_sections": 40,
     "links_with_distance": 40,
-    "links_with_speed_limit": 22,
-    "links_with_distance_only": 18,
+    "links_with_speed_limit": 39,
+    "links_with_distance_only": 1,
     "sections_not_promoted": 12,
-    "remaining_track_speed_reviews": 18,
-    "remaining_topology_reviews": 12
+    "remaining_track_speed_reviews": 1,
+    "remaining_topology_reviews": 12,
+    "promoted_multitrack_equal_speed_sections": 17
   },
   "accepted_operational_point_aliases": {
     "AIRASCA": "AIRASCA",
@@ -27094,6 +27095,11 @@
     "links_with_distance_only": 18,
     "sections_not_promoted": 12,
     "policy": "Only a RINF SectionOfLine whose two operational-point names match unique topology display names and whose endpoints correspond to one existing undirected topology link was promoted. All such links receive section distance. Speed is promoted only for a single running track whose RINF direction code is 30 (both directions).",
-    "track_direction_reference": "https://rinf.data.era.europa.eu/era-vocabulary/rinf-appGuide/v3.3.0/"
+    "track_direction_reference": "https://rinf.data.era.europa.eu/era-vocabulary/rinf-appGuide/v3.3.0/",
+    "multitrack_speed_policy": "Promote a scalar speed_limit_kmh only when every identified RunningTrack has a non-null, identical maximumPermittedSpeed; preserve each track URI, ID and direction code in speed_limit_source.track_limits. Differing or missing track speeds remain unresolved.",
+    "promoted_multitrack_equal_speed_sections": 17,
+    "remaining_multitrack_speed_sections": [
+      "http://data.europa.eu/949/sectionOfLine/17d4fb4c7f"
+    ]
   }
 }
