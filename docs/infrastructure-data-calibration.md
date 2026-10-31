@@ -13,8 +13,8 @@ The current source register is `config/data_sources/sfm.json`.
 
 1. Open the ERA RINF endpoint: <https://rinf.data.era.europa.eu/endpoint>.
 2. Run `scripts/rinf_sections.sparql`.
-3. Export the result as CSV. Required columns: `section_uri,start_name,end_name,distance_km`. Add `speed_limit_kmh` only when the running-track value has been linked to the section and the track/direction ambiguity has been reviewed.
-4. Add reviewed name/ID mappings to `config/infrastructure/rinf_operational_point_aliases.json`. The importer normalizes names for lookup, but does not guess aliases.
+3. Export the section query as CSV. Required columns: `section_uri,start_name,end_name,distance_km`. For track-level speed review, use a separate RINF extraction that joins each `RunningTrack` to its parent section and exports `track_uri,track_id,track_direction,speed_limit_kmh` alongside the section columns. `maximumPermittedSpeed` is a property of a running track, not of the section as a whole. Do not flatten values across tracks or directions.
+4. Add reviewed name/ID mappings to `config/infrastructure/rinf_operational_point_aliases.json`. The importer normalizes names for lookup, but does not guess aliases. Optional track columns are retained in `track_speed_limits`; a section-wide `speed_limit_kmh` is emitted only when exactly one identified running track is present.
 5. Run:
 
 ```bash
@@ -25,7 +25,7 @@ python scripts/rinf_candidate_import.py \
 ```
 
 6. Review `candidate_sections`, `unmatched_sections`, and `review_reasons`. In particular, a RINF section may span several project topology edges. Do not split a section length among those edges without a documented geometry/linear-reference method.
-7. Only after review, promote accepted measurements into `config/infrastructure/sfm.json`, preserving source URI, snapshot, retrieval date and review status.
+7. Only after review, promote accepted measurements into `config/infrastructure/sfm.json`, preserving source URI, snapshot, retrieval date and review status. Multiple running tracks remain separate directional records; they are not collapsed into a single link speed.
 
 ## Rolling stock
 
