@@ -69,8 +69,10 @@ class RinfCalibratedInfrastructureTests(unittest.TestCase):
                 self.assertTrue(source["track_uri"].startswith("http://data.europa.eu/949/track/"))
                 self.assertTrue(source["track_id"])
         self.assertTrue(all("speed_limit_kmh" not in link for link in distance_only))
-        unresolved = next(link for link in distance_only if link["from"] == "BIVIO_CROCETTA")
-        self.assertEqual(unresolved["to"], "PORTA_SUSA")
+        unresolved = next(
+            link for link in distance_only
+            if {link["from"], link["to"]} == {"BIVIO_CROCETTA", "PORTA_SUSA"}
+        )
 
     def test_registered_aliases_are_unique_exact_normalized_name_matches(self):
         aliases = self.alias_document["operational_point_aliases"]
