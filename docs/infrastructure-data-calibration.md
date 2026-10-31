@@ -12,8 +12,8 @@ The current source register is `config/data_sources/sfm.json`.
 ## RINF extraction
 
 1. Open the ERA RINF endpoint: <https://rinf.data.era.europa.eu/endpoint>.
-2. Run `scripts/rinf_sections.sparql`.
-3. Export the section query as CSV. Required columns: `section_uri,start_name,end_name,distance_km`. For track-level speed review, use a separate RINF extraction that joins each `RunningTrack` to its parent section and exports `track_uri,track_id,track_direction,speed_limit_kmh` alongside the section columns. `maximumPermittedSpeed` is a property of a running track, not of the section as a whole. Do not flatten values across tracks or directions.
+2. Run `scripts/rinf_sections.sparql` for the section-only export, or preferably `scripts/rinf_section_tracks.sparql` for the combined export.
+3. The combined query emits one row per `SectionOfLine`/`RunningTrack` pair, with `track_uri`, `track_id`, `track_direction` and `speed_limit_kmh` where published. It filters both the section and running tracks to RFI infrastructure manager code `0083`. Export CSV with required columns `section_uri,start_name,end_name,distance_km` and optional track columns `track_uri,track_id,track_direction,speed_limit_kmh`. Do not combine tracks or directions; blank speed values remain missing data. `maximumPermittedSpeed` is a property of a running track, not of the section as a whole.
 4. Add reviewed name/ID mappings to `config/infrastructure/rinf_operational_point_aliases.json`. The importer normalizes names for lookup, but does not guess aliases. Optional track columns are retained in `track_speed_limits`; a section-wide `speed_limit_kmh` is emitted only when exactly one identified running track is present.
 5. Run:
 
