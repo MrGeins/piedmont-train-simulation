@@ -5,7 +5,7 @@
   "source_file": "docs/query.csv",
   "source_file_git_blob_sha": "49d0f4f84f6184d146d7020dccba3ff62ca2cff8",
   "source_scope": "RFI infrastructure manager 0083; national network export, not pre-filtered to the SFM/Piedmont topology",
-  "active_infrastructure_modified": false,
+  "active_infrastructure_modified": true,
   "alias_policy": "No aliases were written to the active alias registry. Suggestions below are generated only by exact normalized equality with an existing topology display name and still require human confirmation.",
   "proposed_operational_point_aliases": {
     "AIRASCA": "AIRASCA",
@@ -107,8 +107,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/02f8e8fd09",
@@ -134,10 +135,11 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": false,
-      "status": "pending_manual_review",
+      "status": "not_promoted_multi_edge_or_topology_mismatch",
       "review_reasons": [
         "rinf_section_not_a_single_project_topology_edge"
-      ]
+      ],
+      "promoted_to_active_config": false
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/065eef020f",
@@ -181,10 +183,12 @@
       "rinf_track_rows": 4,
       "rinf_running_tracks": 4,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/071f795e8d",
@@ -210,8 +214,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/0accd1dc3d",
@@ -243,11 +248,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": false,
-      "status": "pending_manual_review",
+      "status": "not_promoted_multi_edge_or_topology_mismatch",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review",
         "rinf_section_not_a_single_project_topology_edge"
-      ]
+      ],
+      "promoted_to_active_config": false
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/0b5800a125",
@@ -279,11 +285,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": false,
-      "status": "pending_manual_review",
+      "status": "not_promoted_multi_edge_or_topology_mismatch",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review",
         "rinf_section_not_a_single_project_topology_edge"
-      ]
+      ],
+      "promoted_to_active_config": false
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/0e0cd55cae",
@@ -309,8 +316,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/0f7391697e",
@@ -342,10 +350,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/12a2323f02",
@@ -371,8 +381,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/17d4fb4c7f",
@@ -404,10 +415,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/24efbb742c",
@@ -439,10 +452,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/2aa87bfcef",
@@ -468,8 +483,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/2e5cb5fb19",
@@ -495,8 +511,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/30ef91b87a",
@@ -522,8 +539,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/349fb4824c",
@@ -555,10 +573,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/393b65eccb",
@@ -590,10 +610,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/44873ec6dc",
@@ -619,10 +641,11 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": false,
-      "status": "pending_manual_review",
+      "status": "not_promoted_multi_edge_or_topology_mismatch",
       "review_reasons": [
         "rinf_section_not_a_single_project_topology_edge"
-      ]
+      ],
+      "promoted_to_active_config": false
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/4f4cc51d6c",
@@ -654,11 +677,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": false,
-      "status": "pending_manual_review",
+      "status": "not_promoted_multi_edge_or_topology_mismatch",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review",
         "rinf_section_not_a_single_project_topology_edge"
-      ]
+      ],
+      "promoted_to_active_config": false
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/517a36e426",
@@ -690,10 +714,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/544a8b54e4",
@@ -719,8 +745,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/58ea418c58",
@@ -746,8 +773,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/5a642ff278",
@@ -779,10 +807,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/5d5d6fb894",
@@ -808,8 +838,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/605e55d622",
@@ -841,10 +872,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/664be4826c",
@@ -870,8 +903,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/6a7957d318",
@@ -903,10 +937,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/6d9a37739c",
@@ -938,10 +974,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/6ddfa798b2",
@@ -973,11 +1011,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": false,
-      "status": "pending_manual_review",
+      "status": "not_promoted_multi_edge_or_topology_mismatch",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review",
         "rinf_section_not_a_single_project_topology_edge"
-      ]
+      ],
+      "promoted_to_active_config": false
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/703d512d1c",
@@ -1003,8 +1042,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/709ea020b2",
@@ -1030,8 +1070,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/742c923bb2",
@@ -1057,8 +1098,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/786b09821f",
@@ -1084,8 +1126,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/7cb45cf59e",
@@ -1111,8 +1154,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/870c6500f8",
@@ -1144,10 +1188,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/877218da09",
@@ -1179,10 +1225,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/8aaad10c77",
@@ -1208,10 +1256,11 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": false,
-      "status": "pending_manual_review",
+      "status": "not_promoted_multi_edge_or_topology_mismatch",
       "review_reasons": [
         "rinf_section_not_a_single_project_topology_edge"
-      ]
+      ],
+      "promoted_to_active_config": false
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/8b9e0ed88f",
@@ -1243,11 +1292,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": false,
-      "status": "pending_manual_review",
+      "status": "not_promoted_multi_edge_or_topology_mismatch",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review",
         "rinf_section_not_a_single_project_topology_edge"
-      ]
+      ],
+      "promoted_to_active_config": false
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/8da0e7f3e2",
@@ -1273,8 +1323,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/a1e9add892",
@@ -1300,8 +1351,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/ac03486be8",
@@ -1327,8 +1379,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/b9703bdf46",
@@ -1354,10 +1407,11 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": false,
-      "status": "pending_manual_review",
+      "status": "not_promoted_multi_edge_or_topology_mismatch",
       "review_reasons": [
         "rinf_section_not_a_single_project_topology_edge"
-      ]
+      ],
+      "promoted_to_active_config": false
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/c7d15109c0",
@@ -1389,10 +1443,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/c93ea5e5a4",
@@ -1418,10 +1474,11 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": false,
-      "status": "pending_manual_review",
+      "status": "not_promoted_multi_edge_or_topology_mismatch",
       "review_reasons": [
         "rinf_section_not_a_single_project_topology_edge"
-      ]
+      ],
+      "promoted_to_active_config": false
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/ca20f7a1d8",
@@ -1447,8 +1504,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/d24d8a3a44",
@@ -1480,11 +1538,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": false,
-      "status": "pending_manual_review",
+      "status": "not_promoted_multi_edge_or_topology_mismatch",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review",
         "rinf_section_not_a_single_project_topology_edge"
-      ]
+      ],
+      "promoted_to_active_config": false
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/d2c2be159a",
@@ -1510,8 +1569,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/de3f3e2f2c",
@@ -1543,10 +1603,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/e0587bb675",
@@ -1578,10 +1640,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/ecce7cb7ec",
@@ -1607,8 +1671,9 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": true,
-      "status": "pending_manual_review",
-      "review_reasons": []
+      "status": "promoted_distance_and_speed",
+      "review_reasons": [],
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/f1967558f3",
@@ -1640,10 +1705,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/f3a6ad7267",
@@ -1669,10 +1736,11 @@
       "rinf_track_rows": 1,
       "rinf_running_tracks": 1,
       "direct_project_link": false,
-      "status": "pending_manual_review",
+      "status": "not_promoted_multi_edge_or_topology_mismatch",
       "review_reasons": [
         "rinf_section_not_a_single_project_topology_edge"
-      ]
+      ],
+      "promoted_to_active_config": false
     },
     {
       "section_uri": "http://data.europa.eu/949/sectionOfLine/fa7b1f5955",
@@ -1704,10 +1772,12 @@
       "rinf_track_rows": 2,
       "rinf_running_tracks": 2,
       "direct_project_link": true,
-      "status": "pending_manual_review",
+      "status": "promoted_distance_only",
       "review_reasons": [
         "multiple_running_tracks_require_directional_review"
-      ]
+      ],
+      "promotion_note": "Distance maps to one existing topology edge; per-track speeds remain separate in this report and are not flattened into the edge.",
+      "promoted_to_active_config": true
     }
   ],
   "unmatched_sections": [
@@ -26931,6 +27001,98 @@
     "sections_requiring_track_direction_review": 24,
     "unmatched_sections": 3151,
     "rejected_rows": 0,
-    "ready_for_manual_review": 22
+    "ready_for_manual_review": 22,
+    "promoted_sections": 40,
+    "links_with_distance": 40,
+    "links_with_speed_limit": 22,
+    "links_with_distance_only": 18,
+    "sections_not_promoted": 12
+  },
+  "accepted_operational_point_aliases": {
+    "AIRASCA": "AIRASCA",
+    "ALBA": "ALBA",
+    "MUSSOTTO": "MUSSOTTO",
+    "ALPIGNANO": "ALPIGNANO",
+    "COLLEGNO": "COLLEGNO",
+    "ASTI": "ASTI",
+    "AVIGLIANA": "AVIGLIANA",
+    "ROSTA": "ROSTA",
+    "BALANGERO": "BALANGERO",
+    "LANZO TORINESE": "LANZO",
+    "BANDITO": "BANDITO",
+    "BRA": "BRA",
+    "BARDONECCHIA": "BARDONECCHIA",
+    "BEAULARD": "BEAULARD",
+    "BIVIO CROCETTA": "BIVIO_CROCETTA",
+    "TORINO PORTA SUSA": "PORTA_SUSA",
+    "CUNEO": "CUNEO",
+    "BORGARO": "BORGARO",
+    "CASELLE TORINESE": "CASELLE",
+    "BORGONE": "BORGONE",
+    "BOSCONERO": "BOSCONERO",
+    "FELETTO": "FELETTO",
+    "BRANDIZZO": "BRANDIZZO",
+    "CHIVASSO": "CHIVASSO",
+    "BUSSOLENO": "BUSSOLENO",
+    "CALUSO": "CALUSO",
+    "PESSIONE": "PESSIONE",
+    "MERCENASCO": "MERCENASCO",
+    "CANDIOLO": "CANDIOLO",
+    "NONE": "NONE",
+    "CARMAGNOLA": "CARMAGNOLA",
+    "RACCONIGI": "RACCONIGI",
+    "CAVALLERMAGGIORE": "CAVALLERMAGGIORE",
+    "SAVIGLIANO": "SAVIGLIANO",
+    "CENTALLO": "CENTALLO",
+    "CHIOMONTE": "CHIOMONTE",
+    "PC MEANA": "PC_MEANA",
+    "MONTANARO": "MONTANARO",
+    "CIRIE'": "CIRIE",
+    "NOLE": "NOLE",
+    "GRUGLIASCO": "GRUGLIASCO",
+    "S.AMBROGIO": "S_AMBROGIO",
+    "MONCALIERI": "MONCALIERI",
+    "MONCALIERI SANGONE": "SANGONE",
+    "FOSSANO": "FOSSANO",
+    "FUNGHERA": "FUNGHERA",
+    "TRAVES": "TRAVES",
+    "GERMAGNANO": "GERMAGNANO",
+    "LOSA": "LOSA",
+    "PESSINETTO": "PESSINETTO",
+    "MATHI": "MATHI",
+    "STRAMBINO": "STRAMBINO",
+    "MEZZENILE": "MEZZENILE",
+    "CERES": "CERES",
+    "TROFARELLO": "TROFARELLO",
+    "NICHELINO": "NICHELINO",
+    "RODALLO": "RODALLO",
+    "S.VITTORIA": "S_VITTORIA",
+    "SALBERTRAND": "SALBERTRAND",
+    "VILLANOVA D'ASTI": "VILLANOVA_ASTI",
+    "PINEROLO OLIMPICA": "PIN_OLIMPICA",
+    "PINEROLO": "PINEROLO",
+    "POCAPAGLIA": "POCAPAGLIA",
+    "S.PAOLO SOLBRITO": "S_PAOLO_SOLBRITO",
+    "SANFRE`": "SANFRE",
+    "VOLPIANO": "VOLPIANO",
+    "IVREA": "IVREA",
+    "SUSA": "SUSA",
+    "TORINO LINGOTTO": "LINGOTTO",
+    "TORINO PORTA NUOVA": "PORTA_NUOVA",
+    "TORINO STURA": "STURA",
+    "CHIERI": "CHIERI",
+    "VILLASTELLONE": "VILLASTELLONE"
+  },
+  "promotion": {
+    "promoted_at": "2026-10-31",
+    "source_snapshot": "2026-09-29",
+    "exact_unique_aliases_accepted": 73,
+    "sections_promoted": 40,
+    "links_with_distance": 40,
+    "links_with_speed_limit": 22,
+    "links_with_distance_only": 18,
+    "sections_not_promoted": 12,
+    "policy": "Only a RINF SectionOfLine whose two operational-point names match unique topology display names and whose endpoints correspond to one existing undirected topology link was promoted. All such links receive section distance. Speed is promoted only for a single running track whose RINF direction code is 30 (both directions).",
+    "track_direction_reference": "https://rinf.data.era.europa.eu/era-vocabulary/rinf-appGuide/v3.3.0/"
   }
 }
