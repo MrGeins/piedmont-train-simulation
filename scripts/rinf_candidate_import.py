@@ -1,8 +1,9 @@
 """Build review-only candidates from an ERA RINF SPARQL CSV export.
 
 This tool never edits the active infrastructure configuration. RINF sections
-are between operational points and can span multiple project topology edges;
-every candidate therefore remains pending manual topology review.
+are between operational points and can span multiple project topology edges.
+Track-level speed limits are retained per running track and are never silently
+flattened into a section-wide value when multiple tracks are present.
 """
 
 from __future__ import annotations
@@ -74,10 +75,21 @@ def build_candidates(
                 "reason": "missing distance_km",
             })
             continue
+
+        track_uri = (row.get("track_uri") or "").strip()
+        track_id = (row.get("track_id") or "").strip()
+        track_direction = (row.get("track_direction") or "").strip()
+        # If the export omits track identity, keep each row separate: assuming
+        # that two rows describe the same track would risk merging directions.
+        track_key = track_uri or track_id or f"unidentified-row-{row_number}"
         grouped[section_uri].append({
             "start_name": start_name,
             "end_name": end_name,
             "distance_km": distance,
+            "track_uri": track_uri or None,
+            "track_id": track_id or None,
+            "track_direction": track_direction or None,
+            "track_key": track_key,
             "speed_limit_kmh": speed,
         })
 
@@ -113,16 +125,34 @@ def build_candidates(
             continue
 
         distances = {item["distance_km"] for item in section_rows}
-        speeds = {item["speed_limit_kmh"] for item in section_rows if item["speed_limit_kmh"] is not None}
         distance = next(iter(distances)) if len(distances) == 1 else None
-        speed = next(iter(speeds)) if len(speeds) == 1 else None
+
+        tracks_by_key: dict[str, dict[str, Any]] = {}
+        for item in section_rows:
+            track = tracks_by_key.setdefault(item["track_key"], {
+                "track_uri": item["track_uri"],
+                "track_id": item["track_id"],
+                "track_direction": item["track_direction"],
+                "speed_limit_kmh": item["speed_limit_kmh"],
+            })
+            if track["speed_limit_kmh"] != item["speed_limit_kmh"]:
+                track["speed_limit_kmh"] = None
+                track["conflicting_speed_values"] = True
+
+        track_records = list(tracks_by_key.values())
+        all_track_speeds = [item["speed_limit_kmh"] for item in track_records]
+        speed = (
+            all_track_speeds[0]
+            if len(track_records) == 1 and all_track_speeds[0] is not None
+            else None
+        )
         reasons = []
         if distance is None:
             reasons.append("conflicting_section_lengths")
-        if not speeds:
-            reasons.append("missing_track_speed_limit")
-        elif len(speeds) > 1:
-            reasons.append("multiple_track_speed_limits_require_directional_review")
+        if not track_records or any(value is None for value in all_track_speeds):
+            reasons.append("missing_or_conflicting_track_speed_limit")
+        if len(track_records) > 1:
+            reasons.append("multiple_running_tracks_require_directional_review")
 
         direct_link_exists = frozenset((start_key, end_key)) in links
         if not direct_link_exists:
@@ -136,12 +166,14 @@ def build_candidates(
             "to": end_key,
             "distance_km": distance,
             "speed_limit_kmh": speed,
+            "track_speed_limits": track_records,
             "source": {
                 "source_id": "rinf_rfi_2026_09",
                 "snapshot": source_snapshot,
                 "section_uri": section_uri,
             },
             "rinf_track_rows": len(section_rows),
+            "rinf_running_tracks": len(track_records),
             "direct_project_link": direct_link_exists,
             "status": "pending_manual_review",
             "review_reasons": reasons,
