@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "source_id": "sfm_program_2026",
+  "source_url": "https://mtm.torino.it/wp-content/uploads/servizi-e-contratti/ferroviari/sfm/PEA-SFM-2026.pdf",
+  "note": "Reference observations transcribed from the 2026 operating plan. Route distances apply to the listed whole or partial trip, not to individual graph edges. These observations are for timetable validation only.",
+  "observations": [
+    {
+      "train_number": "26000",
+      "line": "SFM1",
+      "origin": "CHIERI",
+      "destination": "RIVAROLO",
+      "route_distance_km": 57.05,
+      "departure": "06:20",
+      "arrival": "07:44",
+      "planned_duration_min": 84,
+      "rolling_stock_type": "POP",
+      "composition": "1Ale104-A1+1Le104-A2+1Le104-A3+1Ale104-A4"
+    },
+    {
+      "train_number": "26002",
+      "line": "SFM1",
+      "origin": "CHIERI",
+      "destination": "RIVAROLO",
+      "route_distance_km": 57.05,
+      "departure": "06:50",
+      "arrival": "08:14",
+      "planned_duration_min": 84,
+      "rolling_stock_type": "ROCK",
+      "composition": "1Ale521-DM1+1Le521-TA+1Le521-TB+1Le521-TX+1Ale521-DM2"
+    },
+    {
+      "train_number": "26200",
+      "line": "SFM2",
+      "origin": "PINEROLO",
+      "destination": "CHIVASSO",
+      "route_distance_km": 62.212,
+      "departure": "05:17",
+      "arrival": "06:31",
+      "planned_duration_min": 74,
+      "rolling_stock_type": "TAF",
+      "composition": "1ALe506+2Le736+1ALe426"
+    },
+    {
+      "train_number": "26203",
+      "line": "SFM2",
+      "origin": "TORINO LINGOTTO",
+      "destination": "CHIVASSO",
+      "route_distance_km": 29.185,
+      "departure": "06:35",
+      "arrival": "07:09",
+      "planned_duration_min": 34,
+      "rolling_stock_type": "TAF",
+      "composition": "1ALe506+2Le736+1ALe426"
+    }
+  ]
+}

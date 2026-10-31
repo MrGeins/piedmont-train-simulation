@@ -3,6 +3,8 @@ from backend.controller.pathfinder import interpolate_along_tracks, get_active_p
 
 
 class TrainAgent:
+    DEFAULT_SEGMENT_TRAVEL_MINUTES = 3.0
+
     def __init__(
         self,
         service_id: str,
@@ -62,8 +64,8 @@ class TrainAgent:
         if station_idx + 1 >= len(self.route):
             return 3.0
         u, v = self.route[station_idx], self.route[station_idx + 1]
-        val = self.custom_travel_times.get((u, v), 3.0)
-        return val if val > 0 else 3.0
+        val = self.custom_travel_times.get((u, v), self.DEFAULT_SEGMENT_TRAVEL_MINUTES)
+        return val if val > 0 else self.DEFAULT_SEGMENT_TRAVEL_MINUTES
 
     def get_scheduled_track(self, station_key: str) -> int:
         active_plan = self.reverse_platforms if self.is_reverse else self.forward_platforms

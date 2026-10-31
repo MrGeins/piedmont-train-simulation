@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "rinf_rfi_2026_09": {
+      "publisher": "European Union Agency for Railways / Rete Ferroviaria Italiana",
+      "title": "RINF dataset - RFI",
+      "source_type": "railway_infrastructure_register",
+      "url": "https://rinf.data.era.europa.eu/dataset-explorer",
+      "dataset_file": "20260929_RINF_RFI.ttl",
+      "infrastructure_manager_code": "0083",
+      "snapshot_date": "2026-09-29",
+      "format": "RDF Turtle",
+      "fields_of_interest": [
+        "SectionOfLine",
+        "opStart",
+        "opEnd",
+        "lengthOfSectionOfLine",
+        "RunningTrack",
+        "maximumPermittedSpeed"
+      ],
+      "limitations": [
+        "A section of line is between adjacent operational points and may contain multiple tracks.",
+        "Length belongs to the section of line; maximum permitted speed belongs to a running track.",
+        "Track-to-section and project-topology mappings must be verified before importing values."
+      ],
+      "status": "public_dataset_requires_mapping"
+    },
+    "rfi_rinf_public": {
+      "publisher": "Rete Ferroviaria Italiana",
+      "title": "RFI RINF public register",
+      "source_type": "infrastructure_reference",
+      "url": "https://rinf.rfi.it/RinfWebPubblico",
+      "status": "public_reference"
+    },
+    "rfi_ifrp_pir_2027": {
+      "publisher": "Rete Ferroviaria Italiana",
+      "title": "Prospetto Informativo della Rete - Infrastruttura Ferroviaria Regionale Piemontese 2027",
+      "source_type": "regional_network_statement",
+      "url": "https://www.rfi.it/it/Offerta/accesso-alla-rete/prospetto-informativo-della-rete-dell-infrastruttura-ferroviaria.html",
+      "document_url": "https://www.rfi.it/content/dam/rfi/offerta/offertaaccessorete/prospetto-informativo-ferrovie-concesse/ifrp_2027/PIR_IFRP_2027_Dicembre_2025_definitivo.pdf",
+      "status": "published_document_e-pir_details_require_access"
+    },
+    "sfm_program_2026": {
+      "publisher": "Agenzia della Mobilità Piemontese",
+      "title": "Programma d'esercizio SFM - anno solare 2026",
+      "source_type": "operating_plan",
+      "url": "https://mtm.torino.it/wp-content/uploads/servizi-e-contratti/ferroviari/sfm/PEA-SFM-2026.pdf",
+      "fields_of_interest": [
+        "train_number",
+        "sfm_line",
+        "origin",
+        "destination",
+        "line_distance_km",
+        "departure_time",
+        "arrival_time",
+        "rolling_stock_type",
+        "composition"
+      ],
+      "limitations": [
+        "The published line_distance_km is a whole-trip or partial-trip distance, not a distance for every internal topology edge.",
+        "The file describes planned 2026 services and rolling-stock assignments; it does not provide acceleration or braking curves."
+      ],
+      "status": "published_operating_reference"
+    },
+    "sfm_faq_rolling_stock": {
+      "publisher": "Servizio Ferroviario Metropolitano di Torino",
+      "title": "SFM FAQ - rolling stock used on the network",
+      "source_type": "rolling_stock_family_reference",
+      "url": "https://www.sfmtorino.it/faq/",
+      "fields_of_interest": [
+        "Minuetto",
+        "Pop",
+        "Jazz",
+        "Rock",
+        "TAF",
+        "E464_with_Vivalto_coaches"
+      ],
+      "limitations": [
+        "The FAQ lists families used across the SFM network, not a complete assignment by service or a technical performance dataset."
+      ],
+      "status": "published_reference"
+    }
+  }
+}
