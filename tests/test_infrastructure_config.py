@@ -14,8 +14,9 @@ class InfrastructureConfigTests(unittest.TestCase):
         self.assertEqual(set(stations) - set(topology), set())
         self.assertIn("STURA", stations)
         self.assertIn("STURA", topology)
-        # The current SFM source has no measured segment lengths yet.
-        self.assertTrue(all(link.distance_km is None for link in links))
+        # RINF calibration covers 40 verified direct links; the rest retain the fallback.
+        self.assertEqual(sum(link.distance_km is not None for link in links), 40)
+        self.assertEqual(sum(link.speed_limit_kmh is not None for link in links), 22)
 
     def test_unknown_link_endpoint_is_rejected(self):
         data = {
