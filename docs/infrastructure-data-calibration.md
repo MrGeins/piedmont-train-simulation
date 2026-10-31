@@ -54,3 +54,10 @@ The RFI snapshot `2026-09-29` was matched against the existing SFM topology. The
 RINF direction codes are `10` = normal direction, `20` = opposite direction, and `30` = both directions. This mapping is taken from the ERA RINF Application Guide. See <https://rinf.data.era.europa.eu/era-vocabulary/rinf-appGuide/v3.3.0/>.
 
 Every promoted link carries `distance_source`; links with a promoted speed also carry `speed_limit_source`, including the RunningTrack URI, track ID and direction. The 3-minute fallback remains in place wherever calibrated distance/speed data is unavailable. This calibration does not populate rolling-stock performance profiles.
+
+
+## Multi-track speed review — 2026-11-01
+
+A second pass reviewed all 18 direct topology sections that contain multiple RINF RunningTracks. Seventeen sections publish a non-null, identical maximum permitted speed on every identified track. Their scalar edge speed is now promoted because it is unambiguous for the project's undirected link model; all RunningTrack URIs, IDs, direction codes and individual values are retained in `speed_limit_source.track_limits`. The remaining section, Bivio Crocetta–Torino Porta Susa, has different track limits (100 and 60 km/h) and remains distance-only until the simulator can represent track selection or a documented conservative policy is approved.
+
+The active network now contains 39 speed-calibrated links and 1 distance-only calibrated link. The 12 RINF sections that span multiple topology edges remain unpromoted: a unique shortest path through technical topology nodes is not, by itself, evidence that the section's length can be allocated to each edge. Their route candidates should be reviewed as section-level overlays, not split into invented edge distances.
