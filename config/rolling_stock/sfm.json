@@ -3,7 +3,7 @@
   "profiles": {},
   "metadata": {
     "status": "pending_calibration",
-    "note": "Observed SFM rolling-stock families are recorded separately from physical performance profiles. Do not populate speed, acceleration, braking or turnback values without exact-variant technical evidence."
+    "note": "Published maximum-speed references are recorded where available, but they are not complete physical performance profiles. Do not populate acceleration, service braking or turnback values without exact-variant technical evidence."
   },
   "observed_types": [
     {
@@ -21,7 +21,13 @@
         "sfm_faq_rolling_stock",
         "sfm_program_2026"
       ],
-      "performance_profile_status": "not_calibrated"
+      "performance_profile_status": "not_calibrated",
+      "published_specs": {
+        "max_speed_kmh": 160,
+        "source_id": "trenitalia_pop_technical_outline",
+        "scope": "four_car_POP_family_reference",
+        "calibration_status": "published_max_speed_only_exact_SFM_variant_not_fully_verified"
+      }
     },
     {
       "type_id": "JAZZ",
@@ -38,7 +44,13 @@
         "sfm_faq_rolling_stock",
         "sfm_program_2026"
       ],
-      "performance_profile_status": "not_calibrated"
+      "performance_profile_status": "not_calibrated",
+      "published_specs": {
+        "max_speed_kmh": 160,
+        "source_id": "hitachi_rail_caravaggio",
+        "scope": "ETR521_five_car_manufacturer_specification",
+        "calibration_status": "published_max_speed_only"
+      }
     },
     {
       "type_id": "TAF",
@@ -47,7 +59,13 @@
         "sfm_faq_rolling_stock",
         "sfm_program_2026"
       ],
-      "performance_profile_status": "not_calibrated"
+      "performance_profile_status": "not_calibrated",
+      "published_specs": {
+        "max_speed_kmh": 140,
+        "source_id": "trenord_taf_fleet",
+        "scope": "TAF_family_reference",
+        "calibration_status": "published_max_speed_only_exact_SFM_unit_not_fully_verified"
+      }
     },
     {
       "type_id": "E464_VIVALTO",
