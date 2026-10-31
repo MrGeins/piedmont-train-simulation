@@ -61,3 +61,13 @@ Every promoted link carries `distance_source`; links with a promoted speed also 
 A second pass reviewed all 18 direct topology sections that contain multiple RINF RunningTracks. Seventeen sections publish a non-null, identical maximum permitted speed on every identified track. Their scalar edge speed is now promoted because it is unambiguous for the project's undirected link model; all RunningTrack URIs, IDs, direction codes and individual values are retained in `speed_limit_source.track_limits`. The remaining section, Bivio Crocetta–Torino Porta Susa, has different track limits (100 and 60 km/h) and remains distance-only until the simulator can represent track selection or a documented conservative policy is approved.
 
 The active network now contains 39 speed-calibrated links and 1 distance-only calibrated link. The 12 RINF sections that span multiple topology edges remain unpromoted: a unique shortest path through technical topology nodes is not, by itself, evidence that the section's length can be allocated to each edge. Their route candidates should be reviewed as section-level overlays, not split into invented edge distances.
+
+
+## Rolling-stock published maximum speeds — 2026-11-01
+
+Public operator/manufacturer references provide maximum speeds for three families observed in the SFM 2026 operating plan:
+- POP: 160 km/h (published four-car POP family summary; exact SFM unit subtype still requires confirmation).
+- Rock ETR521: 160 km/h (Hitachi Rail manufacturer specification for the five-car ETR521).
+- TAF: 140 km/h (operator fleet reference; exact SFM unit subtype still requires confirmation).
+
+These values are stored as `published_specs` on the observed family records, not as calibrated `VehiclePerformance` profiles. The references do not provide the exact formation-specific acceleration and service-braking curves required by the running-time model. `profiles` therefore remains empty and the 3-minute fallback is unchanged.
