@@ -16,7 +16,7 @@ class InfrastructureConfigTests(unittest.TestCase):
         self.assertIn("STURA", topology)
         # RINF calibration covers 40 verified direct links; the rest retain the fallback.
         self.assertEqual(sum(link.distance_km is not None for link in links), 40)
-        self.assertEqual(sum(link.speed_limit_kmh is not None for link in links), 22)
+        self.assertEqual(sum(link.speed_limit_kmh is not None for link in links), 39)
 
     def test_unknown_link_endpoint_is_rejected(self):
         data = {
