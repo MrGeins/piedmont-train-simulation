@@ -122,6 +122,86 @@
         "Confirms TAF family configuration and 140 km/h maximum speed; does not identify the exact SFM unit or publish numeric acceleration/braking curves."
       ],
       "status": "published_operator_reference"
+    },
+    "treniebinari_e464": {
+      "publisher": "Treniebinari.it",
+      "title": "Scheda tecnica locomotiva elettrica FS E.464",
+      "source_type": "rolling_stock_technical_reference",
+      "url": "https://www.treniebinari.it/treniebinari/locomotive-elettriche-corrente-continua/locomotiva-elettrica-fs-E464.html",
+      "fields_of_interest": [
+        "service_mass_t",
+        "hourly_power_kw",
+        "continuous_power_kw",
+        "maximum_tractive_effort_kn",
+        "maximum_speed_kmh"
+      ],
+      "limitations": [
+        "Locomotive-only data; does not specify Vivalto consist mass or complete train performance.",
+        "No numeric acceleration curve or service-braking deceleration curve is published."
+      ],
+      "status": "published_technical_reference"
+    },
+    "treniebinari_taf": {
+      "publisher": "Treniebinari.it",
+      "title": "Scheda tecnica elettrotreno TAF",
+      "source_type": "rolling_stock_technical_reference",
+      "url": "https://www.treniebinari.it/treniebinari/elettrotreni/elettrotreno-ale426-le763-ale506-ansaldo-breda-firema-taf-treno-alta-frequentazione.html",
+      "fields_of_interest": [
+        "formation",
+        "hourly_power_kw",
+        "maximum_speed_kmh"
+      ],
+      "limitations": [
+        "Family-level technical data; no numeric acceleration or service-braking curve."
+      ],
+      "status": "published_technical_reference"
+    },
+    "treniebinari_rock": {
+      "publisher": "Treniebinari.it",
+      "title": "Scheda tecnica ETR 421/521/621 Rock/Caravaggio",
+      "source_type": "rolling_stock_technical_reference",
+      "url": "https://www.treniebinari.it/treniebinari/elettrotreni/elettrotreno-etr-421-521-621-hitachi-rail-rock-caravaggio.html",
+      "fields_of_interest": [
+        "formation",
+        "hourly_power_kw",
+        "maximum_speed_kmh"
+      ],
+      "limitations": [
+        "Power and formation depend on ETR variant; the SFM observation is a five-car ETR521.",
+        "No numeric acceleration or service-braking curve."
+      ],
+      "status": "published_technical_reference"
+    },
+    "treniebinari_pop": {
+      "publisher": "Treniebinari.it",
+      "title": "Scheda tecnica ETR 103/104/204 POP/Donizetti",
+      "source_type": "rolling_stock_technical_reference",
+      "url": "https://www.treniebinari.it/treniebinari/elettrotreni/elettrotreno-etr-103-104-204-alstom-ferroviaria-pop-donizetti.html",
+      "fields_of_interest": [
+        "formation",
+        "hourly_power_kw",
+        "maximum_speed_kmh"
+      ],
+      "limitations": [
+        "Power and length depend on ETR variant; the SFM observation identifies a four-car ETR104.",
+        "No numeric acceleration or service-braking curve."
+      ],
+      "status": "published_technical_reference"
+    },
+    "treniebinari_minuetto": {
+      "publisher": "Treniebinari.it",
+      "title": "Scheda tecnica elettromotrice articolata ALe 501 Minuetto",
+      "source_type": "rolling_stock_technical_reference",
+      "url": "https://www.treniebinari.it/treniebinari/elettromotrici/elettromotrice-articolata-ale-501-minuetto.html",
+      "fields_of_interest": [
+        "formation",
+        "hourly_power_kw",
+        "maximum_speed_kmh"
+      ],
+      "limitations": [
+        "Family-level ALe501-Le220-ALe502 technical data; no numeric acceleration or service-braking curve."
+      ],
+      "status": "published_technical_reference"
     }
   }
 }
