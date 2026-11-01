@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from math import ceil
 from typing import Iterable
 
 from backend.railway.vehicle_performance import VehiclePerformance
@@ -25,13 +26,88 @@ class SegmentPerformance:
 
 
 class TravelTimeCalculator:
-    """Compute a simplified accelerate-cruise-brake running time.
+    """Calculate accelerate-cruise-brake running times.
 
-    This is a kinematic model, not a full railway dynamics simulator. It
-    assumes constant acceleration and service braking, with no gradients,
-    curves, signal checks or temporary speed restrictions. Those effects can
-    be added as further infrastructure constraints when their data is known.
+    The default path retains the constant-acceleration kinematic model. An
+    explicitly supplied vehicle acceleration curve enables numerical
+    integration over speed, with linear interpolation between documented
+    knots. Neither path models gradients, resistance, signals or temporary
+    speed restrictions.
     """
+
+    _SPEED_INTEGRATION_STEP_MPS = 0.25
+    _PEAK_SPEED_SOLVER_ITERATIONS = 60
+
+    @staticmethod
+    def _acceleration_at_speed(vehicle: VehiclePerformance, speed_mps: float) -> float:
+        speed_kmh = speed_mps * 3.6
+        curve = vehicle.acceleration_curve
+        for left, right in zip(curve, curve[1:]):
+            if speed_kmh <= right.speed_kmh:
+                ratio = (speed_kmh - left.speed_kmh) / (right.speed_kmh - left.speed_kmh)
+                return left.acceleration_mps2 + ratio * (
+                    right.acceleration_mps2 - left.acceleration_mps2
+                )
+        return curve[-1].acceleration_mps2
+
+    def _profile_acceleration_distance_time(
+        self, peak_speed_mps: float, vehicle: VehiclePerformance
+    ) -> tuple[float, float]:
+        """Integrate acceleration distance/time using small speed increments."""
+        if peak_speed_mps <= 0:
+            return 0.0, 0.0
+
+        steps = max(1, ceil(peak_speed_mps / self._SPEED_INTEGRATION_STEP_MPS))
+        delta_speed = peak_speed_mps / steps
+        distance_m = 0.0
+        time_seconds = 0.0
+
+        for index in range(steps):
+            speed_start = index * delta_speed
+            speed_end = (index + 1) * delta_speed
+            acceleration = self._acceleration_at_speed(
+                vehicle, (speed_start + speed_end) / 2.0
+            )
+            distance_m += (speed_end * speed_end - speed_start * speed_start) / (
+                2.0 * acceleration
+            )
+            time_seconds += delta_speed / acceleration
+
+        return distance_m, time_seconds
+
+    def _calculate_profile_segment_seconds(
+        self, distance_m: float, speed_cap_mps: float, vehicle: VehiclePerformance
+    ) -> float:
+        braking = float(vehicle.service_braking_mps2)
+        acceleration_distance, acceleration_time = self._profile_acceleration_distance_time(
+            speed_cap_mps, vehicle
+        )
+        braking_distance = speed_cap_mps * speed_cap_mps / (2.0 * braking)
+
+        if acceleration_distance + braking_distance <= distance_m:
+            cruise_distance = distance_m - acceleration_distance - braking_distance
+            return (
+                acceleration_time
+                + cruise_distance / speed_cap_mps
+                + speed_cap_mps / braking
+            )
+
+        # The segment is too short to reach the speed cap. Solve the peak
+        # speed for which acceleration and service-braking distances sum to
+        # the segment length.
+        low, high = 0.0, speed_cap_mps
+        for _ in range(self._PEAK_SPEED_SOLVER_ITERATIONS):
+            peak = (low + high) / 2.0
+            peak_distance, _ = self._profile_acceleration_distance_time(peak, vehicle)
+            peak_braking_distance = peak * peak / (2.0 * braking)
+            if peak_distance + peak_braking_distance > distance_m:
+                high = peak
+            else:
+                low = peak
+
+        peak_speed = (low + high) / 2.0
+        _, acceleration_time = self._profile_acceleration_distance_time(peak_speed, vehicle)
+        return acceleration_time + peak_speed / braking
 
     def calculate_segment_minutes(
         self,
@@ -39,15 +115,23 @@ class TravelTimeCalculator:
         vehicle: VehiclePerformance,
     ) -> float:
         distance_m = segment.distance_km * 1000.0
-        acceleration = float(vehicle.acceleration_mps2)
-        braking = float(vehicle.service_braking_mps2)
         speed_cap = min(float(segment.speed_limit_kmh), float(vehicle.max_speed_kmh)) / 3.6
 
+        if vehicle.acceleration_curve:
+            total_seconds = self._calculate_profile_segment_seconds(
+                distance_m, speed_cap, vehicle
+            )
+            return total_seconds / 60.0
+
+        acceleration = float(vehicle.acceleration_mps2)
+        braking = float(vehicle.service_braking_mps2)
         accel_distance_at_cap = speed_cap * speed_cap / (2.0 * acceleration)
         brake_distance_at_cap = speed_cap * speed_cap / (2.0 * braking)
 
         if accel_distance_at_cap + brake_distance_at_cap >= distance_m:
-            peak_speed = (2.0 * distance_m / (1.0 / acceleration + 1.0 / braking)) ** 0.5
+            peak_speed = (
+                2.0 * distance_m / (1.0 / acceleration + 1.0 / braking)
+            ) ** 0.5
             acceleration_time = peak_speed / acceleration
             braking_time = peak_speed / braking
             total_seconds = acceleration_time + braking_time
