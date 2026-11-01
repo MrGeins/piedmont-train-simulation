@@ -202,6 +202,40 @@
         "Family-level ALe501-Le220-ALe502 technical data; no numeric acceleration or service-braking curve."
       ],
       "status": "published_technical_reference"
+    },
+    "user_supplied_rolling_stock_technical_summary": {
+      "publisher": "User-supplied document",
+      "title": "Specifiche tecniche materiale rotabile piemontese",
+      "source_type": "user_supplied_rolling_stock_technical_summary",
+      "file": "specifiche_tecniche_treni_piemonte.pdf",
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "fields_of_interest": [
+        "empty_mass_t",
+        "equivalent_mass_t",
+        "rotational_inertia_factor",
+        "maximum_power_kw",
+        "maximum_tractive_effort_kn",
+        "max_speed_kmh",
+        "acceleration_profile",
+        "service_braking_mps2",
+        "emergency_braking_mps2",
+        "davis_coefficients_kgf",
+        "maximum_speed_by_mode_kmh",
+        "acceleration_by_mode_mps2",
+        "pneumatic_brake_delay_seconds"
+      ],
+      "limitations": [
+        "User-supplied synthesis; no manufacturer document numbers, revisions, test conditions or per-value citations are supplied.",
+        "Values are preserved as stated and are not independently verified.",
+        "Acceleration profiles mix ranges, endpoint values and isolated points; interpolation rules are not supplied.",
+        "No minimum turnback times are provided.",
+        "These candidates are stored separately and are not loaded into operational VehiclePerformance profiles."
+      ],
+      "status": "user_supplied_unverified_reference_candidates"
     }
   }
 }
