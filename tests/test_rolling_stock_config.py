@@ -21,20 +21,29 @@ class RollingStockConfigTests(unittest.TestCase):
         data = json.loads(config_path.read_text(encoding="utf-8"))
         self.assertEqual(data["profiles"], {})
         published = {
-            item["type_id"]: item["published_specs"]["max_speed_kmh"]
+            item["type_id"]: item["published_specs"]
             for item in data["observed_types"]
             if "published_specs" in item
         }
-        self.assertEqual(published, {"POP": 160, "ROCK": 160, "TAF": 140})
-        for item in data["observed_types"]:
-            if "published_specs" in item:
-                self.assertEqual(
-                    item["published_specs"]["calibration_status"],
-                    "published_max_speed_only" if item["type_id"] == "ROCK"
-                    else ("published_max_speed_only_exact_SFM_variant_not_fully_verified"
-                          if item["type_id"] == "POP"
-                          else "published_max_speed_only_exact_SFM_unit_not_fully_verified"),
-                )
+        self.assertEqual(set(published), {"MINUETTO", "POP", "ROCK", "TAF", "E464_VIVALTO"})
+        expected = {
+            "MINUETTO": (160, 1250),
+            "POP": (160, 2000),
+            "ROCK": (160, 3400),
+            "TAF": (140, 3640),
+            "E464_VIVALTO": (160, 3500),
+        }
+        for type_id, (max_speed, hourly_power) in expected.items():
+            self.assertEqual(published[type_id]["max_speed_kmh"], max_speed)
+            self.assertEqual(published[type_id]["hourly_power_kw"], hourly_power)
+            self.assertIn(published[type_id]["source_id"], {
+                "treniebinari_minuetto", "treniebinari_pop", "treniebinari_rock",
+                "treniebinari_taf", "treniebinari_e464",
+            })
+        self.assertEqual(published["E464_VIVALTO"]["continuous_power_kw"], 3000)
+        self.assertEqual(published["E464_VIVALTO"]["service_mass_t"], 72)
+        self.assertEqual(published["E464_VIVALTO"]["maximum_tractive_effort_kn"], 200)
+        self.assertEqual(data["profiles"], {})
 
     def test_valid_profile_is_accepted(self):
         validate_rolling_stock({
