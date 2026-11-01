@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "title": "Specifiche tecniche materiale rotabile piemontese",
+    "source_id": "user_supplied_technical_summary_pdf",
+    "source_file": "specifiche_tecniche_treni_piemonte.pdf",
+    "source_pages": [
+      1,
+      2,
+      3
+    ],
+    "supplied_by_user": true,
+    "verification_status": "user_supplied_unverified",
+    "intended_use": "Reference candidates for engineering review; not loaded by the operational timetable or travel-time calculator.",
+    "limitations": [
+      "The document does not identify manufacturer document numbers, revision dates, test conditions or traceable source citations for individual values.",
+      "Values are retained as supplied and are not reconciled with the separately registered Treniebinari references.",
+      "Acceleration descriptions are represented as source-reported points or regimes; no interpolation law is assumed.",
+      "Emergency braking values are recorded for reference and are not used for normal running-time calculations.",
+      "No minimum turnback times are supplied."
+    ]
+  },
+  "vehicles": [
+    {
+      "type_id": "ROCK_ETR521",
+      "family": "Rock",
+      "variant": "Hitachi Rail Caravaggio ETR 521, five-car",
+      "source_page": 1,
+      "mass_empty_t": 290,
+      "equivalent_mass_t": 313,
+      "rotational_inertia_factor": 1.08,
+      "maximum_power_kw": 3400,
+      "maximum_tractive_effort_kn": 330,
+      "max_speed_kmh": 160,
+      "acceleration_profile": [
+        {
+          "regime": "constant_acceleration",
+          "from_speed_kmh": 0,
+          "to_speed_kmh": 37,
+          "acceleration_mps2": 1.1
+        },
+        {
+          "regime": "decreasing_hyperbolic",
+          "from_speed_kmh": 37,
+          "to_speed_kmh": 160,
+          "end_acceleration_mps2": 0.22
+        }
+      ],
+      "service_braking_mps2": 0.9,
+      "emergency_braking_mps2": 1.2,
+      "davis_coefficients_kgf": {
+        "A": 320,
+        "B": 1.3,
+        "C": 0.024
+      },
+      "notes": [
+        "Emergency braking value is reported with electromagnetic track brakes."
+      ]
+    },
+    {
+      "type_id": "POP_ETR104",
+      "family": "POP",
+      "variant": "Alstom Coradia Stream ETR 104, four-car",
+      "source_page": 1,
+      "mass_empty_t": 185,
+      "equivalent_mass_t": 200,
+      "rotational_inertia_factor": 1.08,
+      "maximum_power_kw": 2400,
+      "maximum_tractive_effort_kn": 200,
+      "max_speed_kmh": 160,
+      "acceleration_profile": [
+        {
+          "regime": "constant_acceleration",
+          "from_speed_kmh": 0,
+          "to_speed_kmh": 43,
+          "acceleration_mps2": 1
+        },
+        {
+          "regime": "decreasing",
+          "from_speed_kmh": 43,
+          "to_speed_kmh": 160,
+          "end_acceleration_mps2": 0.18
+        }
+      ],
+      "service_braking_mps2": 0.9,
+      "emergency_braking_mps2": 1.2,
+      "davis_coefficients_kgf": {
+        "A": 222,
+        "B": 0.74,
+        "C": 0.013
+      },
+      "notes": [
+        "Source summary states permanent-magnet synchronous motors."
+      ]
+    },
+    {
+      "type_id": "JAZZ_ETR425",
+      "family": "Jazz",
+      "variant": "Alstom Coradia Meridian ETR 425 / ETR 526 family; five articulated cars",
+      "source_page": 2,
+      "mass_empty_t": 160,
+      "equivalent_mass_t": 171,
+      "rotational_inertia_factor": 1.07,
+      "maximum_power_kw": 2000,
+      "maximum_tractive_effort_kn": 160,
+      "max_speed_kmh": 160,
+      "acceleration_profile": [
+        {
+          "regime": "constant_acceleration",
+          "from_speed_kmh": 0,
+          "to_speed_kmh": 45,
+          "acceleration_mps2": 0.9
+        },
+        {
+          "regime": "decreasing_hyperbolic",
+          "from_speed_kmh": 45,
+          "to_speed_kmh": 160,
+          "end_acceleration_mps2": 0.15
+        }
+      ],
+      "service_braking_mps2": 0.85,
+      "emergency_braking_mps2": 1.1,
+      "davis_coefficients_kgf": {
+        "A": 195,
+        "B": 0.7,
+        "C": 0.016
+      }
+    },
+    {
+      "type_id": "TAF_ALE426",
+      "family": "TAF",
+      "variant": "ALe 506 + 2 Le 736 + ALe 426, four-car",
+      "source_page": 2,
+      "mass_empty_t": 210,
+      "equivalent_mass_t": 231,
+      "rotational_inertia_factor": 1.1,
+      "maximum_power_kw": 2360,
+      "maximum_tractive_effort_kn": 180,
+      "max_speed_kmh": 140,
+      "acceleration_profile": [
+        {
+          "regime": "constant_acceleration",
+          "from_speed_kmh": 0,
+          "to_speed_kmh": 47,
+          "acceleration_mps2": 0.75
+        },
+        {
+          "regime": "decreasing",
+          "from_speed_kmh": 47,
+          "to_speed_kmh": 140,
+          "end_acceleration_mps2": 0.14
+        }
+      ],
+      "service_braking_mps2": 0.7,
+      "emergency_braking_mps2": 1,
+      "davis_coefficients_kgf": {
+        "A": 270,
+        "B": 1.1,
+        "C": 0.022
+      }
+    },
+    {
+      "type_id": "MINUETTO_ELECTRIC",
+      "family": "Minuetto",
+      "variant": "ALe 501 electric",
+      "source_page": 2,
+      "equivalent_mass_t": 112,
+      "maximum_power_kw": 1250,
+      "maximum_tractive_effort_kn": 110,
+      "max_speed_kmh": 160,
+      "acceleration_profile": [
+        {
+          "regime": "source_reported_initial_acceleration",
+          "acceleration_mps2": 0.95
+        }
+      ],
+      "service_braking_mps2": 0.85,
+      "emergency_braking_mps2": 1.1
+    },
+    {
+      "type_id": "MINUETTO_DIESEL",
+      "family": "Minuetto",
+      "variant": "ALn 501 / ALn 502 diesel",
+      "source_page": 2,
+      "equivalent_mass_t": 123,
+      "maximum_power_kw": 1120,
+      "power_description": "2 x 560 kW IVECO engines with hydromechanical transmission",
+      "maximum_tractive_effort_kn": 95,
+      "max_speed_kmh": 130,
+      "acceleration_profile": [
+        {
+          "regime": "source_reported_initial_acceleration",
+          "acceleration_mps2": 0.7
+        }
+      ],
+      "service_braking_mps2": 0.75,
+      "emergency_braking_mps2": 1,
+      "notes": [
+        "Source states acceleration is affected by hydromechanical coupling efficiency curves."
+      ]
+    },
+    {
+      "type_id": "BLUES_HTR312",
+      "family": "Blues",
+      "variant": "Hitachi Rail HTR 312, three-car",
+      "source_page": 3,
+      "mass_empty_t": 155,
+      "maximum_speed_by_mode_kmh": {
+        "catenary": 160,
+        "diesel": 160,
+        "battery": 100
+      },
+      "acceleration_by_mode_mps2": {
+        "electric_or_battery_boost": 1.1,
+        "diesel_only": 0.75
+      },
+      "service_braking_mps2": 0.9,
+      "emergency_braking_mps2": 1.2,
+      "traction_modes": [
+        "3 kV DC catenary",
+        "battery",
+        "diesel Euro V"
+      ]
+    },
+    {
+      "type_id": "BLUES_HTR412",
+      "family": "Blues",
+      "variant": "Hitachi Rail HTR 412, four-car",
+      "source_page": 3,
+      "mass_empty_t": 190,
+      "maximum_speed_by_mode_kmh": {
+        "catenary": 160,
+        "diesel": 160,
+        "battery": 100
+      },
+      "acceleration_by_mode_mps2": {
+        "electric_or_battery_boost": 1.1,
+        "diesel_only": 0.75
+      },
+      "service_braking_mps2": 0.9,
+      "emergency_braking_mps2": 1.2,
+      "traction_modes": [
+        "3 kV DC catenary",
+        "battery",
+        "diesel Euro V"
+      ]
+    },
+    {
+      "type_id": "VIVALTO_E464_5NCDP",
+      "family": "Vivalto + E.464",
+      "variant": "E.464 locomotive + five NCDP coaches",
+      "source_page": 3,
+      "equivalent_mass_t": 335,
+      "max_speed_kmh": 160,
+      "maximum_tractive_effort_kn": 200,
+      "locomotive_power_kw": 3500,
+      "locomotive_service_mass_t": 72,
+      "acceleration_profile": [
+        {
+          "regime": "source_reported_point",
+          "speed_kmh": 0,
+          "acceleration_mps2": 0.6,
+          "interval_to_speed_kmh": 30
+        },
+        {
+          "regime": "source_reported_point",
+          "speed_kmh": 100,
+          "acceleration_mps2": 0.28
+        },
+        {
+          "regime": "source_reported_point",
+          "speed_kmh": 160,
+          "acceleration_mps2": 0.08
+        }
+      ],
+      "service_braking_mps2": 0.7,
+      "emergency_braking_mps2": 1.05,
+      "braking_description": "Disc brakes with pneumatic propagation"
+    },
+    {
+      "type_id": "MD_E464_5MDVC_MDVE",
+      "family": "Medie Distanze + E.464",
+      "variant": "E.464 locomotive + five MDVC/MDVE coaches",
+      "source_page": 3,
+      "equivalent_mass_t": 285,
+      "max_speed_kmh": 140,
+      "alternative_max_speed_kmh": 160,
+      "maximum_tractive_effort_kn": 200,
+      "acceleration_profile": [
+        {
+          "regime": "source_reported_point",
+          "speed_kmh": 0,
+          "acceleration_mps2": 0.65,
+          "interval_to_speed_kmh": 30
+        },
+        {
+          "regime": "source_reported_point",
+          "speed_kmh": 100,
+          "acceleration_mps2": 0.32
+        },
+        {
+          "regime": "source_reported_point",
+          "speed_kmh": 140,
+          "acceleration_mps2": 0.1
+        }
+      ],
+      "service_braking_mps2": 0.6,
+      "emergency_braking_mps2": 0.9,
+      "pneumatic_brake_delay_seconds": 2.5,
+      "notes": [
+        "Source states maximum speed may be 160 km/h depending on bogies; default listed value remains 140 km/h."
+      ]
+    }
+  ]
+}
