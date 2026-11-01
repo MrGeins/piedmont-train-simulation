@@ -71,3 +71,20 @@ Public operator/manufacturer references provide maximum speeds for three familie
 - TAF: 140 km/h (operator fleet reference; exact SFM unit subtype still requires confirmation).
 
 These values are stored as `published_specs` on the observed family records, not as calibrated `VehiclePerformance` profiles. The references do not provide the exact formation-specific acceleration and service-braking curves required by the running-time model. `profiles` therefore remains empty and the 3-minute fallback is unchanged.
+
+
+## Rolling-stock technical reference pass — 2026-11-01
+
+The user supplied five Treniebinari technical-sheet URLs. The published family/variant data now recorded in `config/rolling_stock/sfm.json` are:
+
+| SFM family / variant | Maximum speed | Hourly power | Additional published data |
+|---|---:|---:|---|
+| Minuetto ALe 501-Le 220-ALe 502 | 160 km/h | 1,250 kW | Three-car family |
+| POP ETR 104 | 160 km/h | 2,000 kW | Four-car variant |
+| Rock ETR 521 | 160 km/h | 3,400 kW | Five-car variant |
+| TAF ALe 506 + 2 Le 736 + ALe 426 | 140 km/h | 3,640 kW | Four-car formation |
+| E.464 + Vivalto | 160 km/h | 3,500 kW | E.464 locomotive only: 3,000 kW continuous, 72 t service mass, 200 kN maximum tractive effort |
+
+Source URLs are registered individually in `config/data_sources/sfm.json`. Values are scoped to the published family or variant; in particular, E.464 locomotive data are not treated as the mass or performance of the complete Vivalto train.
+
+These references provide useful traction and speed constraints but not a full train performance model. They do not provide complete numeric acceleration and service-braking curves for the exact SFM formations, nor turnback times. The `profiles` object therefore remains empty and the 3-minute fallback is not changed. Published power and tractive effort must not be converted into an assumed constant acceleration without a verified mass model and traction/braking curves.
