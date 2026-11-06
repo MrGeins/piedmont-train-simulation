@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from math import ceil
+from math import ceil, inf
 from typing import Iterable
 
 from backend.railway.vehicle_performance import VehiclePerformance
@@ -28,11 +28,14 @@ class SegmentPerformance:
 class TravelTimeCalculator:
     """Calculate accelerate-cruise-brake running times.
 
-    The default path retains the constant-acceleration kinematic model. An
-    explicitly supplied vehicle acceleration curve enables numerical
-    integration over speed, with linear interpolation between documented
-    knots. Neither path models gradients, resistance, signals or temporary
-    speed restrictions.
+    Three mutually exclusive acceleration models are supported:
+    1. legacy constant acceleration;
+    2. an explicit speed/acceleration curve;
+    3. traction effort/power opposed by SI Davis resistance.
+
+    The model remains a level-track, no-signal calculation. It does not yet
+    model gradients, train resistance beyond Davis, temporary restrictions,
+    brake propagation delay or traction-system transients.
     """
 
     _SPEED_INTEGRATION_STEP_MPS = 0.25
@@ -50,10 +53,10 @@ class TravelTimeCalculator:
                 )
         return curve[-1].acceleration_mps2
 
-    def _profile_acceleration_distance_time(
-        self, peak_speed_mps: float, vehicle: VehiclePerformance
+    def _integrate_acceleration(
+        self, peak_speed_mps: float, acceleration_at_speed
     ) -> tuple[float, float]:
-        """Integrate acceleration distance/time using small speed increments."""
+        """Return acceleration distance/time by integrating in speed space."""
         if peak_speed_mps <= 0:
             return 0.0, 0.0
 
@@ -65,9 +68,9 @@ class TravelTimeCalculator:
         for index in range(steps):
             speed_start = index * delta_speed
             speed_end = (index + 1) * delta_speed
-            acceleration = self._acceleration_at_speed(
-                vehicle, (speed_start + speed_end) / 2.0
-            )
+            acceleration = acceleration_at_speed((speed_start + speed_end) / 2.0)
+            if acceleration <= 0:
+                return inf, inf
             distance_m += (speed_end * speed_end - speed_start * speed_start) / (
                 2.0 * acceleration
             )
@@ -75,30 +78,67 @@ class TravelTimeCalculator:
 
         return distance_m, time_seconds
 
-    def _calculate_profile_segment_seconds(
-        self, distance_m: float, speed_cap_mps: float, vehicle: VehiclePerformance
+    def _profile_acceleration_distance_time(
+        self, peak_speed_mps: float, vehicle: VehiclePerformance
+    ) -> tuple[float, float]:
+        return self._integrate_acceleration(
+            peak_speed_mps,
+            lambda speed: self._acceleration_at_speed(vehicle, speed),
+        )
+
+    def _traction_acceleration_distance_time(
+        self, peak_speed_mps: float, vehicle: VehiclePerformance
+    ) -> tuple[float, float]:
+        model = vehicle.traction_model
+        if model is None:
+            raise ValueError("traction model is not configured")
+        return self._integrate_acceleration(peak_speed_mps, model.acceleration_mps2)
+
+    def _maximum_sustainable_speed(
+        self, speed_cap_mps: float, vehicle: VehiclePerformance
+    ) -> float:
+        model = vehicle.traction_model
+        if model is None:
+            raise ValueError("traction model is not configured")
+        if model.acceleration_mps2(0.0) <= 0:
+            raise ValueError("tractive effort does not overcome resistance at standstill")
+        if model.acceleration_mps2(speed_cap_mps) > 0:
+            return speed_cap_mps
+
+        low, high = 0.0, speed_cap_mps
+        for _ in range(self._PEAK_SPEED_SOLVER_ITERATIONS):
+            midpoint = (low + high) / 2.0
+            if model.acceleration_mps2(midpoint) > 0:
+                low = midpoint
+            else:
+                high = midpoint
+
+        # Do not numerically integrate to the asymptotic force-balance point.
+        return low * (1.0 - 1e-6)
+
+    def _calculate_dynamic_segment_seconds(
+        self,
+        distance_m: float,
+        speed_cap_mps: float,
+        vehicle: VehiclePerformance,
+        acceleration_distance_time,
     ) -> float:
         braking = float(vehicle.service_braking_mps2)
-        acceleration_distance, acceleration_time = self._profile_acceleration_distance_time(
+        acceleration_distance, acceleration_time = acceleration_distance_time(
             speed_cap_mps, vehicle
         )
-        braking_distance = speed_cap_mps * speed_cap_mps / (2.0 * braking)
+        if acceleration_distance == inf:
+            raise ValueError("vehicle cannot accelerate to the requested speed")
 
+        braking_distance = speed_cap_mps * speed_cap_mps / (2.0 * braking)
         if acceleration_distance + braking_distance <= distance_m:
             cruise_distance = distance_m - acceleration_distance - braking_distance
-            return (
-                acceleration_time
-                + cruise_distance / speed_cap_mps
-                + speed_cap_mps / braking
-            )
+            return acceleration_time + cruise_distance / speed_cap_mps + speed_cap_mps / braking
 
-        # The segment is too short to reach the speed cap. Solve the peak
-        # speed for which acceleration and service-braking distances sum to
-        # the segment length.
         low, high = 0.0, speed_cap_mps
         for _ in range(self._PEAK_SPEED_SOLVER_ITERATIONS):
             peak = (low + high) / 2.0
-            peak_distance, _ = self._profile_acceleration_distance_time(peak, vehicle)
+            peak_distance, _ = acceleration_distance_time(peak, vehicle)
             peak_braking_distance = peak * peak / (2.0 * braking)
             if peak_distance + peak_braking_distance > distance_m:
                 high = peak
@@ -106,8 +146,29 @@ class TravelTimeCalculator:
                 low = peak
 
         peak_speed = (low + high) / 2.0
-        _, acceleration_time = self._profile_acceleration_distance_time(peak_speed, vehicle)
+        _, acceleration_time = acceleration_distance_time(peak_speed, vehicle)
         return acceleration_time + peak_speed / braking
+
+    def _calculate_profile_segment_seconds(
+        self, distance_m: float, speed_cap_mps: float, vehicle: VehiclePerformance
+    ) -> float:
+        return self._calculate_dynamic_segment_seconds(
+            distance_m,
+            speed_cap_mps,
+            vehicle,
+            self._profile_acceleration_distance_time,
+        )
+
+    def _calculate_traction_segment_seconds(
+        self, distance_m: float, speed_cap_mps: float, vehicle: VehiclePerformance
+    ) -> float:
+        sustainable_speed = self._maximum_sustainable_speed(speed_cap_mps, vehicle)
+        return self._calculate_dynamic_segment_seconds(
+            distance_m,
+            sustainable_speed,
+            vehicle,
+            self._traction_acceleration_distance_time,
+        )
 
     def calculate_segment_minutes(
         self,
@@ -116,6 +177,12 @@ class TravelTimeCalculator:
     ) -> float:
         distance_m = segment.distance_km * 1000.0
         speed_cap = min(float(segment.speed_limit_kmh), float(vehicle.max_speed_kmh)) / 3.6
+
+        if vehicle.traction_model is not None:
+            total_seconds = self._calculate_traction_segment_seconds(
+                distance_m, speed_cap, vehicle
+            )
+            return total_seconds / 60.0
 
         if vehicle.acceleration_curve:
             total_seconds = self._calculate_profile_segment_seconds(
