@@ -1,6 +1,7 @@
 """Structural validation for external infrastructure configuration."""
 from __future__ import annotations
 from typing import Any
+from math import isfinite
 
 
 class InfrastructureConfigError(ValueError):
@@ -113,8 +114,9 @@ def validate_infrastructure(data: Any, source: str = "infrastructure config") ->
         if "gradient_permille" in link and (
             isinstance(link["gradient_permille"], bool)
             or not isinstance(link["gradient_permille"], (int, float))
+            or not isfinite(link["gradient_permille"])
         ):
-            errors.append(f"{prefix}.gradient_permille must be a number when provided")
+            errors.append(f"{prefix}.gradient_permille must be a finite number when provided")
         if "electrified" in link and not isinstance(link["electrified"], bool):
             errors.append(f"{prefix}.electrified must be boolean when provided")
         if "track_type" in link and (
