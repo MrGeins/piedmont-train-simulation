@@ -111,7 +111,7 @@ class TravelTimeCalculatorTests(unittest.TestCase):
 
     def test_davis_resistance_uses_explicit_si_units(self):
         resistance = DavisResistance(A_N=1000, B_N_per_mps=10, C_N_per_mps2=2)
-        self.assertAlmostEqual(resistance.force_n(5), 1050)
+        self.assertAlmostEqual(resistance.force_n(5), 1100)
 
     def test_tractive_effort_is_limited_by_effort_and_power(self):
         model = TractionModel(
