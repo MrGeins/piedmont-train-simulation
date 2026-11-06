@@ -1,6 +1,12 @@
 """Rolling-stock performance parameters used by the running-time model."""
 
 from dataclasses import dataclass
+from math import isfinite
+
+
+def _positive_number(name: str, value: float) -> None:
+    if isinstance(value, bool) or not isinstance(value, (int, float)) or not isfinite(value) or value <= 0:
+        raise ValueError(f"{name} must be a finite positive number")
 
 
 @dataclass(frozen=True)
@@ -16,6 +22,7 @@ class AccelerationPoint:
             if (
                 isinstance(value, bool)
                 or not isinstance(value, (int, float))
+                or not isfinite(value)
                 or value < 0
                 or (name == "acceleration_mps2" and value == 0)
             ):
@@ -27,17 +34,87 @@ class AccelerationPoint:
 
 
 @dataclass(frozen=True)
+class DavisResistance:
+    """Davis resistance coefficients in SI units.
+
+    Resistance_N = A_N + B_N_per_mps * speed_mps
+                   + C_N_per_mps2 * speed_mps**2.
+
+    These units are deliberately explicit. Coefficients published in kgf,
+    with speed in km/h or mph, must be converted from their documented
+    source convention before constructing this object.
+    """
+
+    A_N: float
+    B_N_per_mps: float
+    C_N_per_mps2: float
+
+    def __post_init__(self) -> None:
+        for name in ("A_N", "B_N_per_mps", "C_N_per_mps2"):
+            value = getattr(self, name)
+            if (
+                isinstance(value, bool)
+                or not isinstance(value, (int, float))
+                or not isfinite(value)
+                or value < 0
+            ):
+                raise ValueError(f"{name} must be a finite non-negative number")
+        if self.A_N == self.B_N_per_mps == self.C_N_per_mps2 == 0:
+            raise ValueError("at least one Davis resistance coefficient must be positive")
+
+    def force_n(self, speed_mps: float) -> float:
+        if not isfinite(speed_mps) or speed_mps < 0:
+            raise ValueError("speed_mps must be finite and non-negative")
+        return (
+            self.A_N
+            + self.B_N_per_mps * speed_mps
+            + self.C_N_per_mps2 * speed_mps * speed_mps
+        )
+
+
+@dataclass(frozen=True)
+class TractionModel:
+    """Longitudinal traction model for one complete train formation.
+
+    mass_kg is the effective/equivalent train mass, including rotating-mass
+    allowance if the source defines it that way. Do not apply a separate
+    rotational-inertia multiplier to an already equivalent mass.
+    """
+
+    mass_kg: float
+    max_tractive_effort_n: float
+    max_power_w: float
+    resistance: DavisResistance
+
+    def __post_init__(self) -> None:
+        _positive_number("mass_kg", self.mass_kg)
+        _positive_number("max_tractive_effort_n", self.max_tractive_effort_n)
+        _positive_number("max_power_w", self.max_power_w)
+        if not isinstance(self.resistance, DavisResistance):
+            raise ValueError("resistance must be a DavisResistance instance")
+
+    def tractive_effort_n(self, speed_mps: float) -> float:
+        if not isfinite(speed_mps) or speed_mps < 0:
+            raise ValueError("speed_mps must be finite and non-negative")
+        if speed_mps == 0:
+            return float(self.max_tractive_effort_n)
+        return min(
+            float(self.max_tractive_effort_n),
+            float(self.max_power_w) / speed_mps,
+        )
+
+    def acceleration_mps2(self, speed_mps: float) -> float:
+        net_force = self.tractive_effort_n(speed_mps) - self.resistance.force_n(speed_mps)
+        return net_force / float(self.mass_kg)
+
+
+@dataclass(frozen=True)
 class VehiclePerformance:
     """Physical performance envelope for one rolling-stock type.
 
-    Values are SI-compatible inputs: km/h, m/s² and seconds. They must come
-    from a documented vehicle profile; this class deliberately supplies no
-    invented SFM fleet defaults.
-
-    acceleration_curve is optional. When supplied, it contains explicit
-    speed/acceleration knots from 0 km/h through at least max_speed_kmh.
-    The running-time model linearly interpolates between those knots. No
-    curve is inferred from the rolling-stock reference-candidate dataset.
+    Values must come from a documented vehicle profile. No SFM fleet defaults
+    are invented. Exactly one optional dynamic representation may be used:
+    an explicit acceleration curve, or a traction model with SI Davis data.
     """
 
     max_speed_kmh: float
@@ -45,12 +122,11 @@ class VehiclePerformance:
     service_braking_mps2: float
     minimum_turnback_seconds: int = 90
     acceleration_curve: tuple[AccelerationPoint, ...] = ()
+    traction_model: TractionModel | None = None
 
     def __post_init__(self) -> None:
         for name in ("max_speed_kmh", "acceleration_mps2", "service_braking_mps2"):
-            value = getattr(self, name)
-            if isinstance(value, bool) or not isinstance(value, (int, float)) or value <= 0:
-                raise ValueError(f"{name} must be a positive number")
+            _positive_number(name, getattr(self, name))
         if (
             isinstance(self.minimum_turnback_seconds, bool)
             or not isinstance(self.minimum_turnback_seconds, int)
@@ -70,3 +146,11 @@ class VehiclePerformance:
                 raise ValueError("acceleration_curve speeds must be strictly increasing")
             if speeds[-1] < self.max_speed_kmh:
                 raise ValueError("acceleration_curve must cover max_speed_kmh")
+
+        if self.traction_model is not None:
+            if not isinstance(self.traction_model, TractionModel):
+                raise ValueError("traction_model must be a TractionModel instance")
+            if self.acceleration_curve:
+                raise ValueError(
+                    "acceleration_curve and traction_model are alternative models; configure only one"
+                )
