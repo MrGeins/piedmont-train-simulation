@@ -58,6 +58,45 @@ class RollingStockConfigTests(unittest.TestCase):
             },
         })
 
+    def test_optional_brake_delay_is_validated_and_loaded(self):
+        import json
+        import tempfile
+        from pathlib import Path
+
+        profile = {
+            "schema_version": 1,
+            "profiles": {
+                "TEST_EMU": {
+                    "max_speed_kmh": 120,
+                    "acceleration_mps2": 0.7,
+                    "service_braking_mps2": 0.8,
+                    "brake_propagation_delay_seconds": 2.5,
+                }
+            },
+        }
+        validate_rolling_stock(profile)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "rolling-stock.json"
+            path.write_text(json.dumps(profile), encoding="utf-8")
+            loaded = load_vehicle_profiles(path)
+        self.assertEqual(loaded["TEST_EMU"].brake_propagation_delay_seconds, 2.5)
+
+    def test_invalid_brake_delay_is_rejected(self):
+        for invalid_delay in (-1, float("inf"), float("nan"), True):
+            with self.subTest(delay=invalid_delay):
+                with self.assertRaises(RollingStockConfigError):
+                    validate_rolling_stock({
+                        "schema_version": 1,
+                        "profiles": {
+                            "TEST_EMU": {
+                                "max_speed_kmh": 120,
+                                "acceleration_mps2": 0.7,
+                                "service_braking_mps2": 0.8,
+                                "brake_propagation_delay_seconds": invalid_delay,
+                            }
+                        },
+                    })
+
     def test_invalid_profile_is_rejected(self):
         with self.assertRaises(RollingStockConfigError):
             validate_rolling_stock({
