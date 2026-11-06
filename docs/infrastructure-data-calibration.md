@@ -121,3 +121,14 @@ The running-time calculator now supports a third, optional longitudinal model al
 - The model assumes level track and does not yet include gradients, brake propagation delay, traction transients, signals, temporary speed restrictions or direction-dependent track selection.
 
 **Source-data restriction:** the Davis coefficients in `technical_reference_candidates.json` remain `user_supplied_unverified`. Their force and speed units/convention have not been established from a traceable source. They have not been converted, loaded or used by the runtime model. The new API accepts only explicitly SI-converted values; the candidate data remain unchanged. Likewise, no candidate train mass, power or tractive-effort values have been activated as SFM operational profiles.
+
+
+## Track gradient and brake propagation delay (2026-11-06)
+
+- `gradient_permille` is treated as a signed gradient in the infrastructure link's stored `from` -> `to` direction. The path calculator reverses its sign when a train traverses the same link in the opposite direction.
+- Positive gradient is uphill and subtracts the longitudinal gravity component from acceleration; it also increases effective service-braking deceleration. Negative gradient is downhill and has the opposite effects.
+- The gravity component uses `g = 9.80665 m/s²` and the small-angle approximation `g * gradient_permille / 1000`. This is suitable for railway gradients expressed in permille.
+- `brake_propagation_delay_seconds` is an optional rolling-stock profile field, finite and non-negative, defaulting to zero. During the delay the simplified model holds speed constant; full service braking then acts at the gradient-adjusted deceleration.
+- The delay value supplied in the technical-summary PDF remains unverified and is not copied into operational profiles. Existing profiles remain empty and all existing callers retain zero delay.
+- No gradient values have been added to the active infrastructure dataset. The implementation only consumes a gradient when one is explicitly supplied and validated.
+- Limitations: the model does not yet simulate a distributed brake pipe, per-vehicle brake build-up, traction cut-off transients, grade changes within a segment, or direction-specific running-track selection. Constant-speed motion during brake propagation is an explicit simplification.
