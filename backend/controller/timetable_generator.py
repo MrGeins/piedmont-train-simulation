@@ -1,86 +1,35 @@
+"""Generate explicit trip plans and reusable physical trainset agents."""
+
 from backend.controller.train_agent import TrainAgent
+from backend.controller.fleet_manager import FleetManager
 from backend.utils.time_formatter import time_to_seconds, seconds_to_string
-from backend.data.stations_data import stations_registry
-from backend.data.schedules_service import ROUTES, PLATFORM_PLANS, TAKT_TEMPLATES
+from backend.network_graph import stations_registry, infrastructure_map
+from backend.controller.pathfinder import get_physical_path
+from backend.data.schedules_service import ROUTES, PLATFORM_PLANS, SERVICES
+from backend.railway.travel_time_calculator import (
+    MissingOperationalDataError,
+    TravelTimeCalculator,
+)
+from backend.railway.vehicle_performance import VehiclePerformance
 
 
 class TimetableGenerator:
-    @staticmethod
-    def parse_takt_leg_times(
-        takt_dict: dict[str, str],
-        route_order: list[str]
-    ) -> tuple[dict[tuple[str, str], float], dict[str, float], int | None]:
-        """
-        Analizza i token orari di una direzione ("p:MM", "MM-MM", "a:MM") lungo route_order
-        e restituisce:
-        - travel_times: {(st_from, st_to): minuti_percorrenza}
-        - dwell_times: {st_key: minuti_sosta}
-        - start_minute: intero del minuto di partenza (p:MM) dal capolinea
-        """
-        travel_times = {}
-        dwell_times = {}
-        start_minute = None
-        prev_dep_min = None
-        prev_st = None
-
-        for st_key in route_order:
-            token = takt_dict.get(st_key)
-            if not token:
-                continue
-            token = token.strip()
-            if token.startswith("p:"):
-                dep_m = int(token.split(":")[1])
-                start_minute = dep_m
-                prev_dep_min = dep_m
-                prev_st = st_key
-            elif token.startswith("a:"):
-                arr_m = int(token.split(":")[1])
-                if prev_dep_min is not None and prev_st is not None:
-                    diff = (arr_m - prev_dep_min) % 60
-                    travel_times[(prev_st, st_key)] = float(diff if diff > 0 else 4.0)
-            elif "-" in token:
-                arr_s, dep_s = token.split("-")
-                arr_m, dep_m = int(arr_s), int(dep_s)
-                if prev_dep_min is not None and prev_st is not None:
-                    diff = (arr_m - prev_dep_min) % 60
-                    travel_times[(prev_st, st_key)] = float(diff if diff > 0 else 3.0)
-                dwell = (dep_m - arr_m) % 60
-                dwell_times[st_key] = float(max(1, dwell))
-                prev_dep_min = dep_m
-                prev_st = st_key
-
-        return travel_times, dwell_times, start_minute
-
-    @staticmethod
-    def align_to_takt_minute(base_time_sec: int, target_minute: int | None) -> int:
-        """Allinea l'orario di partenza iniziale al primo scoccare del minuto target_minute (p:MM)."""
-        if target_minute is None:
-            return base_time_sec
-        base_h = base_time_sec // 3600
-        base_m = (base_time_sec % 3600) // 60
-        if target_minute >= base_m:
-            return base_h * 3600 + target_minute * 60
-        else:
-            return (base_h + 1) * 3600 + target_minute * 60
+    # Compatibility fallback used only until a link has measured operational data.
+    DEFAULT_SEGMENT_TRAVEL_MINUTES = TrainAgent.DEFAULT_SEGMENT_TRAVEL_MINUTES
+    DEFAULT_TURNBACK_SECONDS = 90
 
     @classmethod
     def build_directional_schedules(cls, route_key: str, route: list) -> tuple[dict[str, int], dict[str, int]]:
-        """Costruisce i piani binari per la direzione base (forward) e opposta (reverse)."""
+        """Build the default and opposite-direction platform plans."""
         explicit_plan = PLATFORM_PLANS.get(route_key, {})
         forward_sched = {}
         reverse_sched = {}
-
         for i, st_key in enumerate(route):
             st_obj = stations_registry.get(st_key)
             avail = st_obj.available_tracks if st_obj and st_obj.available_tracks else [1]
-            is_endpoint = (i == 0 or i == len(route) - 1)
-
-            if st_key in explicit_plan and explicit_plan[st_key] in avail:
-                fwd_tr = explicit_plan[st_key]
-            else:
-                fwd_tr = avail[0]
+            is_endpoint = i == 0 or i == len(route) - 1
+            fwd_tr = explicit_plan.get(st_key) if explicit_plan.get(st_key) in avail else avail[0]
             forward_sched[st_key] = fwd_tr
-
             if is_endpoint or len(avail) == 1:
                 rev_tr = fwd_tr
             else:
@@ -95,100 +44,193 @@ class TimetableGenerator:
                 else:
                     rev_tr = non_stub_avail[0]
             reverse_sched[st_key] = rev_tr
-
         return forward_sched, reverse_sched
 
     @classmethod
-    def generate_full_day_timetable(cls) -> list[TrainAgent]:
-        all_trains = []
+    def _build_route_travel_times(
+        cls,
+        route: list[str],
+        calculator: TravelTimeCalculator | None,
+        vehicle: VehiclePerformance | None,
+    ) -> dict[tuple[str, str], float]:
+        """Return directional station-to-station times in minutes.
 
-        for template_key, cfg in TAKT_TEMPLATES.items():
-            service_id = cfg.get("service_id", template_key)
-            route_key = cfg.get("route_key", service_id)
-            base_route = ROUTES.get(route_key, [])
-            if not base_route:
+        If operational data is incomplete, retain the legacy simulation fallback
+        for that station pair. The fallback is not presented as a real running time.
+        """
+        result: dict[tuple[str, str], float] = {}
+        for start, end in zip(route, route[1:]):
+            if calculator is not None and vehicle is not None:
+                physical_path = get_physical_path(start, end, infrastructure_map)
+                try:
+                    result[(start, end)] = calculator.calculate_path_minutes(
+                        physical_path, infrastructure_map, vehicle
+                    )
+                    continue
+                except MissingOperationalDataError:
+                    pass
+            result[(start, end)] = cls.DEFAULT_SEGMENT_TRAVEL_MINUTES
+        return result
+
+    @staticmethod
+    def validate_generated_timetable(trains: list[TrainAgent]) -> None:
+        """Fail fast when generated trains reference invalid stations or platform tracks."""
+        errors = []
+        seen_numbers = set()
+        for index, train in enumerate(trains):
+            label = f"trains[{index}] (number={train.train_number})"
+            if train.train_number in seen_numbers:
+                errors.append(f"{label}: duplicate train number")
+            seen_numbers.add(train.train_number)
+            if not train.route:
+                errors.append(f"{label}: route must not be empty")
+                continue
+            for station_key in train.route:
+                station = stations_registry.get(station_key)
+                if station is None:
+                    errors.append(f"{label}: route references unknown station {station_key!r}")
+                    continue
+                for plan_name in ("forward_platforms", "reverse_platforms"):
+                    track = getattr(train, plan_name, {}).get(station_key)
+                    if track not in station.available_tracks:
+                        errors.append(
+                            f"{label}: {plan_name} selects unavailable track {track!r} "
+                            f"at {station_key}; available={station.available_tracks}"
+                        )
+        if errors:
+            raise ValueError("Generated timetable validation failed:\\n- " + "\\n- ".join(errors))
+
+    @classmethod
+    def required_fleet_size(
+        cls,
+        route: list[str],
+        frequency_min: int,
+        travel_times: dict[tuple[str, str], float] | None = None,
+        turnback_seconds: int = DEFAULT_TURNBACK_SECONDS,
+    ) -> int:
+        """Calculate the even fleet minimum for a bidirectional service."""
+        if frequency_min <= 0:
+            raise ValueError("frequency_min must be positive")
+        if turnback_seconds < 0:
+            raise ValueError("turnback_seconds must be non-negative")
+        travel_times = travel_times or {}
+        one_way_travel_seconds = sum(
+            travel_times.get((start, end), cls.DEFAULT_SEGMENT_TRAVEL_MINUTES) * 60
+            for start, end in zip(route, route[1:])
+        )
+        dwell_minutes = sum(
+            stations_registry[station].default_dwell
+            for station in route[1:-1]
+            if station in stations_registry
+        )
+        one_way_seconds = one_way_travel_seconds + dwell_minutes * 60
+        round_trip_seconds = 2 * one_way_seconds + 2 * turnback_seconds
+        headway_seconds = frequency_min * 60
+        units_per_terminal = max(
+            1,
+            int((round_trip_seconds + (2 * headway_seconds) - 1) // (2 * headway_seconds)),
+        )
+        return 2 * units_per_terminal
+
+    @classmethod
+    def generate_full_day_trip_plan(
+        cls,
+        travel_time_calculator: TravelTimeCalculator | None = None,
+        vehicle_performance: VehiclePerformance | None = None,
+    ):
+        """Generate every scheduled directional trip and assign it to trainsets."""
+        if (travel_time_calculator is None) != (vehicle_performance is None):
+            raise ValueError("travel_time_calculator and vehicle_performance must be provided together")
+
+        plans = {}
+        for service_key, cfg in SERVICES.items():
+            service_id = cfg["service_id"]
+            route = ROUTES.get(service_id, [])
+            if not route:
                 continue
 
-            base_num = cfg.get("base_num", 1000)
-            fleet_size = cfg.get("fleet_size", 4)
-            end_str = cfg.get("end_time", "23:00:00")
-            freq_sec = cfg.get("frequency_min", 60) * 60
+            forward_times = cls._build_route_travel_times(
+                route, travel_time_calculator, vehicle_performance
+            )
+            one_way_travel_seconds = sum(forward_times.values()) * 60
+            dwell_seconds = sum(
+                stations_registry[station].default_dwell * 60
+                for station in route[1:-1]
+                if station in stations_registry
+            )
+            one_way_running_seconds = int(one_way_travel_seconds + dwell_seconds)
+            turnback_seconds = (
+                vehicle_performance.minimum_turnback_seconds
+                if vehicle_performance is not None
+                else cls.DEFAULT_TURNBACK_SECONDS
+            )
+            required = cls.required_fleet_size(
+                route, cfg["frequency_min"], forward_times, turnback_seconds
+            )
+            if cfg["fleet_size"] < required:
+                raise ValueError(
+                    f"Service {service_id} has fleet_size={cfg['fleet_size']}, "
+                    f"but its bidirectional timetable requires at least {required} trainsets"
+                )
 
-            default_start = cfg.get("start_time", "05:00:00")
-            start_south_str = cfg.get("start_time_south", default_start)
-            start_north_str = cfg.get("start_time_north", default_start)
+            trainsets = FleetManager.plan_service(
+                service_id=service_id,
+                route=route,
+                base_train_number=cfg["base_num"],
+                # Only the minimum active fleet is dispatched; additional configured
+                # units remain reserve stock and must not create duplicate departures.
+                fleet_size=required,
+                start_seconds=time_to_seconds(cfg["start_time"]),
+                end_seconds=time_to_seconds(cfg["end_time"]),
+                frequency_seconds=cfg["frequency_min"] * 60,
+                one_way_running_seconds=one_way_running_seconds,
+                turnback_seconds=turnback_seconds,
+            )
+            plans[service_key] = trainsets
+        return plans
 
-            start_sec_south = time_to_seconds(start_south_str)
-            start_sec_north = time_to_seconds(start_north_str)
+    @classmethod
+    def generate_full_day_timetable(
+        cls,
+        travel_time_calculator: TravelTimeCalculator | None = None,
+        vehicle_performance: VehiclePerformance | None = None,
+    ) -> list[TrainAgent]:
+        """Create one runtime agent per trainset from its first assigned trip."""
+        plans = cls.generate_full_day_trip_plan(travel_time_calculator, vehicle_performance)
+        all_trains = []
+        for service_key, trainsets in plans.items():
+            cfg = SERVICES[service_key]
+            service_id = cfg["service_id"]
+            route = ROUTES[service_id]
+            forward, reverse = cls.build_directional_schedules(service_id, route)
+            forward_times = cls._build_route_travel_times(
+                route, travel_time_calculator, vehicle_performance
+            )
+            reverse_times = {(end, start): minutes for (start, end), minutes in forward_times.items()}
+            cycle_times = {**forward_times, **reverse_times}
+            start_seconds = time_to_seconds(cfg["start_time"])
 
-            fwd_sched, rev_sched = cls.build_directional_schedules(route_key, base_route)
-
-            custom_travel = {}
-            custom_dwell = {}
-            dir_routes = {}
-            dir_start_mins = {}
-
-            for dir_key in ["SOUTH", "NORTH"]:
-                if dir_key in cfg:
-                    dir_dict = cfg[dir_key]
-                    first_st = next(iter(dir_dict.keys()), None)
-                    ordered_r = (
-                        list(base_route)
-                        if first_st == base_route[0]
-                        else list(reversed(base_route))
-                    )
-                    dir_routes[dir_key] = ordered_r
-
-                    t_map, d_map, p_min = cls.parse_takt_leg_times(dir_dict, ordered_r)
-                    dir_start_mins[dir_key] = p_min
-                    custom_travel.update(t_map)
-                    for st_k, dw_val in d_map.items():
-                        custom_dwell[(ordered_r[0], st_k)] = dw_val
-
-            anchor_south = cls.align_to_takt_minute(start_sec_south, dir_start_mins.get("SOUTH"))
-            anchor_north = cls.align_to_takt_minute(start_sec_north, dir_start_mins.get("NORTH"))
-
-            dir_anchors = {
-                "SOUTH": anchor_south,
-                "NORTH": anchor_north,
-            }
-
-            station_anchors = {}
-            if "SOUTH" in dir_routes:
-                station_anchors[dir_routes["SOUTH"][0]] = anchor_south
-            if "NORTH" in dir_routes:
-                station_anchors[dir_routes["NORTH"][0]] = anchor_north
-
-            for idx in range(fleet_size):
-                dir_key = "SOUTH" if idx % 2 == 0 else "NORTH"
-                if dir_key not in dir_routes:
-                    dir_key = "SOUTH" if "SOUTH" in dir_routes else "NORTH"
-
-                initial_route = dir_routes[dir_key]
-                is_reverse = (initial_route[0] != base_route[0])
-                wave = idx // 2
-
-                first_dep_sec = dir_anchors[dir_key]
-                dep_seconds = first_dep_sec + (wave * freq_sec)
-                dep_str = seconds_to_string(dep_seconds)
-
-                # Numerazione pari per SOUTH, dispari per NORTH
-                train_num = base_num + (wave * 2) + (1 if dir_key == "NORTH" else 0)
-
+            for trainset in trainsets:
+                if not trainset.assigned_trips:
+                    continue
+                first_trip = trainset.assigned_trips[0]
+                is_reverse = first_trip.direction == "REVERSE"
+                initial_route = list(reversed(route)) if is_reverse else list(route)
                 agent = TrainAgent(
                     service_id=service_id,
-                    train_number=train_num,
-                    route=list(initial_route),
-                    departure_time_str=dep_str,
-                    end_service_str=end_str,
-                    forward_platforms=fwd_sched,
-                    reverse_platforms=rev_sched,
+                    train_number=trainset.trainset_id,
+                    route=initial_route,
+                    departure_time_str=seconds_to_string(first_trip.departure_seconds),
+                    end_service_str=cfg["end_time"],
+                    forward_platforms=forward,
+                    reverse_platforms=reverse,
                     is_reverse_direction=is_reverse,
-                    custom_travel_times=custom_travel,
-                    custom_dwell_times=custom_dwell,
-                    takt_anchors=station_anchors,
-                    frequency_seconds=freq_sec
+                    custom_travel_times=cycle_times,
+                    custom_dwell_times={},
+                    takt_anchors={route[0]: start_seconds, route[-1]: start_seconds},
+                    frequency_seconds=cfg["frequency_min"] * 60,
                 )
                 all_trains.append(agent)
 
+        cls.validate_generated_timetable(all_trains)
         return all_trains

@@ -1,4 +1,4 @@
-from backend.data.stations_data import stations_registry
+from backend.network_graph import stations_registry
 from backend.controller.pathfinder import get_physical_path, is_segment_double_track, get_active_physical_edge
 
 
@@ -16,8 +16,9 @@ class InterlockingSystem:
                 else:
                     self.station_platforms[st_key][track_num] = "RESERVED"
 
-    def _get_undirected_key(self, node_a: str, node_b: str) -> str:
-        return f"{node_a}_{node_b}" if node_a < node_b else f"{node_b}_{node_a}"
+    def _get_undirected_key(self, node_a: str, node_b: str) -> tuple[str, str]:
+        """Return a collision-safe key for an undirected physical section."""
+        return (node_a, node_b) if node_a < node_b else (node_b, node_a)
 
     def rename_train_id(self, old_id: int, new_id: int):
         for st_key, platforms in self.station_platforms.items():
@@ -41,7 +42,7 @@ class InterlockingSystem:
         is_terminating: bool = False
     ) -> int | None:
         if station_key not in self.station_platforms:
-            return 1
+            return None
 
         platforms = self.station_platforms[station_key]
         st_obj = stations_registry.get(station_key)
@@ -163,5 +164,26 @@ class InterlockingSystem:
 
         return assigned_track
 
-    def release_track_section(self, train_id: int, node_from: str, node_to: str):
-        self.release_all_train_blocks(train_id)
+    def release_track_section(
+        self,
+        train_id: int,
+        node_from: str,
+        node_to: str,
+        infrastructure_network: list | None = None,
+    ):
+        """Release only the physical blocks belonging to the completed station-to-station leg."""
+        if infrastructure_network:
+            phys_path = get_physical_path(node_from, node_to, infrastructure_network)
+        else:
+            phys_path = [node_from, node_to]
+
+        for index in range(len(phys_path) - 1):
+            u, v = phys_path[index], phys_path[index + 1]
+            section_key = self._get_undirected_key(u, v)
+            occupant = self.single_track_locks.get(section_key)
+            if occupant is not None and occupant[0] == train_id:
+                self.single_track_locks[section_key] = None
+
+            for direction in ((u, v), (v, u)):
+                if self.directional_blocks.get(direction) == train_id:
+                    self.directional_blocks[direction] = None

@@ -1,0 +1,45 @@
+PREFIX era: <http://data.europa.eu/949/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# RINF section + running-track export for RFI (IM code 0083).
+# Each output row represents one RunningTrack belonging to one SectionOfLine.
+# Keep track URI, track ID and normal direction: do not aggregate speed values
+# across tracks. The importer only exposes a section-level speed when exactly
+# one identified running track is present and has one unambiguous speed value.
+#
+# Run at https://rinf.data.era.europa.eu/endpoint and export CSV.
+# Snapshot provenance must be recorded separately from the live endpoint query.
+
+SELECT DISTINCT
+  (STR(?section) AS ?section_uri)
+  (STR(?startName) AS ?start_name)
+  (STR(?endName) AS ?end_name)
+  (STR(?length) AS ?distance_km)
+  (STR(?track) AS ?track_uri)
+  (STR(?trackId) AS ?track_id)
+  (STR(?trackDirection) AS ?track_direction)
+  (STR(?speed) AS ?speed_limit_kmh)
+WHERE {
+  ?section a era:SectionOfLine ;
+           era:opStart ?start ;
+           era:opEnd ?end ;
+           era:lengthOfSectionOfLine ?length ;
+           era:infrastructureManager ?sectionImRole ;
+           era:hasPart ?track .
+
+  ?sectionImRole era:roleOf ?sectionIm .
+  ?sectionIm era:organisationCode "0083" .
+
+  ?start era:opName ?startName .
+  ?end era:opName ?endName .
+
+  ?track a era:RunningTrack ;
+         era:infrastructureManager ?trackImRole .
+  ?trackImRole era:roleOf ?trackIm .
+  ?trackIm era:organisationCode "0083" .
+
+  OPTIONAL { ?track era:trackId ?trackId . }
+  OPTIONAL { ?track era:trackDirection ?trackDirection . }
+  OPTIONAL { ?track era:maximumPermittedSpeed ?speed . }
+}
+ORDER BY ?start_name ?end_name ?track_id
