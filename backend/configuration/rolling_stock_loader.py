@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from math import isfinite
 from pathlib import Path
 from typing import Any
 
@@ -34,11 +35,26 @@ def validate_rolling_stock(data: Any, source: str = "rolling stock config") -> N
                 continue
             for field in ("max_speed_kmh", "acceleration_mps2", "service_braking_mps2"):
                 value = profile.get(field)
-                if isinstance(value, bool) or not isinstance(value, (int, float)) or value <= 0:
-                    errors.append(f"{prefix}.{field} must be a positive number")
+                if (
+                    isinstance(value, bool)
+                    or not isinstance(value, (int, float))
+                    or not isfinite(value)
+                    or value <= 0
+                ):
+                    errors.append(f"{prefix}.{field} must be a finite positive number")
             turnback = profile.get("minimum_turnback_seconds", 90)
             if isinstance(turnback, bool) or not isinstance(turnback, int) or turnback < 0:
                 errors.append(f"{prefix}.minimum_turnback_seconds must be a non-negative integer")
+            delay = profile.get("brake_propagation_delay_seconds", 0.0)
+            if (
+                isinstance(delay, bool)
+                or not isinstance(delay, (int, float))
+                or not isfinite(delay)
+                or delay < 0
+            ):
+                errors.append(
+                    f"{prefix}.brake_propagation_delay_seconds must be a finite non-negative number"
+                )
     if errors:
         raise RollingStockConfigError(
             f"{source}: validation failed:\n- " + "\n- ".join(errors)
@@ -68,6 +84,9 @@ def load_vehicle_profiles(
             acceleration_mps2=profile["acceleration_mps2"],
             service_braking_mps2=profile["service_braking_mps2"],
             minimum_turnback_seconds=profile.get("minimum_turnback_seconds", 90),
+            brake_propagation_delay_seconds=profile.get(
+                "brake_propagation_delay_seconds", 0.0
+            ),
         )
         for profile_id, profile in data["profiles"].items()
     }
