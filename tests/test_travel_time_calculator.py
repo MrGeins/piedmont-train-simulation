@@ -41,9 +41,7 @@ class TravelTimeCalculatorTests(unittest.TestCase):
         result = self.calculator.calculate_path_minutes(["A", "B"], links, self.vehicle)
         self.assertGreater(result, 0)
         with self.assertRaises(MissingOperationalDataError):
-            self.calculator.calculate_path_minutes(
-                ["A", "B", "C"], links, self.vehicle
-            )
+            self.calculator.calculate_path_minutes(["A", "B", "C"], links, self.vehicle)
 
     def test_invalid_vehicle_performance_is_rejected(self):
         with self.assertRaises(ValueError):
@@ -61,10 +59,8 @@ class TravelTimeCalculatorTests(unittest.TestCase):
             ),
         )
         segment = SegmentPerformance(distance_km=10, speed_limit_kmh=100)
-
         profiled_time = self.calculator.calculate_segment_minutes(segment, profiled_vehicle)
         constant_time = self.calculator.calculate_segment_minutes(segment, self.vehicle)
-
         self.assertGreater(profiled_time, 0)
         self.assertLess(profiled_time, constant_time)
 
@@ -131,12 +127,7 @@ class TravelTimeCalculatorTests(unittest.TestCase):
             max_power_w=2_000_000,
             resistance=DavisResistance(1000, 10, 2),
         )
-        vehicle = VehiclePerformance(
-            max_speed_kmh=120,
-            acceleration_mps2=0.7,
-            service_braking_mps2=0.8,
-            traction_model=traction,
-        )
+        vehicle = VehiclePerformance(120, 0.7, 0.8, traction_model=traction)
         minutes = self.calculator.calculate_segment_minutes(
             SegmentPerformance(distance_km=10, speed_limit_kmh=100), vehicle
         )
@@ -166,9 +157,7 @@ class TravelTimeCalculatorTests(unittest.TestCase):
         )
         vehicle = VehiclePerformance(120, 0.7, 0.8, traction_model=traction)
         with self.assertRaises(ValueError):
-            self.calculator.calculate_segment_minutes(
-                SegmentPerformance(1, 80), vehicle
-            )
+            self.calculator.calculate_segment_minutes(SegmentPerformance(1, 80), vehicle)
 
     def test_acceleration_curve_and_traction_model_are_mutually_exclusive(self):
         traction = TractionModel(
@@ -180,10 +169,7 @@ class TravelTimeCalculatorTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             VehiclePerformance(
                 120, 0.7, 0.8,
-                acceleration_curve=(
-                    AccelerationPoint(0, 1.0),
-                    AccelerationPoint(120, 0.4),
-                ),
+                acceleration_curve=(AccelerationPoint(0, 1.0), AccelerationPoint(120, 0.4)),
                 traction_model=traction,
             )
 
@@ -192,6 +178,55 @@ class TravelTimeCalculatorTests(unittest.TestCase):
             DavisResistance(-1, 0, 0)
         with self.assertRaises(ValueError):
             DavisResistance(0, 0, 0)
+
+    def test_uphill_gradient_increases_running_time(self):
+        level = self.calculator.calculate_segment_minutes(
+            SegmentPerformance(10, 100, 0), self.vehicle
+        )
+        uphill = self.calculator.calculate_segment_minutes(
+            SegmentPerformance(10, 100, 10), self.vehicle
+        )
+        self.assertGreater(uphill, level)
+
+    def test_downhill_gradient_reduces_running_time(self):
+        level = self.calculator.calculate_segment_minutes(
+            SegmentPerformance(10, 100, 0), self.vehicle
+        )
+        downhill = self.calculator.calculate_segment_minutes(
+            SegmentPerformance(10, 100, -10), self.vehicle
+        )
+        self.assertLess(downhill, level)
+
+    def test_extreme_downhill_that_overcomes_service_braking_is_rejected(self):
+        with self.assertRaises(ValueError):
+            self.calculator.calculate_segment_minutes(
+                SegmentPerformance(10, 100, -100), self.vehicle
+            )
+
+    def test_brake_propagation_delay_increases_running_time(self):
+        delayed_vehicle = VehiclePerformance(
+            120, 0.7, 0.8, brake_propagation_delay_seconds=5.0
+        )
+        baseline = self.calculator.calculate_segment_minutes(
+            SegmentPerformance(10, 100), self.vehicle
+        )
+        delayed = self.calculator.calculate_segment_minutes(
+            SegmentPerformance(10, 100), delayed_vehicle
+        )
+        self.assertGreater(delayed, baseline)
+
+    def test_brake_propagation_delay_is_validated(self):
+        with self.assertRaises(ValueError):
+            VehiclePerformance(120, 0.7, 0.8, brake_propagation_delay_seconds=-1)
+        with self.assertRaises(ValueError):
+            VehiclePerformance(120, 0.7, 0.8, brake_propagation_delay_seconds=float("inf"))
+
+    def test_path_reverses_gradient_when_traversing_link_backwards(self):
+        link = RailwayLine("A", "B", True, distance_km=10, speed_limit_kmh=100,
+                           gradient_permille=10)
+        forward = self.calculator.calculate_path_minutes(["A", "B"], [link], self.vehicle)
+        reverse = self.calculator.calculate_path_minutes(["B", "A"], [link], self.vehicle)
+        self.assertGreater(forward, reverse)
 
 
 if __name__ == "__main__":
