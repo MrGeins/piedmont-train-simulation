@@ -44,6 +44,27 @@ class InfrastructureConfigTests(unittest.TestCase):
         with self.assertRaises(InfrastructureConfigError):
             validate_infrastructure(data)
 
+    def test_gradient_must_be_finite_but_may_be_signed(self):
+        base = {
+            "schema_version": 1,
+            "stations": {
+                "A": {"name": "A", "roro_station": True, "default_dwell": 1, "terminal": False,
+                      "num_tracks": 1, "available_tracks": [1], "stub_tracks": {}},
+                "B": {"name": "B", "roro_station": True, "default_dwell": 1, "terminal": True,
+                      "num_tracks": 1, "available_tracks": [1], "stub_tracks": {}},
+            },
+            "topology": {
+                "A": {"name": "A", "x": 0, "y": 0, "display_label": True},
+                "B": {"name": "B", "x": 1, "y": 1, "display_label": True},
+            },
+            "links": [{"from": "A", "to": "B", "double_track": True, "gradient_permille": -12.5}],
+        }
+        validate_infrastructure(base)
+        for invalid_gradient in (float("nan"), float("inf"), float("-inf"), True):
+            invalid = {**base, "links": [{**base["links"][0], "gradient_permille": invalid_gradient}]}
+            with self.assertRaises(InfrastructureConfigError):
+                validate_infrastructure(invalid)
+
     def test_infrastructure_can_be_loaded_through_a_provider(self):
         provider = LocalJsonInfrastructureProvider(DEFAULT_CONFIG_PATH)
         stations, links, topology = load_infrastructure(provider=provider)
