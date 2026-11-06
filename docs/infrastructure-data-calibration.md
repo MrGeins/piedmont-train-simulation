@@ -107,3 +107,17 @@ The candidate dataset includes, where supplied, empty/equivalent mass, rotationa
 - The existing constant-acceleration path remains unchanged when no curve is supplied, preserving current callers and fallback behavior.
 - The candidate technical-reference JSON is not loaded by this model. No PDF candidate values have been converted into knots because their source status and curve semantics remain unverified.
 - This increment does not yet model Davis resistance, traction power/effort limits, gradients, pneumatic brake delay, signals or temporary speed restrictions. Those require additional source validation and explicit model contracts before implementation.
+
+## Longitudinal traction and Davis resistance model (2026-11-06)
+
+The running-time calculator now supports a third, optional longitudinal model alongside the legacy constant-acceleration model and the explicit acceleration-curve model.
+
+- `TractionModel` requires complete-formation effective mass in kg, maximum tractive effort in N, maximum power in W, and a `DavisResistance` instance.
+- The Davis convention is explicitly SI: `R_N(v) = A_N + B_N_per_mps * v_mps + C_N_per_mps2 * v_mps²`. Coefficients must be finite and non-negative, with at least one non-zero term.
+- Available tractive effort is `min(max_tractive_effort_n, max_power_w / speed_mps)`; at standstill it is limited by maximum tractive effort. Net acceleration is (tractive effort minus Davis resistance) divided by effective mass.
+- The calculator integrates acceleration distance/time over speed, constrains the target speed by the infrastructure limit, vehicle maximum and sustainable traction speed, and solves the peak speed for short segments. Service braking remains a constant deceleration.
+- The acceleration-curve and traction/Davis representations are mutually exclusive. An acceleration curve already represents net acceleration; combining it with resistance would double-count losses.
+- Effective mass must already include the rotational-inertia allowance when the source reports equivalent mass. Do not apply a second inertia multiplier.
+- The model assumes level track and does not yet include gradients, brake propagation delay, traction transients, signals, temporary speed restrictions or direction-dependent track selection.
+
+**Source-data restriction:** the Davis coefficients in `technical_reference_candidates.json` remain `user_supplied_unverified`. Their force and speed units/convention have not been established from a traceable source. They have not been converted, loaded or used by the runtime model. The new API accepts only explicitly SI-converted values; the candidate data remain unchanged. Likewise, no candidate train mass, power or tractive-effort values have been activated as SFM operational profiles.
