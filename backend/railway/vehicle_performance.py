@@ -9,6 +9,11 @@ def _positive_number(name: str, value: float) -> None:
         raise ValueError(f"{name} must be a finite positive number")
 
 
+def _non_negative_number(name: str, value: float) -> None:
+    if isinstance(value, bool) or not isinstance(value, (int, float)) or not isfinite(value) or value < 0:
+        raise ValueError(f"{name} must be a finite non-negative number")
+
+
 @dataclass(frozen=True)
 class AccelerationPoint:
     """A documented acceleration value at a vehicle speed."""
@@ -39,10 +44,6 @@ class DavisResistance:
 
     Resistance_N = A_N + B_N_per_mps * speed_mps
                    + C_N_per_mps2 * speed_mps**2.
-
-    These units are deliberately explicit. Coefficients published in kgf,
-    with speed in km/h or mph, must be converted from their documented
-    source convention before constructing this object.
     """
 
     A_N: float
@@ -74,12 +75,7 @@ class DavisResistance:
 
 @dataclass(frozen=True)
 class TractionModel:
-    """Longitudinal traction model for one complete train formation.
-
-    mass_kg is the effective/equivalent train mass, including rotating-mass
-    allowance if the source defines it that way. Do not apply a separate
-    rotational-inertia multiplier to an already equivalent mass.
-    """
+    """Longitudinal traction model for one complete train formation."""
 
     mass_kg: float
     max_tractive_effort_n: float
@@ -112,9 +108,9 @@ class TractionModel:
 class VehiclePerformance:
     """Physical performance envelope for one rolling-stock type.
 
-    Values must come from a documented vehicle profile. No SFM fleet defaults
-    are invented. Exactly one optional dynamic representation may be used:
-    an explicit acceleration curve, or a traction model with SI Davis data.
+    brake_propagation_delay_seconds represents the delay before the model
+    applies full service braking. It defaults to zero until verified data
+    exists for the exact train formation.
     """
 
     max_speed_kmh: float
@@ -123,6 +119,7 @@ class VehiclePerformance:
     minimum_turnback_seconds: int = 90
     acceleration_curve: tuple[AccelerationPoint, ...] = ()
     traction_model: TractionModel | None = None
+    brake_propagation_delay_seconds: float = 0.0
 
     def __post_init__(self) -> None:
         for name in ("max_speed_kmh", "acceleration_mps2", "service_braking_mps2"):
@@ -133,6 +130,9 @@ class VehiclePerformance:
             or self.minimum_turnback_seconds < 0
         ):
             raise ValueError("minimum_turnback_seconds must be a non-negative integer")
+        _non_negative_number(
+            "brake_propagation_delay_seconds", self.brake_propagation_delay_seconds
+        )
 
         if not isinstance(self.acceleration_curve, tuple):
             raise ValueError("acceleration_curve must be a tuple of AccelerationPoint values")
