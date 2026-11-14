@@ -66,3 +66,43 @@ The test suite checks both this final partial-step consistency and convergence
 of stopping distance as the integration time step is refined. These are
 numerical consistency checks; they do not replace calibration against measured
 rolling-stock braking data.
+
+## JSON formation configuration
+
+```json
+{
+  "schema_version": 1,
+  "formations": []
+}
+```
+
+The opt-in loader is `backend.configuration.braking_loader.load_brake_formations`.
+The default file is `config/braking/formations.json`; it is intentionally
+empty until a complete formation has traceable, calibrated parameters. The
+loader returns a mapping from unique `formation_id` values to
+`BrakeFormation` instances. It is not called by the normal timetable or
+running-time path.
+
+The accompanying `config/braking/schema.json` defines the JSON structure.
+The Python validator additionally enforces cross-field constraints that a
+basic JSON Schema cannot express here: unique formation and vehicle IDs,
+the first vehicle at the command source (0 m), and non-decreasing vehicle
+positions. Unknown keys and missing physical parameters are rejected.
+
+| Parameter | Unit | Constraint |
+|---|---:|---|
+| `propagation_speed_mps` | m/s | finite, > 0 |
+| `pressure_response_time_constant_seconds` | s | finite, > 0 |
+| `full_service_pressure_reduction_kpa` | kPa | finite, > 0 |
+| `position_m` | m | finite, >= 0; first vehicle is 0 |
+| `mass_kg` | kg | finite, > 0 |
+| `maximum_brake_force_n` | N | finite, > 0 |
+| `maximum_pressure_kpa` | kPa | finite, > 0 |
+| `fill_time_constant_seconds` | s | finite, > 0 |
+
+No physical defaults are supplied. The active configuration contains no
+formations, and the unverified technical-reference candidate file is not
+read by this loader. A formation must be populated only from evidence for the
+exact consist and its brake equipment. Existing segment and turnback fallback
+values are unaffected.
+
