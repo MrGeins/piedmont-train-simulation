@@ -106,3 +106,30 @@ read by this loader. A formation must be populated only from evidence for the
 exact consist and its brake equipment. Existing segment and turnback fallback
 values are unaffected.
 
+## Explicit configured simulation entry point
+
+Use `backend.configuration.braking_service.ConfiguredBrakingService` when a
+caller explicitly wants the distributed pneumatic model:
+
+```python
+from backend.configuration.braking_service import ConfiguredBrakingService
+
+service = ConfiguredBrakingService()
+print(service.available_formations)
+result = service.simulate_service_braking(
+    formation_id="VERIFIED_FORMATION_ID",
+    initial_speed_mps=20.0,
+)
+```
+
+The service loads the JSON configuration once when constructed. The caller
+must select an existing `formation_id`; an unknown ID raises
+`UnknownBrakeFormationError`. An empty formation list exposes no selectable
+formations. Invalid or incomplete configuration fails during construction;
+the service does not substitute legacy values or synthesize a formation.
+
+This is a separate simulation API, not an alternate mode hidden inside
+`TravelTimeCalculator`. The running-time calculator and its existing
+constant-deceleration / optional propagation-delay behavior remain unchanged.
+Integration tests exercise a complete configured braking run, empty and
+invalid configurations, and the separation from the legacy running-time path.
