@@ -203,17 +203,23 @@ class TravelTimeCalculatorTests(unittest.TestCase):
                 SegmentPerformance(10, 100, -100), self.vehicle
             )
 
-    def test_brake_propagation_delay_increases_running_time(self):
+    def test_brake_propagation_delay_increases_running_time_on_short_segment(self):
         delayed_vehicle = VehiclePerformance(
             120, 0.7, 0.8, brake_propagation_delay_seconds=5.0
         )
-        baseline = self.calculator.calculate_segment_minutes(
-            SegmentPerformance(10, 100), self.vehicle
-        )
-        delayed = self.calculator.calculate_segment_minutes(
-            SegmentPerformance(10, 100), delayed_vehicle
-        )
+        segment = SegmentPerformance(0.5, 100)
+        baseline = self.calculator.calculate_segment_minutes(segment, self.vehicle)
+        delayed = self.calculator.calculate_segment_minutes(segment, delayed_vehicle)
         self.assertGreater(delayed, baseline)
+
+    def test_brake_propagation_delay_does_not_change_long_segment_cruise_time(self):
+        delayed_vehicle = VehiclePerformance(
+            120, 0.7, 0.8, brake_propagation_delay_seconds=5.0
+        )
+        segment = SegmentPerformance(10, 100)
+        baseline = self.calculator.calculate_segment_minutes(segment, self.vehicle)
+        delayed = self.calculator.calculate_segment_minutes(segment, delayed_vehicle)
+        self.assertAlmostEqual(delayed, baseline, places=7)
 
     def test_brake_propagation_delay_is_validated(self):
         with self.assertRaises(ValueError):
