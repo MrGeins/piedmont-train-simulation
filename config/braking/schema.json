@@ -1,6 +1,5 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/piedmont-train-simulation/braking-formations.schema.json",
   "title": "Pneumatic brake formations",
   "type": "object",
   "additionalProperties": false,
