@@ -121,5 +121,51 @@ class BrakeSimulationTests(unittest.TestCase):
             self.simulator.simulate_service_braking(self.make_formation(), 0.0)
 
 
+    def test_final_partial_step_uses_pressure_for_actual_stopping_interval(self):
+        formation = self.make_formation()
+        result = self.simulator.simulate_service_braking(
+            formation, 20.0, time_step_seconds=1.0
+        )
+        previous = result.samples[-2]
+        final = result.samples[-1]
+        actual_interval = final.time_seconds - previous.time_seconds
+
+        self.assertLess(actual_interval, 1.0)
+        self.assertEqual(final.speed_mps, 0.0)
+        for index, vehicle in enumerate(formation.vehicles):
+            pipe_reduction = formation.brake_pipe.pressure_reduction_kpa(
+                vehicle.position_m, final.time_seconds
+            )
+            target_pressure = vehicle.brake_cylinder.target_pressure_kpa(
+                pipe_reduction,
+                formation.brake_pipe.full_service_pressure_reduction_kpa,
+            )
+            expected_pressure = vehicle.brake_cylinder.pressure_after(
+                previous.cylinder_pressures_kpa[index],
+                target_pressure,
+                actual_interval,
+            )
+            self.assertAlmostEqual(
+                final.cylinder_pressures_kpa[index], expected_pressure, places=9
+            )
+
+    def test_stopping_distance_converges_as_time_step_is_refined(self):
+        formation = self.make_formation()
+        coarse = self.simulator.simulate_service_braking(
+            formation, 20.0, time_step_seconds=0.1
+        )
+        medium = self.simulator.simulate_service_braking(
+            formation, 20.0, time_step_seconds=0.05
+        )
+        fine = self.simulator.simulate_service_braking(
+            formation, 20.0, time_step_seconds=0.025
+        )
+
+        coarse_error = abs(coarse.stopping_distance_m - fine.stopping_distance_m)
+        medium_error = abs(medium.stopping_distance_m - fine.stopping_distance_m)
+        self.assertLess(medium_error, coarse_error)
+        self.assertLess(medium_error, 0.05)
+
+
 if __name__ == "__main__":
     unittest.main()
