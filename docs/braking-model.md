@@ -51,3 +51,18 @@ The service-braking simulation is exposed as a separate API. Integration into
 TravelTimeCalculator is deferred until verified per-formation configuration
 and validation data exist. Existing three-minute segment and 90-second
 turnback fallbacks are untouched.
+
+
+## Numerical integration and stopping event
+
+The simulator advances brake-pipe and cylinder states over each integration
+interval. If the end-of-step braking force implies that the train stops before
+the interval ends, it solves for the stopping instant by bisection. The final
+sample therefore uses cylinder pressures evaluated over the actual partial
+interval, rather than advancing pneumatic states through time after the train
+has already stopped.
+
+The test suite checks both this final partial-step consistency and convergence
+of stopping distance as the integration time step is refined. These are
+numerical consistency checks; they do not replace calibration against measured
+rolling-stock braking data.
