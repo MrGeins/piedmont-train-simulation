@@ -119,6 +119,7 @@ class BrakeSimulation:
     """Integrate service-braking response for every vehicle in a formation."""
 
     _GRAVITY_MPS2 = 9.80665
+    _STOPPING_ROOT_ITERATIONS = 60
 
     def simulate_service_braking(
         self,
@@ -144,6 +145,28 @@ class BrakeSimulation:
         if maximum_force / total_mass + grade_acceleration <= 0:
             raise ValueError("maximum service braking cannot overcome the downhill gradient")
 
+        def evaluate_interval(interval_seconds: float, start_time_seconds: float):
+            """Evaluate end-of-interval cylinder states and resulting train deceleration."""
+            absolute_time = start_time_seconds + interval_seconds
+            next_pressures = []
+            total_force = 0.0
+            for index, vehicle in enumerate(vehicles):
+                pipe_reduction = formation.brake_pipe.pressure_reduction_kpa(
+                    vehicle.position_m, absolute_time
+                )
+                target_pressure = vehicle.brake_cylinder.target_pressure_kpa(
+                    pipe_reduction, formation.brake_pipe.full_service_pressure_reduction_kpa
+                )
+                pressure = vehicle.brake_cylinder.pressure_after(
+                    pressures[index], target_pressure, interval_seconds
+                )
+                next_pressures.append(pressure)
+                total_force += vehicle.maximum_brake_force_n * (
+                    pressure / vehicle.brake_cylinder.maximum_pressure_kpa
+                )
+            deceleration = total_force / total_mass + grade_acceleration
+            return next_pressures, total_force, deceleration
+
         time_seconds = 0.0
         distance_m = 0.0
         speed_mps = float(initial_speed_mps)
@@ -152,28 +175,32 @@ class BrakeSimulation:
 
         while speed_mps > 0 and time_seconds < max_duration_seconds:
             elapsed = min(time_step_seconds, max_duration_seconds - time_seconds)
-            next_time = time_seconds + elapsed
-            total_force = 0.0
-            next_pressures = []
+            next_pressures, total_force, deceleration = evaluate_interval(elapsed, time_seconds)
+            actual_elapsed = elapsed
+            stopped_inside_step = False
 
-            for index, vehicle in enumerate(vehicles):
-                pipe_reduction = formation.brake_pipe.pressure_reduction_kpa(
-                    vehicle.position_m, next_time
+            # If the endpoint force would stop the train before the end of this
+            # step, solve for the stopping instant. This keeps cylinder pressure,
+            # brake force and elapsed time on the same physical interval.
+            if deceleration > 0 and speed_mps / deceleration < elapsed:
+                lower = 0.0
+                upper = elapsed
+                for _ in range(self._STOPPING_ROOT_ITERATIONS):
+                    midpoint = (lower + upper) * 0.5
+                    _, _, midpoint_deceleration = evaluate_interval(midpoint, time_seconds)
+                    if midpoint_deceleration * midpoint >= speed_mps:
+                        upper = midpoint
+                    else:
+                        lower = midpoint
+                actual_elapsed = upper
+                next_pressures, total_force, deceleration = evaluate_interval(
+                    actual_elapsed, time_seconds
                 )
-                target_pressure = vehicle.brake_cylinder.target_pressure_kpa(
-                    pipe_reduction, formation.brake_pipe.full_service_pressure_reduction_kpa
-                )
-                pressure = vehicle.brake_cylinder.pressure_after(
-                    pressures[index], target_pressure, elapsed
-                )
-                next_pressures.append(pressure)
-                total_force += vehicle.maximum_brake_force_n * (
-                    pressure / vehicle.brake_cylinder.maximum_pressure_kpa
-                )
+                stopped_inside_step = True
 
-            deceleration = total_force / total_mass + grade_acceleration
-            actual_elapsed = min(elapsed, speed_mps / deceleration) if deceleration > 0 else elapsed
-            next_speed = max(0.0, speed_mps - deceleration * actual_elapsed)
+            next_speed = 0.0 if stopped_inside_step else max(
+                0.0, speed_mps - deceleration * actual_elapsed
+            )
             distance_m += (speed_mps + next_speed) * 0.5 * actual_elapsed
             time_seconds += actual_elapsed
             pressures = next_pressures
