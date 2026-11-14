@@ -1,0 +1,3662 @@
+{
+  "schema_version": 1,
+  "stations": {
+    "STURA": {
+      "name": "Torino Stura",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": true,
+      "num_tracks": 9,
+      "available_tracks": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "stub_tracks": {}
+    },
+    "REBAUDENGO": {
+      "name": "Torino Rebaudengo Fossata",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 5,
+      "available_tracks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stub_tracks": {}
+    },
+    "DORA": {
+      "name": "Torino Dora",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "PORTA_SUSA": {
+      "name": "Torino Porta Susa",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 6,
+      "available_tracks": [
+        5,
+        6
+      ],
+      "stub_tracks": {}
+    },
+    "ZAPPATA": {
+      "name": "Torino Zappata",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "LINGOTTO": {
+      "name": "Torino Lingotto",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 9,
+      "available_tracks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "stub_tracks": {}
+    },
+    "PORTA_NUOVA": {
+      "name": "Torino Porta Nuova",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 20,
+      "available_tracks": [
+        1,
+        2,
+        19,
+        20
+      ],
+      "stub_tracks": {
+        "1": "SOUTH",
+        "2": "SOUTH",
+        "19": "SOUTH",
+        "20": "SOUTH"
+      }
+    },
+    "GROSSETO": {
+      "name": "Torino Corso Grosseto",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "VENARIA_RIGOLA": {
+      "name": "Venaria Reale-Rigola Stadio",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "VENARIA_REGGIA": {
+      "name": "Venaria Reale-Reggia",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BORGARO": {
+      "name": "Borgaro",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CASELLE": {
+      "name": "Caselle Torinese",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "AEROPORTO": {
+      "name": "Torino Aeroporto di Caselle",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": true,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "stub_tracks": {
+        "3": "SOUTH",
+        "4": "SOUTH"
+      }
+    },
+    "S_MAURIZIO": {
+      "name": "S. Maurizio Canavese",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CIRIE": {
+      "name": "Ciriè",
+      "roro_station": true,
+      "default_dwell": 2,
+      "terminal": false,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "NOLE": {
+      "name": "Nole",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "VILLANOVA_GROSSO": {
+      "name": "Villanova C.-Grosso",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "MATHI": {
+      "name": "Mathi",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BALANGERO": {
+      "name": "Balangero",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "LANZO": {
+      "name": "Lanzo Torinese",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "GERMAGNANO": {
+      "name": "Germagnano",
+      "roro_station": true,
+      "default_dwell": 2,
+      "terminal": true,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "stub_tracks": {
+        "1": "SOUTH"
+      }
+    },
+    "FUNGHERA": {
+      "name": "Funghera",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "TRAVES": {
+      "name": "Traves",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "LOSA": {
+      "name": "Losa",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "PESSINETTO": {
+      "name": "Pessinetto",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "MEZZENILE": {
+      "name": "Mezzenile",
+      "roro_station": false,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "CERES": {
+      "name": "Ceres",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {
+        "1": "SOUTH",
+        "2": "SOUTH",
+        "3": "SOUTH"
+      }
+    },
+    "SAN_PAOLO": {
+      "name": "Torino San Paolo",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "stub_tracks": {}
+    },
+    "QUAGLIA": {
+      "name": "Quaglia - Le Gru",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "ORBASSANO": {
+      "name": "Orbassano San Luigi",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {
+        "1": "NORTH",
+        "2": "NORTH"
+      }
+    },
+    "GRUGLIASCO": {
+      "name": "Grugliasco",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "COLLEGNO": {
+      "name": "Collegno",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "ALPIGNANO": {
+      "name": "Alpignano",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "ROSTA": {
+      "name": "Rosta",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "AVIGLIANA": {
+      "name": "Avigliana",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "S_AMBROGIO": {
+      "name": "S. Ambrogio",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CONDOVE": {
+      "name": "Condove-Chiusa S.M.",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "S_ANTONINO": {
+      "name": "S. Antonino-Vaie",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BORGONE": {
+      "name": "Borgone",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BRUZOLO": {
+      "name": "Bruzolo di Susa",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BUSSOLENO": {
+      "name": "Bussoleno",
+      "roro_station": true,
+      "default_dwell": 2,
+      "terminal": false,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "SUSA": {
+      "name": "Susa",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {
+        "1": "EAST"
+      }
+    },
+    "MEANA": {
+      "name": "Meana",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CHIOMONTE": {
+      "name": "Chiomonte",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "SALBERTRAND": {
+      "name": "Salbertrand",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "OULX": {
+      "name": "Oulx-Cesana-Claviere-Sestriere",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BEAULARD": {
+      "name": "Beaulard",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BARDONECCHIA": {
+      "name": "Bardonecchia",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "SETTIMO": {
+      "name": "Settimo Torinese",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 5,
+      "available_tracks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stub_tracks": {
+        "4": "NORTH"
+      }
+    },
+    "VOLPIANO": {
+      "name": "Volpiano",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "S_BENIGNO": {
+      "name": "S. Benigno Canavese",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "BOSCONERO": {
+      "name": "Bosconero",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "FELETTO": {
+      "name": "Feletto",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "RIVAROLO": {
+      "name": "Rivarolo Canavese",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {
+        "1": "SOUTH",
+        "2": "SOUTH",
+        "3": "SOUTH"
+      }
+    },
+    "BRANDIZZO": {
+      "name": "Brandizzo",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CHIVASSO": {
+      "name": "Chivasso",
+      "roro_station": true,
+      "default_dwell": 4,
+      "terminal": true,
+      "num_tracks": 6,
+      "available_tracks": [
+        5,
+        6
+      ],
+      "stub_tracks": {}
+    },
+    "MONTANARO": {
+      "name": "Montanaro",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "RODALLO": {
+      "name": "Rodallo",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CALUSO": {
+      "name": "Caluso",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CANDIA": {
+      "name": "Candia Canavese",
+      "roro_station": true,
+      "default_dwell": 4,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "MERCENASCO": {
+      "name": "Mercenasco",
+      "roro_station": false,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "STRAMBINO": {
+      "name": "Strambino",
+      "roro_station": true,
+      "default_dwell": 5,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "IVREA": {
+      "name": "Ivrea",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "SANGONE": {
+      "name": "Moncalieri Sangone",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "NICHELINO": {
+      "name": "Nichelino",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CANDIOLO": {
+      "name": "Candiolo",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "NONE": {
+      "name": "None",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "AIRASCA": {
+      "name": "Airasca",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "PISCINA": {
+      "name": "Piscina di Pinerolo",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "PIN_OLIMPICA": {
+      "name": "Pinerolo Olimpica",
+      "roro_station": false,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "PINEROLO": {
+      "name": "Pinerolo",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {
+        "1": "NORTH",
+        "2": "NORTH",
+        "3": "NORTH"
+      }
+    },
+    "MONCALIERI": {
+      "name": "Moncalieri",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 5,
+      "available_tracks": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "stub_tracks": {}
+    },
+    "TROFARELLO": {
+      "name": "Trofarello",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 6,
+      "available_tracks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "stub_tracks": {}
+    },
+    "CHIERI": {
+      "name": "Chieri",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {
+        "1": "WEST",
+        "2": "WEST"
+      }
+    },
+    "CAMBIANO": {
+      "name": "Cambiano-Santena",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "PESSIONE": {
+      "name": "Pessione",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "VILLANOVA_ASTI": {
+      "name": "Villanova d'Asti",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "S_PAOLO_SOLBRITO": {
+      "name": "S. Paolo Solbrito",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "VILLAFRANCA": {
+      "name": "Villafranca-Cantarana",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "BALDICHIERI": {
+      "name": "Baldichieri-Tigliole",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "S_DAMIANO": {
+      "name": "S. Damiano d'Asti",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "ASTI": {
+      "name": "Asti",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 8,
+      "available_tracks": [
+        1,
+        5
+      ],
+      "stub_tracks": {}
+    },
+    "VILLASTELLONE": {
+      "name": "Villastellone",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CARMAGNOLA": {
+      "name": "Carmagnola",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "SOMMARIVA": {
+      "name": "Sommariva Don Bosco",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "SANFRE": {
+      "name": "Sanfrè",
+      "roro_station": false,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "BANDITO": {
+      "name": "Bandito",
+      "roro_station": false,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "BRA": {
+      "name": "Bra",
+      "roro_station": true,
+      "default_dwell": 2,
+      "terminal": false,
+      "num_tracks": 6,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "POCAPAGLIA": {
+      "name": "Pocapaglia",
+      "roro_station": false,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "S_VITTORIA": {
+      "name": "S. Vittoria",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "MONTICELLO": {
+      "name": "Monticello d'Alba",
+      "roro_station": false,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "MUSSOTTO": {
+      "name": "Mussotto",
+      "roro_station": false,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 1,
+      "available_tracks": [
+        1
+      ],
+      "stub_tracks": {}
+    },
+    "ALBA": {
+      "name": "Alba",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 3,
+      "available_tracks": [
+        1,
+        2,
+        3
+      ],
+      "stub_tracks": {}
+    },
+    "RACCONIGI": {
+      "name": "Racconigi",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CAVALLERMAGGIORE": {
+      "name": "Cavallermaggiore",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "SAVIGLIANO": {
+      "name": "Savigliano",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 4,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "FOSSANO": {
+      "name": "Fossano",
+      "roro_station": true,
+      "default_dwell": 2,
+      "terminal": false,
+      "num_tracks": 7,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CENTALLO": {
+      "name": "Centallo",
+      "roro_station": true,
+      "default_dwell": 1,
+      "terminal": false,
+      "num_tracks": 2,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    },
+    "CUNEO": {
+      "name": "Cuneo",
+      "roro_station": true,
+      "default_dwell": 0,
+      "terminal": true,
+      "num_tracks": 5,
+      "available_tracks": [
+        1,
+        2
+      ],
+      "stub_tracks": {}
+    }
+  },
+  "topology": {
+    "STURA": {
+      "name": "Torino Stura",
+      "x": -60,
+      "y": -60,
+      "display_label": true
+    },
+    "BIVIO_CERES": {
+      "name": "Bivio Ceres",
+      "x": -60,
+      "y": -38,
+      "display_label": false
+    },
+    "REBAUDENGO": {
+      "name": "Torino Rebaudengo",
+      "x": -60,
+      "y": -20,
+      "display_label": true
+    },
+    "DORA": {
+      "name": "Torino Dora",
+      "x": -60,
+      "y": 0,
+      "display_label": true
+    },
+    "PORTA_SUSA": {
+      "name": "Torino Porta Susa",
+      "x": -60,
+      "y": 20,
+      "display_label": true
+    },
+    "BIVIO_CROCETTA": {
+      "name": "Bivio Crocetta",
+      "x": -60,
+      "y": 40,
+      "display_label": false
+    },
+    "BIVIO_GRANGIA": {
+      "name": "Bivio Grangia",
+      "x": -80,
+      "y": 60,
+      "display_label": false
+    },
+    "SAN_PAOLO": {
+      "name": "Torino San Paolo",
+      "x": -115,
+      "y": 60,
+      "display_label": true
+    },
+    "BIVIO_ORBASSANO": {
+      "name": "Bivio Orbassano",
+      "x": -132,
+      "y": 60,
+      "display_label": false
+    },
+    "QUADRIVIO": {
+      "name": "Quadrivio",
+      "x": -50,
+      "y": 60,
+      "display_label": false
+    },
+    "ZAPPATA": {
+      "name": "Torino Zappata",
+      "x": -25,
+      "y": 60,
+      "display_label": true
+    },
+    "CLESSIDRA": {
+      "name": "Clessidra",
+      "x": 0,
+      "y": 60,
+      "display_label": false
+    },
+    "PORTA_NUOVA": {
+      "name": "Torino Porta Nuova",
+      "x": 0,
+      "y": 35,
+      "display_label": true
+    },
+    "LINGOTTO": {
+      "name": "Torino Lingotto",
+      "x": 0,
+      "y": 85,
+      "display_label": true
+    },
+    "GROSSETO": {
+      "name": "Torino C. Grosseto",
+      "x": -82,
+      "y": -42,
+      "display_label": true
+    },
+    "VENARIA_RIGOLA": {
+      "name": "Venaria Rigola",
+      "x": -100,
+      "y": -60,
+      "display_label": true
+    },
+    "VENARIA_REGGIA": {
+      "name": "Venaria Reggia",
+      "x": -120,
+      "y": -80,
+      "display_label": true
+    },
+    "PC_BORGARO": {
+      "name": "PC Borgaro",
+      "x": -140,
+      "y": -100,
+      "display_label": false
+    },
+    "BORGARO": {
+      "name": "Borgaro",
+      "x": -140,
+      "y": -118,
+      "display_label": true
+    },
+    "CASELLE": {
+      "name": "Caselle Torinese",
+      "x": -140,
+      "y": -138,
+      "display_label": true
+    },
+    "AEROPORTO": {
+      "name": "Torino Aeroporto",
+      "x": -140,
+      "y": -158,
+      "display_label": true
+    },
+    "S_MAURIZIO": {
+      "name": "S. Maurizio C.",
+      "x": -140,
+      "y": -178,
+      "display_label": true
+    },
+    "CIRIE": {
+      "name": "Ciriè",
+      "x": -140,
+      "y": -198,
+      "display_label": true
+    },
+    "PC_CIRIE": {
+      "name": "PC Ciriè",
+      "x": -140,
+      "y": -212,
+      "display_label": false
+    },
+    "NOLE": {
+      "name": "Nole",
+      "x": -158,
+      "y": -230,
+      "display_label": true
+    },
+    "VILLANOVA_GROSSO": {
+      "name": "Villanova Grosso",
+      "x": -178,
+      "y": -250,
+      "display_label": true
+    },
+    "MATHI": {
+      "name": "Mathi",
+      "x": -198,
+      "y": -270,
+      "display_label": true
+    },
+    "BALANGERO": {
+      "name": "Balangero",
+      "x": -218,
+      "y": -290,
+      "display_label": true
+    },
+    "LANZO": {
+      "name": "Lanzo Torinese",
+      "x": -238,
+      "y": -310,
+      "display_label": true
+    },
+    "GERMAGNANO": {
+      "name": "Germagnano",
+      "x": -258,
+      "y": -330,
+      "display_label": true
+    },
+    "PC_GERMAGNANO": {
+      "name": "PC Germagnano",
+      "x": -272,
+      "y": -344,
+      "display_label": false
+    },
+    "FUNGHERA": {
+      "name": "Funghera",
+      "x": -292,
+      "y": -344,
+      "display_label": true
+    },
+    "TRAVES": {
+      "name": "Traves",
+      "x": -315,
+      "y": -344,
+      "display_label": true
+    },
+    "LOSA": {
+      "name": "Losa",
+      "x": -338,
+      "y": -344,
+      "display_label": true
+    },
+    "PESSINETTO": {
+      "name": "Pessinetto",
+      "x": -361,
+      "y": -344,
+      "display_label": true
+    },
+    "MEZZENILE": {
+      "name": "Mezzenile",
+      "x": -384,
+      "y": -344,
+      "display_label": true
+    },
+    "CERES": {
+      "name": "Ceres",
+      "x": -408,
+      "y": -344,
+      "display_label": true
+    },
+    "QUAGLIA": {
+      "name": "Quaglia - Le Gru",
+      "x": -152,
+      "y": 80,
+      "display_label": true
+    },
+    "ORBASSANO": {
+      "name": "Orbassano S.Luigi",
+      "x": -172,
+      "y": 100,
+      "display_label": true
+    },
+    "GRUGLIASCO": {
+      "name": "Grugliasco",
+      "x": -150,
+      "y": 60,
+      "display_label": true
+    },
+    "COLLEGNO": {
+      "name": "Collegno",
+      "x": -172,
+      "y": 60,
+      "display_label": true
+    },
+    "ALPIGNANO": {
+      "name": "Alpignano",
+      "x": -194,
+      "y": 60,
+      "display_label": true
+    },
+    "ROSTA": {
+      "name": "Rosta",
+      "x": -216,
+      "y": 60,
+      "display_label": true
+    },
+    "AVIGLIANA": {
+      "name": "Avigliana",
+      "x": -238,
+      "y": 60,
+      "display_label": true
+    },
+    "S_AMBROGIO": {
+      "name": "S. Ambrogio",
+      "x": -260,
+      "y": 60,
+      "display_label": true
+    },
+    "CONDOVE": {
+      "name": "Condove",
+      "x": -282,
+      "y": 60,
+      "display_label": true
+    },
+    "S_ANTONINO": {
+      "name": "S. Antonino",
+      "x": -304,
+      "y": 60,
+      "display_label": true
+    },
+    "BORGONE": {
+      "name": "Borgone",
+      "x": -326,
+      "y": 60,
+      "display_label": true
+    },
+    "BRUZOLO": {
+      "name": "Bruzolo",
+      "x": -348,
+      "y": 60,
+      "display_label": true
+    },
+    "BUSSOLENO": {
+      "name": "Bussoleno",
+      "x": -372,
+      "y": 60,
+      "display_label": true
+    },
+    "BIVIO_VALSUSA": {
+      "name": "Bivio Valsusa",
+      "x": -390,
+      "y": 60,
+      "display_label": false
+    },
+    "PC_SUSA": {
+      "name": "PC Susa",
+      "x": -410,
+      "y": 40,
+      "display_label": false
+    },
+    "SUSA": {
+      "name": "Susa",
+      "x": -432,
+      "y": 40,
+      "display_label": true
+    },
+    "PC_MEANA": {
+      "name": "PC Meana",
+      "x": -410,
+      "y": 80,
+      "display_label": false
+    },
+    "MEANA": {
+      "name": "Meana",
+      "x": -430,
+      "y": 80,
+      "display_label": true
+    },
+    "CHIOMONTE": {
+      "name": "Chiomonte",
+      "x": -452,
+      "y": 80,
+      "display_label": true
+    },
+    "SALBERTRAND": {
+      "name": "Salbertrand",
+      "x": -474,
+      "y": 80,
+      "display_label": true
+    },
+    "OULX": {
+      "name": "Oulx",
+      "x": -496,
+      "y": 80,
+      "display_label": true
+    },
+    "BEAULARD": {
+      "name": "Beaulard",
+      "x": -518,
+      "y": 80,
+      "display_label": true
+    },
+    "BARDONECCHIA": {
+      "name": "Bardonecchia",
+      "x": -542,
+      "y": 80,
+      "display_label": true
+    },
+    "PC_STURA": {
+      "name": "PC Stura",
+      "x": -60,
+      "y": -75,
+      "display_label": false
+    },
+    "PC_SETTIMO": {
+      "name": "PC Settimo",
+      "x": -20,
+      "y": -75,
+      "display_label": false
+    },
+    "SETTIMO": {
+      "name": "Settimo T.",
+      "x": 0,
+      "y": -75,
+      "display_label": true
+    },
+    "BIVIO_CANAVESE": {
+      "name": "Bivio Canavese",
+      "x": 20,
+      "y": -75,
+      "display_label": false
+    },
+    "VOLPIANO": {
+      "name": "Volpiano",
+      "x": 20,
+      "y": -95,
+      "display_label": true
+    },
+    "S_BENIGNO": {
+      "name": "S. Benigno C.",
+      "x": 20,
+      "y": -115,
+      "display_label": true
+    },
+    "BOSCONERO": {
+      "name": "Bosconero",
+      "x": 20,
+      "y": -135,
+      "display_label": true
+    },
+    "FELETTO": {
+      "name": "Feletto",
+      "x": 20,
+      "y": -155,
+      "display_label": true
+    },
+    "RIVAROLO": {
+      "name": "Rivarolo C.",
+      "x": 20,
+      "y": -175,
+      "display_label": true
+    },
+    "BRANDIZZO": {
+      "name": "Brandizzo",
+      "x": 48,
+      "y": -75,
+      "display_label": true
+    },
+    "CHIVASSO": {
+      "name": "Chivasso",
+      "x": 80,
+      "y": -75,
+      "display_label": true
+    },
+    "BIVIO_AOSTA": {
+      "name": "Bivio Aosta",
+      "x": 100,
+      "y": -75,
+      "display_label": false
+    },
+    "MONTANARO": {
+      "name": "Montanaro",
+      "x": 100,
+      "y": -100,
+      "display_label": true
+    },
+    "RODALLO": {
+      "name": "Rodallo",
+      "x": 100,
+      "y": -125,
+      "display_label": true
+    },
+    "CALUSO": {
+      "name": "Caluso",
+      "x": 100,
+      "y": -150,
+      "display_label": true
+    },
+    "CANDIA": {
+      "name": "Candia C.",
+      "x": 100,
+      "y": -175,
+      "display_label": true
+    },
+    "MERCENASCO": {
+      "name": "Mercenasco",
+      "x": 100,
+      "y": -200,
+      "display_label": true
+    },
+    "STRAMBINO": {
+      "name": "Strambino",
+      "x": 100,
+      "y": -225,
+      "display_label": true
+    },
+    "IVREA": {
+      "name": "Ivrea",
+      "x": 100,
+      "y": -250,
+      "display_label": true
+    },
+    "BIVIO_SANGONE": {
+      "name": "Bivio Sangone",
+      "x": 0,
+      "y": 102,
+      "display_label": false
+    },
+    "SANGONE": {
+      "name": "Moncalieri Sangone",
+      "x": -20,
+      "y": 122,
+      "display_label": true
+    },
+    "NICHELINO": {
+      "name": "Nichelino",
+      "x": -40,
+      "y": 142,
+      "display_label": true
+    },
+    "CANDIOLO": {
+      "name": "Candiolo",
+      "x": -60,
+      "y": 162,
+      "display_label": true
+    },
+    "NONE": {
+      "name": "None",
+      "x": -80,
+      "y": 182,
+      "display_label": true
+    },
+    "AIRASCA": {
+      "name": "Airasca",
+      "x": -100,
+      "y": 202,
+      "display_label": true
+    },
+    "PC_AIRASCA": {
+      "name": "PC Airasca",
+      "x": -114,
+      "y": 216,
+      "display_label": false
+    },
+    "PISCINA": {
+      "name": "Piscina",
+      "x": -136,
+      "y": 216,
+      "display_label": true
+    },
+    "PIN_OLIMPICA": {
+      "name": "Pinerolo Olimpica",
+      "x": -160,
+      "y": 216,
+      "display_label": true
+    },
+    "PINEROLO": {
+      "name": "Pinerolo",
+      "x": -185,
+      "y": 216,
+      "display_label": true
+    },
+    "MONCALIERI": {
+      "name": "Moncalieri",
+      "x": 0,
+      "y": 125,
+      "display_label": true
+    },
+    "TROFARELLO": {
+      "name": "Trofarello",
+      "x": 0,
+      "y": 160,
+      "display_label": true
+    },
+    "BIVIO_TROFARELLO": {
+      "name": "Bivio Trofarello",
+      "x": 0,
+      "y": 178,
+      "display_label": false
+    },
+    "VILLASTELLONE": {
+      "name": "Villastellone",
+      "x": 0,
+      "y": 205,
+      "display_label": true
+    },
+    "CARMAGNOLA": {
+      "name": "Carmagnola",
+      "x": 0,
+      "y": 240,
+      "display_label": true
+    },
+    "BIVIO_BRA": {
+      "name": "Bivio Bra",
+      "x": 0,
+      "y": 258,
+      "display_label": false
+    },
+    "RACCONIGI": {
+      "name": "Racconigi",
+      "x": 0,
+      "y": 285,
+      "display_label": true
+    },
+    "CAVALLERMAGGIORE": {
+      "name": "Cavallermaggiore",
+      "x": 0,
+      "y": 320,
+      "display_label": true
+    },
+    "SAVIGLIANO": {
+      "name": "Savigliano",
+      "x": 0,
+      "y": 355,
+      "display_label": true
+    },
+    "FOSSANO": {
+      "name": "Fossano",
+      "x": 0,
+      "y": 390,
+      "display_label": true
+    },
+    "CENTALLO": {
+      "name": "Centallo",
+      "x": 0,
+      "y": 425,
+      "display_label": true
+    },
+    "CUNEO": {
+      "name": "Cuneo",
+      "x": 0,
+      "y": 460,
+      "display_label": true
+    },
+    "BIVIO_CHIERI": {
+      "name": "Bivio Chieri",
+      "x": 20,
+      "y": 178,
+      "display_label": false
+    },
+    "CHIERI": {
+      "name": "Chieri",
+      "x": 45,
+      "y": 178,
+      "display_label": true
+    },
+    "BIVIO_GENOVA": {
+      "name": "Bivio Genova",
+      "x": 20,
+      "y": 198,
+      "display_label": false
+    },
+    "CAMBIANO": {
+      "name": "Cambiano",
+      "x": 42,
+      "y": 198,
+      "display_label": true
+    },
+    "PESSIONE": {
+      "name": "Pessione",
+      "x": 70,
+      "y": 198,
+      "display_label": true
+    },
+    "VILLANOVA_ASTI": {
+      "name": "Villanova d'Asti",
+      "x": 98,
+      "y": 198,
+      "display_label": true
+    },
+    "S_PAOLO_SOLBRITO": {
+      "name": "S. Paolo Solbrito",
+      "x": 128,
+      "y": 198,
+      "display_label": true
+    },
+    "VILLAFRANCA": {
+      "name": "Villafranca",
+      "x": 158,
+      "y": 198,
+      "display_label": true
+    },
+    "BALDICHIERI": {
+      "name": "Baldichieri",
+      "x": 188,
+      "y": 198,
+      "display_label": true
+    },
+    "S_DAMIANO": {
+      "name": "S. Damiano",
+      "x": 218,
+      "y": 198,
+      "display_label": true
+    },
+    "ASTI": {
+      "name": "Asti",
+      "x": 248,
+      "y": 198,
+      "display_label": true
+    },
+    "SOMMARIVA": {
+      "name": "Sommariva",
+      "x": 20,
+      "y": 278,
+      "display_label": true
+    },
+    "SANFRE": {
+      "name": "Sanfrè",
+      "x": 40,
+      "y": 298,
+      "display_label": true
+    },
+    "BANDITO": {
+      "name": "Bandito",
+      "x": 60,
+      "y": 318,
+      "display_label": true
+    },
+    "PC_BRA": {
+      "name": "PC Bra",
+      "x": 74,
+      "y": 332,
+      "display_label": false
+    },
+    "BRA": {
+      "name": "Bra",
+      "x": 96,
+      "y": 332,
+      "display_label": true
+    },
+    "POCAPAGLIA": {
+      "name": "Pocapaglia",
+      "x": 122,
+      "y": 332,
+      "display_label": true
+    },
+    "S_VITTORIA": {
+      "name": "S. Vittoria",
+      "x": 148,
+      "y": 332,
+      "display_label": true
+    },
+    "MONTICELLO": {
+      "name": "Monticello",
+      "x": 174,
+      "y": 332,
+      "display_label": true
+    },
+    "MUSSOTTO": {
+      "name": "Mussotto",
+      "x": 200,
+      "y": 332,
+      "display_label": true
+    },
+    "ALBA": {
+      "name": "Alba",
+      "x": 226,
+      "y": 332,
+      "display_label": true
+    }
+  },
+  "links": [
+    {
+      "from": "STURA",
+      "to": "BIVIO_CERES",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_CERES",
+      "to": "REBAUDENGO",
+      "double_track": true
+    },
+    {
+      "from": "REBAUDENGO",
+      "to": "DORA",
+      "double_track": true
+    },
+    {
+      "from": "DORA",
+      "to": "PORTA_SUSA",
+      "double_track": true
+    },
+    {
+      "from": "PORTA_SUSA",
+      "to": "BIVIO_CROCETTA",
+      "double_track": true,
+      "distance_km": 1.804,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/17d4fb4c7f",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      }
+    },
+    {
+      "from": "BIVIO_CROCETTA",
+      "to": "QUADRIVIO",
+      "double_track": true
+    },
+    {
+      "from": "QUADRIVIO",
+      "to": "ZAPPATA",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_CROCETTA",
+      "to": "BIVIO_GRANGIA",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_GRANGIA",
+      "to": "SAN_PAOLO",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_GRANGIA",
+      "to": "QUADRIVIO",
+      "double_track": true
+    },
+    {
+      "from": "ZAPPATA",
+      "to": "CLESSIDRA",
+      "double_track": true
+    },
+    {
+      "from": "CLESSIDRA",
+      "to": "LINGOTTO",
+      "double_track": true
+    },
+    {
+      "from": "CLESSIDRA",
+      "to": "PORTA_NUOVA",
+      "double_track": true
+    },
+    {
+      "from": "PORTA_NUOVA",
+      "to": "LINGOTTO",
+      "double_track": true,
+      "distance_km": 4.318,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/349fb4824c",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 115,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/349fb4824c",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/1d154d338b",
+            "track_id": "TR8702-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 115
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/d48bd77a13",
+            "track_id": "TR8702-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 115
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "BIVIO_CERES",
+      "to": "GROSSETO",
+      "double_track": true
+    },
+    {
+      "from": "GROSSETO",
+      "to": "VENARIA_RIGOLA",
+      "double_track": true
+    },
+    {
+      "from": "VENARIA_RIGOLA",
+      "to": "VENARIA_REGGIA",
+      "double_track": true
+    },
+    {
+      "from": "VENARIA_REGGIA",
+      "to": "PC_BORGARO",
+      "double_track": true
+    },
+    {
+      "from": "PC_BORGARO",
+      "to": "BORGARO",
+      "double_track": true
+    },
+    {
+      "from": "BORGARO",
+      "to": "CASELLE",
+      "double_track": true,
+      "distance_km": 2.555,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/6a7957d318",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 120,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/6a7957d318",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/8c9e992b1b",
+            "track_id": "TR4456-BC-BC01",
+            "track_direction_code": 20,
+            "track_direction": "opposite",
+            "speed_limit_kmh": 120
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/f4de5c7a16",
+            "track_id": "TR4456-BC-BC02",
+            "track_direction_code": 10,
+            "track_direction": "normal",
+            "speed_limit_kmh": 120
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "CASELLE",
+      "to": "AEROPORTO",
+      "double_track": true
+    },
+    {
+      "from": "AEROPORTO",
+      "to": "S_MAURIZIO",
+      "double_track": true
+    },
+    {
+      "from": "S_MAURIZIO",
+      "to": "CIRIE",
+      "double_track": true
+    },
+    {
+      "from": "CIRIE",
+      "to": "PC_CIRIE",
+      "double_track": false
+    },
+    {
+      "from": "PC_CIRIE",
+      "to": "NOLE",
+      "double_track": false
+    },
+    {
+      "from": "NOLE",
+      "to": "VILLANOVA_GROSSO",
+      "double_track": false
+    },
+    {
+      "from": "VILLANOVA_GROSSO",
+      "to": "MATHI",
+      "double_track": false
+    },
+    {
+      "from": "MATHI",
+      "to": "BALANGERO",
+      "double_track": false,
+      "distance_km": 2.024,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/5d5d6fb894",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 120,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/5d5d6fb894",
+        "track_uri": "http://data.europa.eu/949/track/5158d4b8fc",
+        "track_id": "TR4463-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "BALANGERO",
+      "to": "LANZO",
+      "double_track": false,
+      "distance_km": 3.238,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/12a2323f02",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 120,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/12a2323f02",
+        "track_uri": "http://data.europa.eu/949/track/553bf0aa68",
+        "track_id": "TR4464-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "LANZO",
+      "to": "GERMAGNANO",
+      "double_track": false,
+      "distance_km": 1.49,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/ca20f7a1d8",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 60,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/ca20f7a1d8",
+        "track_uri": "http://data.europa.eu/949/track/951f355af7",
+        "track_id": "TR4465-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "GERMAGNANO",
+      "to": "PC_GERMAGNANO",
+      "double_track": false
+    },
+    {
+      "from": "PC_GERMAGNANO",
+      "to": "FUNGHERA",
+      "double_track": false
+    },
+    {
+      "from": "FUNGHERA",
+      "to": "TRAVES",
+      "double_track": false,
+      "distance_km": 1.29,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/071f795e8d",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 55,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/071f795e8d",
+        "track_uri": "http://data.europa.eu/949/track/4e93e462da",
+        "track_id": "TR4409-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "TRAVES",
+      "to": "LOSA",
+      "double_track": false,
+      "distance_km": 2.043,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/8da0e7f3e2",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 55,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/8da0e7f3e2",
+        "track_uri": "http://data.europa.eu/949/track/1b47368d1f",
+        "track_id": "TR4410-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "LOSA",
+      "to": "PESSINETTO",
+      "double_track": false,
+      "distance_km": 1.513,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/a1e9add892",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 55,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/a1e9add892",
+        "track_uri": "http://data.europa.eu/949/track/0b2f1ca094",
+        "track_id": "TR4411-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "PESSINETTO",
+      "to": "MEZZENILE",
+      "double_track": false,
+      "distance_km": 0.91,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/742c923bb2",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 55,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/742c923bb2",
+        "track_uri": "http://data.europa.eu/949/track/7b40c7e315",
+        "track_id": "TR4412-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "MEZZENILE",
+      "to": "CERES",
+      "double_track": false,
+      "distance_km": 2.039,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/58ea418c58",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 55,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/58ea418c58",
+        "track_uri": "http://data.europa.eu/949/track/32aecf3d95",
+        "track_id": "TR4413-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "SAN_PAOLO",
+      "to": "BIVIO_ORBASSANO",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_ORBASSANO",
+      "to": "QUAGLIA",
+      "double_track": true
+    },
+    {
+      "from": "QUAGLIA",
+      "to": "ORBASSANO",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_ORBASSANO",
+      "to": "GRUGLIASCO",
+      "double_track": true
+    },
+    {
+      "from": "GRUGLIASCO",
+      "to": "COLLEGNO",
+      "double_track": true,
+      "distance_km": 2.298,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/e0587bb675",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 155,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/e0587bb675",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/fb2bdf7a13",
+            "track_id": "TR0899-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 155
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/5d2574a464",
+            "track_id": "TR0899-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 155
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "COLLEGNO",
+      "to": "ALPIGNANO",
+      "double_track": true,
+      "distance_km": 4.217,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/605e55d622",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 150,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/605e55d622",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/d31bcbef68",
+            "track_id": "TR0895-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 150
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/e6dab13b60",
+            "track_id": "TR0895-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 150
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "ALPIGNANO",
+      "to": "ROSTA",
+      "double_track": true,
+      "distance_km": 5.218,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/870c6500f8",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 135,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/870c6500f8",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/6ccf8d824a",
+            "track_id": "TR0894-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 135
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/a44b559425",
+            "track_id": "TR0894-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 135
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "ROSTA",
+      "to": "AVIGLIANA",
+      "double_track": true,
+      "distance_km": 4.875,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/de3f3e2f2c",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 155,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/de3f3e2f2c",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/ac590624d6",
+            "track_id": "TR0893-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 155
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/29525aaba8",
+            "track_id": "TR0893-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 155
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "AVIGLIANA",
+      "to": "S_AMBROGIO",
+      "double_track": true,
+      "distance_km": 3.623,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/f1967558f3",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 155,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/f1967558f3",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/d6d360c7f3",
+            "track_id": "TR0892-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 155
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/ededb081f5",
+            "track_id": "TR0892-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 155
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "S_AMBROGIO",
+      "to": "CONDOVE",
+      "double_track": true
+    },
+    {
+      "from": "CONDOVE",
+      "to": "S_ANTONINO",
+      "double_track": true
+    },
+    {
+      "from": "S_ANTONINO",
+      "to": "BORGONE",
+      "double_track": true
+    },
+    {
+      "from": "BORGONE",
+      "to": "BRUZOLO",
+      "double_track": true
+    },
+    {
+      "from": "BRUZOLO",
+      "to": "BUSSOLENO",
+      "double_track": true
+    },
+    {
+      "from": "BUSSOLENO",
+      "to": "BIVIO_VALSUSA",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_VALSUSA",
+      "to": "PC_SUSA",
+      "double_track": false
+    },
+    {
+      "from": "PC_SUSA",
+      "to": "SUSA",
+      "double_track": false
+    },
+    {
+      "from": "BIVIO_VALSUSA",
+      "to": "PC_MEANA",
+      "double_track": true
+    },
+    {
+      "from": "PC_MEANA",
+      "to": "MEANA",
+      "double_track": true
+    },
+    {
+      "from": "MEANA",
+      "to": "CHIOMONTE",
+      "double_track": true
+    },
+    {
+      "from": "CHIOMONTE",
+      "to": "SALBERTRAND",
+      "double_track": true
+    },
+    {
+      "from": "SALBERTRAND",
+      "to": "OULX",
+      "double_track": true
+    },
+    {
+      "from": "OULX",
+      "to": "BEAULARD",
+      "double_track": true
+    },
+    {
+      "from": "BEAULARD",
+      "to": "BARDONECCHIA",
+      "double_track": true,
+      "distance_km": 5.279,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/c7d15109c0",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 100,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/c7d15109c0",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/f61cc8300b",
+            "track_id": "TR0880-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 100
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/4734552b9e",
+            "track_id": "TR0880-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 100
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "STURA",
+      "to": "PC_STURA",
+      "double_track": true
+    },
+    {
+      "from": "PC_STURA",
+      "to": "PC_SETTIMO",
+      "double_track": true
+    },
+    {
+      "from": "PC_SETTIMO",
+      "to": "SETTIMO",
+      "double_track": true
+    },
+    {
+      "from": "SETTIMO",
+      "to": "BIVIO_CANAVESE",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_CANAVESE",
+      "to": "VOLPIANO",
+      "double_track": false
+    },
+    {
+      "from": "VOLPIANO",
+      "to": "S_BENIGNO",
+      "double_track": false
+    },
+    {
+      "from": "S_BENIGNO",
+      "to": "BOSCONERO",
+      "double_track": false
+    },
+    {
+      "from": "BOSCONERO",
+      "to": "FELETTO",
+      "double_track": false,
+      "distance_km": 4.287,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/544a8b54e4",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 105,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/544a8b54e4",
+        "track_uri": "http://data.europa.eu/949/track/8592510f82",
+        "track_id": "TR4444-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "FELETTO",
+      "to": "RIVAROLO",
+      "double_track": false
+    },
+    {
+      "from": "BIVIO_CANAVESE",
+      "to": "BRANDIZZO",
+      "double_track": true
+    },
+    {
+      "from": "BRANDIZZO",
+      "to": "CHIVASSO",
+      "double_track": true,
+      "distance_km": 4.355,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/877218da09",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 160,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/877218da09",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/663953bccb",
+            "track_id": "TR0991-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 160
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/07dcc8b61f",
+            "track_id": "TR0991-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 160
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "CHIVASSO",
+      "to": "BIVIO_AOSTA",
+      "double_track": false
+    },
+    {
+      "from": "BIVIO_AOSTA",
+      "to": "MONTANARO",
+      "double_track": false
+    },
+    {
+      "from": "MONTANARO",
+      "to": "RODALLO",
+      "double_track": false,
+      "distance_km": 5.37,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/0e0cd55cae",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 135,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/0e0cd55cae",
+        "track_uri": "http://data.europa.eu/949/track/e6c2979939",
+        "track_id": "TR1039-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "RODALLO",
+      "to": "CALUSO",
+      "double_track": false,
+      "distance_km": 3.332,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/d2c2be159a",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 135,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/d2c2be159a",
+        "track_uri": "http://data.europa.eu/949/track/d64c2c2a75",
+        "track_id": "TR1040-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "CALUSO",
+      "to": "CANDIA",
+      "double_track": false
+    },
+    {
+      "from": "CANDIA",
+      "to": "MERCENASCO",
+      "double_track": false
+    },
+    {
+      "from": "MERCENASCO",
+      "to": "STRAMBINO",
+      "double_track": false,
+      "distance_km": 3.23,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/30ef91b87a",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 130,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/30ef91b87a",
+        "track_uri": "http://data.europa.eu/949/track/66963e5b6f",
+        "track_id": "TR1043-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "STRAMBINO",
+      "to": "IVREA",
+      "double_track": false,
+      "distance_km": 9.077,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/00e7ac627a",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 130,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/00e7ac627a",
+        "track_uri": "http://data.europa.eu/949/track/2d67d66339",
+        "track_id": "TR1044-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "LINGOTTO",
+      "to": "BIVIO_SANGONE",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_SANGONE",
+      "to": "SANGONE",
+      "double_track": true
+    },
+    {
+      "from": "SANGONE",
+      "to": "NICHELINO",
+      "double_track": false,
+      "distance_km": 2.296,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/709ea020b2",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 120,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/709ea020b2",
+        "track_uri": "http://data.europa.eu/949/track/96d05da4d4",
+        "track_id": "TR1175-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "NICHELINO",
+      "to": "CANDIOLO",
+      "double_track": false,
+      "distance_km": 4.787,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/2e5cb5fb19",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 135,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/2e5cb5fb19",
+        "track_uri": "http://data.europa.eu/949/track/6d51cc61a0",
+        "track_id": "TR1176-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "CANDIOLO",
+      "to": "NONE",
+      "double_track": false,
+      "distance_km": 5.377,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/786b09821f",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 135,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/786b09821f",
+        "track_uri": "http://data.europa.eu/949/track/f7c31bb41b",
+        "track_id": "TR1177-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "NONE",
+      "to": "AIRASCA",
+      "double_track": false,
+      "distance_km": 4.629,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/703d512d1c",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 135,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/703d512d1c",
+        "track_uri": "http://data.europa.eu/949/track/34d661f548",
+        "track_id": "TR1178-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "AIRASCA",
+      "to": "PC_AIRASCA",
+      "double_track": false
+    },
+    {
+      "from": "PC_AIRASCA",
+      "to": "PISCINA",
+      "double_track": false
+    },
+    {
+      "from": "PISCINA",
+      "to": "PIN_OLIMPICA",
+      "double_track": false
+    },
+    {
+      "from": "PIN_OLIMPICA",
+      "to": "PINEROLO",
+      "double_track": false,
+      "distance_km": 0.946,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/2aa87bfcef",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 135,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/2aa87bfcef",
+        "track_uri": "http://data.europa.eu/949/track/c2c8a72d8e",
+        "track_id": "TR0374-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "LINGOTTO",
+      "to": "MONCALIERI",
+      "double_track": true,
+      "distance_km": 3.692,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/0f7391697e",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 160,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/0f7391697e",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/b5f6253ca3",
+            "track_id": "TR8310-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 160
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/3883f46fc5",
+            "track_id": "TR8310-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 160
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "MONCALIERI",
+      "to": "TROFARELLO",
+      "double_track": true,
+      "distance_km": 5.02,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/065eef020f",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 4
+      },
+      "speed_limit_kmh": 160,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/065eef020f",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/07fbb28c86",
+            "track_id": "TR1249-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 160
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/69263fe97d",
+            "track_id": "TR1249-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 160
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/b4de179137",
+            "track_id": "TR1263-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 160
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/3b200c41af",
+            "track_id": "TR1263-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 160
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "TROFARELLO",
+      "to": "BIVIO_TROFARELLO",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_TROFARELLO",
+      "to": "BIVIO_CHIERI",
+      "double_track": false
+    },
+    {
+      "from": "BIVIO_CHIERI",
+      "to": "CHIERI",
+      "double_track": false
+    },
+    {
+      "from": "BIVIO_TROFARELLO",
+      "to": "BIVIO_GENOVA",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_GENOVA",
+      "to": "CAMBIANO",
+      "double_track": true
+    },
+    {
+      "from": "CAMBIANO",
+      "to": "PESSIONE",
+      "double_track": true
+    },
+    {
+      "from": "PESSIONE",
+      "to": "VILLANOVA_ASTI",
+      "double_track": true,
+      "distance_km": 8.345,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/6d9a37739c",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 180,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/6d9a37739c",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/2c4560cf26",
+            "track_id": "TR7000-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 180
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/f729b6afbb",
+            "track_id": "TR7000-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 180
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "VILLANOVA_ASTI",
+      "to": "S_PAOLO_SOLBRITO",
+      "double_track": true,
+      "distance_km": 2.815,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/393b65eccb",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 140,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/393b65eccb",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/1105f85132",
+            "track_id": "TR7001-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 140
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/af528da450",
+            "track_id": "TR7001-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 140
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "S_PAOLO_SOLBRITO",
+      "to": "VILLAFRANCA",
+      "double_track": true
+    },
+    {
+      "from": "VILLAFRANCA",
+      "to": "BALDICHIERI",
+      "double_track": true
+    },
+    {
+      "from": "BALDICHIERI",
+      "to": "S_DAMIANO",
+      "double_track": true
+    },
+    {
+      "from": "S_DAMIANO",
+      "to": "ASTI",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_TROFARELLO",
+      "to": "VILLASTELLONE",
+      "double_track": true
+    },
+    {
+      "from": "VILLASTELLONE",
+      "to": "CARMAGNOLA",
+      "double_track": true,
+      "distance_km": 8.35,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/5a642ff278",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 150,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/5a642ff278",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/58a253b57a",
+            "track_id": "TR1252-BC-BC01",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 150
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/6067923e93",
+            "track_id": "TR1252-BC-BC02",
+            "track_direction_code": 30,
+            "track_direction": "both",
+            "speed_limit_kmh": 150
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "CARMAGNOLA",
+      "to": "BIVIO_BRA",
+      "double_track": true
+    },
+    {
+      "from": "BIVIO_BRA",
+      "to": "SOMMARIVA",
+      "double_track": false
+    },
+    {
+      "from": "SOMMARIVA",
+      "to": "SANFRE",
+      "double_track": false
+    },
+    {
+      "from": "SANFRE",
+      "to": "BANDITO",
+      "double_track": false,
+      "distance_km": 3.395,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/ac03486be8",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 135,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/ac03486be8",
+        "track_uri": "http://data.europa.eu/949/track/15d7405373",
+        "track_id": "TR6946-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "BANDITO",
+      "to": "PC_BRA",
+      "double_track": false
+    },
+    {
+      "from": "PC_BRA",
+      "to": "BRA",
+      "double_track": false
+    },
+    {
+      "from": "BRA",
+      "to": "POCAPAGLIA",
+      "double_track": false,
+      "distance_km": 4.738,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/7cb45cf59e",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 85,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/7cb45cf59e",
+        "track_uri": "http://data.europa.eu/949/track/9af374d87b",
+        "track_id": "TR1419-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "POCAPAGLIA",
+      "to": "S_VITTORIA",
+      "double_track": false,
+      "distance_km": 2.023,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/ecce7cb7ec",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 85,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/ecce7cb7ec",
+        "track_uri": "http://data.europa.eu/949/track/d6bdbc1d2d",
+        "track_id": "TR1418-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "S_VITTORIA",
+      "to": "MONTICELLO",
+      "double_track": false
+    },
+    {
+      "from": "MONTICELLO",
+      "to": "MUSSOTTO",
+      "double_track": false
+    },
+    {
+      "from": "MUSSOTTO",
+      "to": "ALBA",
+      "double_track": false,
+      "distance_km": 2.273,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/664be4826c",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 1
+      },
+      "speed_limit_kmh": 95,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/664be4826c",
+        "track_uri": "http://data.europa.eu/949/track/9a9b9f2302",
+        "track_id": "TR1415-BC-BC01",
+        "track_direction_code": 30,
+        "track_direction": "both",
+        "review_status": "accepted_single_running_track_bidirectional"
+      }
+    },
+    {
+      "from": "BIVIO_BRA",
+      "to": "RACCONIGI",
+      "double_track": true
+    },
+    {
+      "from": "RACCONIGI",
+      "to": "CAVALLERMAGGIORE",
+      "double_track": true,
+      "distance_km": 7.049,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/fa7b1f5955",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 150,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/fa7b1f5955",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/11b615719f",
+            "track_id": "TR1254-BC-BC01",
+            "track_direction_code": 10,
+            "track_direction": "normal",
+            "speed_limit_kmh": 150
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/9083f8b480",
+            "track_id": "TR1254-BC-BC02",
+            "track_direction_code": 20,
+            "track_direction": "opposite",
+            "speed_limit_kmh": 150
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "CAVALLERMAGGIORE",
+      "to": "SAVIGLIANO",
+      "double_track": true,
+      "distance_km": 6.756,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/24efbb742c",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 150,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/24efbb742c",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/51c5e030fc",
+            "track_id": "TR1255-BC-BC01",
+            "track_direction_code": 10,
+            "track_direction": "normal",
+            "speed_limit_kmh": 150
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/02ef531f5e",
+            "track_id": "TR1255-BC-BC02",
+            "track_direction_code": 20,
+            "track_direction": "opposite",
+            "speed_limit_kmh": 150
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "SAVIGLIANO",
+      "to": "FOSSANO",
+      "double_track": true,
+      "distance_km": 12.157,
+      "distance_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-10-31",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/517a36e426",
+        "review_status": "accepted_exact_endpoint_match_and_unique_direct_topology_edge",
+        "rinf_running_tracks": 2
+      },
+      "speed_limit_kmh": 150,
+      "speed_limit_source": {
+        "source_id": "rinf_rfi_2026_09",
+        "snapshot": "2026-09-29",
+        "retrieved_at": "2026-11-01",
+        "section_uri": "http://data.europa.eu/949/sectionOfLine/517a36e426",
+        "aggregation_policy": "identical_speed_limit_across_all_running_tracks",
+        "track_limits": [
+          {
+            "track_uri": "http://data.europa.eu/949/track/d8d4816ca0",
+            "track_id": "TR3487-BC-BC01",
+            "track_direction_code": 10,
+            "track_direction": "normal",
+            "speed_limit_kmh": 150
+          },
+          {
+            "track_uri": "http://data.europa.eu/949/track/2cef66cf5b",
+            "track_id": "TR3487-BC-BC02",
+            "track_direction_code": 20,
+            "track_direction": "opposite",
+            "speed_limit_kmh": 150
+          }
+        ],
+        "review_status": "accepted_identical_speed_across_all_running_tracks"
+      }
+    },
+    {
+      "from": "FOSSANO",
+      "to": "CENTALLO",
+      "double_track": false
+    },
+    {
+      "from": "CENTALLO",
+      "to": "CUNEO",
+      "double_track": false
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "profiles": {},
+  "metadata": {
+    "status": "pending_calibration",
+    "note": "Published technical reference values (maximum speed, hourly power and where available locomotive mass/tractive effort) are retained as partial specifications. They are not complete trainset performance profiles. Do not populate acceleration, service braking or turnback values without exact-formation evidence."
+  },
+  "observed_types": [
+    {
+      "type_id": "MINUETTO",
+      "display_name": "Minuetto",
+      "evidence": [
+        "sfm_faq_rolling_stock"
+      ],
+      "performance_profile_status": "not_calibrated",
+      "published_specs": {
+        "max_speed_kmh": 160,
+        "hourly_power_kw": 1250,
+        "source_id": "treniebinari_minuetto",
+        "scope": "ALe501-Le220-ALe502_three_car_family",
+        "calibration_status": "published_family_specs_only"
+      }
+    },
+    {
+      "type_id": "POP",
+      "display_name": "POP",
+      "evidence": [
+        "sfm_faq_rolling_stock",
+        "sfm_program_2026"
+      ],
+      "performance_profile_status": "not_calibrated",
+      "published_specs": {
+        "max_speed_kmh": 160,
+        "hourly_power_kw": 2000,
+        "source_id": "treniebinari_pop",
+        "scope": "ETR104_four_car_variant_family_reference",
+        "calibration_status": "published_variant_family_specs_only"
+      }
+    },
+    {
+      "type_id": "JAZZ",
+      "display_name": "Jazz",
+      "evidence": [
+        "sfm_faq_rolling_stock"
+      ],
+      "performance_profile_status": "not_calibrated"
+    },
+    {
+      "type_id": "ROCK",
+      "display_name": "Rock",
+      "evidence": [
+        "sfm_faq_rolling_stock",
+        "sfm_program_2026"
+      ],
+      "performance_profile_status": "not_calibrated",
+      "published_specs": {
+        "max_speed_kmh": 160,
+        "hourly_power_kw": 3400,
+        "source_id": "treniebinari_rock",
+        "scope": "ETR521_five_car_variant",
+        "calibration_status": "published_variant_specs_only"
+      }
+    },
+    {
+      "type_id": "TAF",
+      "display_name": "TAF",
+      "evidence": [
+        "sfm_faq_rolling_stock",
+        "sfm_program_2026"
+      ],
+      "performance_profile_status": "not_calibrated",
+      "published_specs": {
+        "max_speed_kmh": 140,
+        "hourly_power_kw": 3640,
+        "source_id": "treniebinari_taf",
+        "scope": "ALe506+2Le736+ALe426_four_car_TAF_family",
+        "calibration_status": "published_family_specs_only"
+      }
+    },
+    {
+      "type_id": "E464_VIVALTO",
+      "display_name": "E.464 + carrozze Vivalto",
+      "evidence": [
+        "sfm_faq_rolling_stock",
+        "sfm_program_2026"
+      ],
+      "performance_profile_status": "not_calibrated",
+      "published_specs": {
+        "max_speed_kmh": 160,
+        "hourly_power_kw": 3500,
+        "continuous_power_kw": 3000,
+        "service_mass_t": 72,
+        "maximum_tractive_effort_kn": 200,
+        "source_id": "treniebinari_e464",
+        "scope": "E464_locomotive_only_Vivalto_consist_not_included",
+        "calibration_status": "published_locomotive_specs_only"
+      }
+    }
+  ]
+}

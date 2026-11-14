@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Pneumatic brake formations",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "formations"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "formations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/formation" }
+    }
+  },
+  "$defs": {
+    "positiveNumber": { "type": "number", "exclusiveMinimum": 0 },
+    "nonNegativeNumber": { "type": "number", "minimum": 0 },
+    "formation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formation_id", "brake_pipe", "vehicles"],
+      "properties": {
+        "formation_id": { "type": "string", "minLength": 1 },
+        "brake_pipe": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "propagation_speed_mps",
+            "pressure_response_time_constant_seconds",
+            "full_service_pressure_reduction_kpa"
+          ],
+          "properties": {
+            "propagation_speed_mps": { "$ref": "#/$defs/positiveNumber" },
+            "pressure_response_time_constant_seconds": { "$ref": "#/$defs/positiveNumber" },
+            "full_service_pressure_reduction_kpa": { "$ref": "#/$defs/positiveNumber" }
+          }
+        },
+        "vehicles": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/vehicle" }
+        }
+      }
+    },
+    "vehicle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "vehicle_id", "position_m", "mass_kg", "maximum_brake_force_n",
+        "brake_cylinder"
+      ],
+      "properties": {
+        "vehicle_id": { "type": "string", "minLength": 1 },
+        "position_m": { "$ref": "#/$defs/nonNegativeNumber" },
+        "mass_kg": { "$ref": "#/$defs/positiveNumber" },
+        "maximum_brake_force_n": { "$ref": "#/$defs/positiveNumber" },
+        "brake_cylinder": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["maximum_pressure_kpa", "fill_time_constant_seconds"],
+          "properties": {
+            "maximum_pressure_kpa": { "$ref": "#/$defs/positiveNumber" },
+            "fill_time_constant_seconds": { "$ref": "#/$defs/positiveNumber" }
+          }
+        }
+      }
+    }
+  }
+}

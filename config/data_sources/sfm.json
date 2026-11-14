@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "rinf_rfi_2026_09": {
+      "publisher": "European Union Agency for Railways / Rete Ferroviaria Italiana",
+      "title": "RINF dataset - RFI",
+      "source_type": "railway_infrastructure_register",
+      "url": "https://rinf.data.era.europa.eu/dataset-explorer",
+      "dataset_file": "20260929_RINF_RFI.ttl",
+      "infrastructure_manager_code": "0083",
+      "snapshot_date": "2026-09-29",
+      "format": "RDF Turtle",
+      "fields_of_interest": [
+        "SectionOfLine",
+        "opStart",
+        "opEnd",
+        "lengthOfSectionOfLine",
+        "RunningTrack",
+        "maximumPermittedSpeed"
+      ],
+      "limitations": [
+        "A section of line is between adjacent operational points and may contain multiple tracks.",
+        "Length belongs to the section of line; maximum permitted speed belongs to a running track.",
+        "Track-to-section and project-topology mappings must be verified before importing values."
+      ],
+      "status": "public_dataset_requires_mapping"
+    },
+    "rfi_rinf_public": {
+      "publisher": "Rete Ferroviaria Italiana",
+      "title": "RFI RINF public register",
+      "source_type": "infrastructure_reference",
+      "url": "https://rinf.rfi.it/RinfWebPubblico",
+      "status": "public_reference"
+    },
+    "rfi_ifrp_pir_2027": {
+      "publisher": "Rete Ferroviaria Italiana",
+      "title": "Prospetto Informativo della Rete - Infrastruttura Ferroviaria Regionale Piemontese 2027",
+      "source_type": "regional_network_statement",
+      "url": "https://www.rfi.it/it/Offerta/accesso-alla-rete/prospetto-informativo-della-rete-dell-infrastruttura-ferroviaria.html",
+      "document_url": "https://www.rfi.it/content/dam/rfi/offerta/offertaaccessorete/prospetto-informativo-ferrovie-concesse/ifrp_2027/PIR_IFRP_2027_Dicembre_2025_definitivo.pdf",
+      "status": "published_document_e-pir_details_require_access"
+    },
+    "sfm_program_2026": {
+      "publisher": "Agenzia della Mobilità Piemontese",
+      "title": "Programma d'esercizio SFM - anno solare 2026",
+      "source_type": "operating_plan",
+      "url": "https://mtm.torino.it/wp-content/uploads/servizi-e-contratti/ferroviari/sfm/PEA-SFM-2026.pdf",
+      "fields_of_interest": [
+        "train_number",
+        "sfm_line",
+        "origin",
+        "destination",
+        "line_distance_km",
+        "departure_time",
+        "arrival_time",
+        "rolling_stock_type",
+        "composition"
+      ],
+      "limitations": [
+        "The published line_distance_km is a whole-trip or partial-trip distance, not a distance for every internal topology edge.",
+        "The file describes planned 2026 services and rolling-stock assignments; it does not provide acceleration or braking curves."
+      ],
+      "status": "published_operating_reference"
+    },
+    "sfm_faq_rolling_stock": {
+      "publisher": "Servizio Ferroviario Metropolitano di Torino",
+      "title": "SFM FAQ - rolling stock used on the network",
+      "source_type": "rolling_stock_family_reference",
+      "url": "https://www.sfmtorino.it/faq/",
+      "fields_of_interest": [
+        "Minuetto",
+        "Pop",
+        "Jazz",
+        "Rock",
+        "TAF",
+        "E464_with_Vivalto_coaches"
+      ],
+      "limitations": [
+        "The FAQ lists families used across the SFM network, not a complete assignment by service or a technical performance dataset."
+      ],
+      "status": "published_reference"
+    },
+    "hitachi_rail_caravaggio": {
+      "publisher": "Hitachi Rail",
+      "title": "Caravaggio / Rock - technical outline",
+      "source_type": "manufacturer_rolling_stock_specification",
+      "url": "https://www.hitachirail.com/products-and-solutions/rolling-stock/commuter-trains/caravaggio-rock/",
+      "fields_of_interest": [
+        "ETR521",
+        "maximum_speed_kmh",
+        "vehicle_count"
+      ],
+      "limitations": [
+        "Published page confirms ETR521 five-car formation and 160 km/h maximum speed, but does not publish numeric acceleration or service-braking curves."
+      ],
+      "status": "published_manufacturer_reference"
+    },
+    "trenitalia_pop_technical_outline": {
+      "publisher": "Trenitalia",
+      "title": "Caratteristiche nuovi treni POP",
+      "source_type": "operator_rolling_stock_specification",
+      "url": "https://www.trenitalia.com/content/dam/tcom/allegati/trenitalia_2014/in_regione/Basilicata_piano_sostituzione_materiale_rotabile.pdf",
+      "fields_of_interest": [
+        "four_car_formation",
+        "maximum_speed_kmh"
+      ],
+      "limitations": [
+        "Published regional POP summary reports a four-car train and 160 km/h maximum speed; exact SFM unit subtype and acceleration/braking curves are not specified."
+      ],
+      "status": "published_operator_reference"
+    },
+    "trenord_taf_fleet": {
+      "publisher": "Trenord",
+      "title": "La flotta - TAF",
+      "source_type": "operator_rolling_stock_family_reference",
+      "url": "https://www.trenord.it/chi-siamo/la-flotta/",
+      "fields_of_interest": [
+        "four_car_formation",
+        "maximum_speed_kmh"
+      ],
+      "limitations": [
+        "Confirms TAF family configuration and 140 km/h maximum speed; does not identify the exact SFM unit or publish numeric acceleration/braking curves."
+      ],
+      "status": "published_operator_reference"
+    },
+    "treniebinari_e464": {
+      "publisher": "Treniebinari.it",
+      "title": "Scheda tecnica locomotiva elettrica FS E.464",
+      "source_type": "rolling_stock_technical_reference",
+      "url": "https://www.treniebinari.it/treniebinari/locomotive-elettriche-corrente-continua/locomotiva-elettrica-fs-E464.html",
+      "fields_of_interest": [
+        "service_mass_t",
+        "hourly_power_kw",
+        "continuous_power_kw",
+        "maximum_tractive_effort_kn",
+        "maximum_speed_kmh"
+      ],
+      "limitations": [
+        "Locomotive-only data; does not specify Vivalto consist mass or complete train performance.",
+        "No numeric acceleration curve or service-braking deceleration curve is published."
+      ],
+      "status": "published_technical_reference"
+    },
+    "treniebinari_taf": {
+      "publisher": "Treniebinari.it",
+      "title": "Scheda tecnica elettrotreno TAF",
+      "source_type": "rolling_stock_technical_reference",
+      "url": "https://www.treniebinari.it/treniebinari/elettrotreni/elettrotreno-ale426-le763-ale506-ansaldo-breda-firema-taf-treno-alta-frequentazione.html",
+      "fields_of_interest": [
+        "formation",
+        "hourly_power_kw",
+        "maximum_speed_kmh"
+      ],
+      "limitations": [
+        "Family-level technical data; no numeric acceleration or service-braking curve."
+      ],
+      "status": "published_technical_reference"
+    },
+    "treniebinari_rock": {
+      "publisher": "Treniebinari.it",
+      "title": "Scheda tecnica ETR 421/521/621 Rock/Caravaggio",
+      "source_type": "rolling_stock_technical_reference",
+      "url": "https://www.treniebinari.it/treniebinari/elettrotreni/elettrotreno-etr-421-521-621-hitachi-rail-rock-caravaggio.html",
+      "fields_of_interest": [
+        "formation",
+        "hourly_power_kw",
+        "maximum_speed_kmh"
+      ],
+      "limitations": [
+        "Power and formation depend on ETR variant; the SFM observation is a five-car ETR521.",
+        "No numeric acceleration or service-braking curve."
+      ],
+      "status": "published_technical_reference"
+    },
+    "treniebinari_pop": {
+      "publisher": "Treniebinari.it",
+      "title": "Scheda tecnica ETR 103/104/204 POP/Donizetti",
+      "source_type": "rolling_stock_technical_reference",
+      "url": "https://www.treniebinari.it/treniebinari/elettrotreni/elettrotreno-etr-103-104-204-alstom-ferroviaria-pop-donizetti.html",
+      "fields_of_interest": [
+        "formation",
+        "hourly_power_kw",
+        "maximum_speed_kmh"
+      ],
+      "limitations": [
+        "Power and length depend on ETR variant; the SFM observation identifies a four-car ETR104.",
+        "No numeric acceleration or service-braking curve."
+      ],
+      "status": "published_technical_reference"
+    },
+    "treniebinari_minuetto": {
+      "publisher": "Treniebinari.it",
+      "title": "Scheda tecnica elettromotrice articolata ALe 501 Minuetto",
+      "source_type": "rolling_stock_technical_reference",
+      "url": "https://www.treniebinari.it/treniebinari/elettromotrici/elettromotrice-articolata-ale-501-minuetto.html",
+      "fields_of_interest": [
+        "formation",
+        "hourly_power_kw",
+        "maximum_speed_kmh"
+      ],
+      "limitations": [
+        "Family-level ALe501-Le220-ALe502 technical data; no numeric acceleration or service-braking curve."
+      ],
+      "status": "published_technical_reference"
+    },
+    "user_supplied_rolling_stock_technical_summary": {
+      "publisher": "User-supplied document",
+      "title": "Specifiche tecniche materiale rotabile piemontese",
+      "source_type": "user_supplied_rolling_stock_technical_summary",
+      "file": "specifiche_tecniche_treni_piemonte.pdf",
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "fields_of_interest": [
+        "empty_mass_t",
+        "equivalent_mass_t",
+        "rotational_inertia_factor",
+        "maximum_power_kw",
+        "maximum_tractive_effort_kn",
+        "max_speed_kmh",
+        "acceleration_profile",
+        "service_braking_mps2",
+        "emergency_braking_mps2",
+        "davis_coefficients_kgf",
+        "maximum_speed_by_mode_kmh",
+        "acceleration_by_mode_mps2",
+        "pneumatic_brake_delay_seconds"
+      ],
+      "limitations": [
+        "User-supplied synthesis; no manufacturer document numbers, revisions, test conditions or per-value citations are supplied.",
+        "Values are preserved as stated and are not independently verified.",
+        "Acceleration profiles mix ranges, endpoint values and isolated points; interpolation rules are not supplied.",
+        "No minimum turnback times are provided.",
+        "These candidates are stored separately and are not loaded into operational VehiclePerformance profiles."
+      ],
+      "status": "user_supplied_unverified_reference_candidates"
+    }
+  }
+}

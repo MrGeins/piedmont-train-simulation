@@ -28,7 +28,22 @@ class RailwayStation:
 
 
 class RailwayLine:
-    def __init__(self, node_from: str, node_to: str, double_track: bool):
+    def __init__(
+        self,
+        node_from: str,
+        node_to: str,
+        double_track: bool,
+        distance_km: float | None = None,
+        speed_limit_kmh: float | None = None,
+        gradient_permille: float | None = None,
+        electrified: bool | None = None,
+        track_type: str | None = None,
+    ):
         self.node_from = node_from
         self.node_to = node_to
         self.double_track = double_track
+        self.distance_km = distance_km
+        self.speed_limit_kmh = speed_limit_kmh
+        self.gradient_permille = gradient_permille
+        self.electrified = electrified
+        self.track_type = track_type
